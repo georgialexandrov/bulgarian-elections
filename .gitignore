@@ -1,3 +1,10 @@
 node_modules
 db/all_elections.db
-raw
+db/sections.db
+db/voting_locations_2019.sql
+files/parliament2009
+files/parliament2013
+files/parliament2014
+files/parliament2017
+.DS_Store
+.env
