@@ -518,4 +518,3 @@ CREATE TABLE parliament_votes_2017(
   "party22_valid" integer,   --- Действителни гласове
   "party22_invalid" integer  --  Недействителни гласове
 );
-
