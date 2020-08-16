@@ -7,32 +7,32 @@ sqlite3 db/all_elections.db ".mode csv" ".separator ';'" ".import ./files/voting
 
 # Parliament
 
-sqlite3 db/all_elections.db ".mode csv" ".separator ';'" ".import ./files/parliament2017/cik_parties_26.03.2017.txt parliament_cik_parties_2017"
-sqlite3 db/all_elections.db ".mode csv" ".separator ';'" ".import ./files/parliament2017/local_candidates_26.03.2017.txt parliament_local_candidates_2017"
-sqlite3 db/all_elections.db ".mode csv" ".separator ';'" ".import ./files/parliament2017/local_parties_26.03.2017.txt parliament_local_parties_2017"
-sqlite3 db/all_elections.db ".mode csv" ".separator ';'" ".import ./files/parliament2017/preferences_26.03.2017.txt parliament_preferences_2017"
-sqlite3 db/all_elections.db ".mode csv" ".separator ';'" ".import ./files/parliament2017/protocols_26.03.2017.txt parliament_protocols_2017"
-sqlite3 db/all_elections.db ".mode csv" ".separator ';'" ".import ./files/parliament2017/sections_26.03.2017.txt parliament_sections_2017"
-sqlite3 db/all_elections.db ".mode csv" ".separator ';'" ".import ./files/parliament2017/votes_26.03.2017.txt parliament_votes_2017"
+sqlite3 db/all_elections.db ".mode csv" ".separator ';'" ".import ./files/parliament2017/cik_parties_26.03.2017.txt parliament_2017_cik_parties"
+sqlite3 db/all_elections.db ".mode csv" ".separator ';'" ".import ./files/parliament2017/local_candidates_26.03.2017.txt parliament_2017_local_candidates"
+sqlite3 db/all_elections.db ".mode csv" ".separator ';'" ".import ./files/parliament2017/local_parties_26.03.2017.txt parliament_2017_local_parties"
+sqlite3 db/all_elections.db ".mode csv" ".separator ';'" ".import ./files/parliament2017/preferences_26.03.2017.txt parliament_2017_preferences"
+sqlite3 db/all_elections.db ".mode csv" ".separator ';'" ".import ./files/parliament2017/protocols_26.03.2017.txt parliament_2017_protocols"
+sqlite3 db/all_elections.db ".mode csv" ".separator ';'" ".import ./files/parliament2017/sections_26.03.2017.txt parliament_2017_sections"
+sqlite3 db/all_elections.db ".mode csv" ".separator ';'" ".import ./files/parliament2017/votes_26.03.2017.txt parliament_2017_votes"
 
-sqlite3 db/all_elections.db ".mode csv" ".separator ';'" ".import ./files/parliament2014/candidates_pe2014.txt parliament_candidates_2014"
-sqlite3 db/all_elections.db ".mode csv" ".separator ';'" ".import ./files/parliament2014/ind_pe2014.txt parliament_ind_2014"
-sqlite3 db/all_elections.db ".mode csv" ".separator ';'" ".import ./files/parliament2014/parties_pe2014.txt parliament_parties_2014"
-sqlite3 db/all_elections.db ".mode csv" ".separator ';'" ".import ./files/parliament2014/preferences_pe2014.txt parliament_preferences_2014"
-sqlite3 db/all_elections.db ".mode csv" ".separator ';'" ".import ./files/parliament2014/protocols_pe2014.txt parliament_protocols_2014"
-sqlite3 db/all_elections.db ".mode csv" ".separator ';'" ".import ./files/parliament2014/sections_pe2014.txt parliament_sections_2014"
-sqlite3 db/all_elections.db ".mode csv" ".separator ';'" ".import ./files/parliament2014/votes_pe2014.txt parliament_votes_2014"
+sqlite3 db/all_elections.db ".mode csv" ".separator ';'" ".import ./files/parliament2014/candidates_pe2014.txt parliament_2014_candidates"
+sqlite3 db/all_elections.db ".mode csv" ".separator ';'" ".import ./files/parliament2014/ind_pe2014.txt parliament_2014_ind"
+sqlite3 db/all_elections.db ".mode csv" ".separator ';'" ".import ./files/parliament2014/parties_pe2014.txt parliament_2014_parties"
+sqlite3 db/all_elections.db ".mode csv" ".separator ';'" ".import ./files/parliament2014/preferences_pe2014.txt parliament_2014_preferences"
+sqlite3 db/all_elections.db ".mode csv" ".separator ';'" ".import ./files/parliament2014/protocols_pe2014.txt parliament_2014_protocols"
+sqlite3 db/all_elections.db ".mode csv" ".separator ';'" ".import ./files/parliament2014/sections_pe2014.txt parliament_2014_sections"
+sqlite3 db/all_elections.db ".mode csv" ".separator ';'" ".import ./files/parliament2014/votes_pe2014.txt parliament_2014_votes"
 
-sqlite3 db/all_elections.db ".mode csv" ".separator ';'" ".import ./files/parliament2013/pe2013_pe_candidates.txt parliament_candidates_2013"
-sqlite3 db/all_elections.db ".mode csv" ".separator ';'" ".import ./files/parliament2013/pe2013_pe_cikparties.txt parliament_parties_2013"
-sqlite3 db/all_elections.db ".mode csv" ".separator ';'" ".import ./files/parliament2013/pe2013_pe_protocols.txt parliament_protocols_2013"
-sqlite3 db/all_elections.db ".mode csv" ".separator ';'" ".import ./files/parliament2013/pe2013_pe_sections.txt parliament_sections_2013"
-sqlite3 db/all_elections.db ".mode csv" ".separator ';'" ".import ./files/parliament2013/pe2013_pe_votes.txt parliament_votes_2013"
+sqlite3 db/all_elections.db ".mode csv" ".separator ';'" ".import ./files/parliament2013/pe2013_pe_candidates.txt parliament_2013_candidates"
+sqlite3 db/all_elections.db ".mode csv" ".separator ';'" ".import ./files/parliament2013/pe2013_pe_cikparties.txt parliament_2013_parties"
+sqlite3 db/all_elections.db ".mode csv" ".separator ';'" ".import ./files/parliament2013/pe2013_pe_protocols.txt parliament_2013_protocols"
+sqlite3 db/all_elections.db ".mode csv" ".separator ';'" ".import ./files/parliament2013/pe2013_pe_sections.txt parliament_2013_sections"
+sqlite3 db/all_elections.db ".mode csv" ".separator ';'" ".import ./files/parliament2013/pe2013_pe_votes.txt parliament_2013_votes"
 
-sqlite3 db/all_elections.db ".mode csv" ".separator ';'" ".import ./files/parliament2009/pe2009_majorvotes.txt parliament_majorvotes_2009"
-sqlite3 db/all_elections.db ".mode csv" ".separator ';'" ".import ./files/parliament2009/pe2009_partyvotes.txt parliament_partyvotes_2009"
-sqlite3 db/all_elections.db ".mode csv" ".separator ';'" ".import ./files/parliament2009/pe2009_protocols.txt parliament_protocols_2009"
-sqlite3 db/all_elections.db ".mode csv" ".separator ';'" ".import ./files/parliament2009/pe2009_sections.txt parliament_sections_2009"
+sqlite3 db/all_elections.db ".mode csv" ".separator ';'" ".import ./files/parliament2009/pe2009_majorvotes.txt parliament_2009_majorvotes"
+sqlite3 db/all_elections.db ".mode csv" ".separator ';'" ".import ./files/parliament2009/pe2009_partyvotes.txt parliament_2009_partyvotes"
+sqlite3 db/all_elections.db ".mode csv" ".separator ';'" ".import ./files/parliament2009/pe2009_protocols.txt parliament_2009_protocols"
+sqlite3 db/all_elections.db ".mode csv" ".separator ';'" ".import ./files/parliament2009/pe2009_sections.txt parliament_2009_sections"
 
 # President
 sqlite3 db/all_elections.db ".mode csv" ".separator ';'" ".import ./files/president_2011_1/el2011_president_candidates.txt president_2011_1_candidates"
@@ -45,10 +45,10 @@ sqlite3 db/all_elections.db ".mode csv" ".separator ';'" ".import ./files/presid
 sqlite3 db/all_elections.db ".mode csv" ".separator ';'" ".import ./files/president_2011_2/el2011_president_sections.txt president_2011_2_sections"
 sqlite3 db/all_elections.db ".mode csv" ".separator ';'" ".import ./files/president_2011_2/el2011_president_votes.txt president_2011_2_votes"
 
-sqlite3 db/all_elections.db ".mode csv" ".separator ';'" ".import ./files/president_2016/06.11.2016/cik_candidates_06.11.2016.txt president_candidates_2016_1"
-sqlite3 db/all_elections.db ".mode csv" ".separator ';'" ".import ./files/president_2016/06.11.2016/protocols_06.11.2016.txt president_protocols_2016_1"
-sqlite3 db/all_elections.db ".mode csv" ".separator ';'" ".import ./files/president_2016/06.11.2016/sections_06.11.2016.txt president_sections_2016_1"
-sqlite3 db/all_elections.db ".mode csv" ".separator ';'" ".import ./files/president_2016/06.11.2016/votes_06.11.2016.txt president_votes_2016_1"
+sqlite3 db/all_elections.db ".mode csv" ".separator ';'" ".import ./files/president_2016/06.11.2016/cik_candidates_06.11.2016.txt president_2016_1_candidates"
+sqlite3 db/all_elections.db ".mode csv" ".separator ';'" ".import ./files/president_2016/06.11.2016/protocols_06.11.2016.txt president_2016_1_protocols"
+sqlite3 db/all_elections.db ".mode csv" ".separator ';'" ".import ./files/president_2016/06.11.2016/sections_06.11.2016.txt president_2016_1_sections"
+sqlite3 db/all_elections.db ".mode csv" ".separator ';'" ".import ./files/president_2016/06.11.2016/votes_06.11.2016.txt president_2016_1_votes"
 
 # European
 
@@ -174,4 +174,47 @@ sqlite3 db/all_elections.db ".mode csv" ".separator ';'" ".import ./files/mayor_
 sqlite3 db/all_elections.db ".mode csv" ".separator ';'" ".import ./files/mayor_2015_2/КР/protocols_01.11.2015.txt mayor_region_2015_2_cik_protocols"
 sqlite3 db/all_elections.db ".mode csv" ".separator ';'" ".import ./files/mayor_2015_2/КР/sections_01.11.2015.txt mayor_region_2015_2_sections"
 sqlite3 db/all_elections.db ".mode csv" ".separator ';'" ".import ./files/mayor_2015_2/КР/votes_01.11.2015.txt mayor_region_2015_2_votes"
+
+
+# 2011
+
+sqlite3 db/all_elections.db ".mode csv" ".separator ';'" ".import './files/mayor_2011_1/кмет на кметство/el2011_mayor_mrlty_candidates.txt' mayor_2011_1_candidates"
+sqlite3 db/all_elections.db ".mode csv" ".separator ';'" ".import './files/mayor_2011_1/кмет на кметство/el2011_mayor_mrlty_cikparties.txt' mayor_2011_1_cik_parties"
+sqlite3 db/all_elections.db ".mode csv" ".separator ';'" ".import './files/mayor_2011_1/кмет на кметство/el2011_mayor_mrlty_coalitions.txt' mayor_2011_1_coalitions"
+sqlite3 db/all_elections.db ".mode csv" ".separator ';'" ".import './files/mayor_2011_1/кмет на кметство/el2011_mayor_mrlty_protocols.txt' mayor_2011_1_protocols"
+sqlite3 db/all_elections.db ".mode csv" ".separator ';'" ".import './files/mayor_2011_1/кмет на кметство/el2011_mayor_mrlty_sections.txt' mayor_2011_1_sections"
+sqlite3 db/all_elections.db ".mode csv" ".separator ';'" ".import './files/mayor_2011_1/кмет на кметство/el2011_mayor_mrlty_votes.txt' mayor_2011_1_votes"
+ 
+
+sqlite3 db/all_elections.db ".mode csv" ".separator ';'" ".import './files/mayor_2011_1/кмет на община/el2011_mayor_munic_candidates.txt' mayor_municipality_2011_1_candidates"
+sqlite3 db/all_elections.db ".mode csv" ".separator ';'" ".import './files/mayor_2011_1/кмет на община/el2011_mayor_munic_cikparties.txt' mayor_municipality_2011_1_cik_parties"
+sqlite3 db/all_elections.db ".mode csv" ".separator ';'" ".import './files/mayor_2011_1/кмет на община/el2011_mayor_munic_coalitions.txt' mayor_municipality_2011_1_coalitions"
+sqlite3 db/all_elections.db ".mode csv" ".separator ';'" ".import './files/mayor_2011_1/кмет на община/el2011_mayor_munic_protocols.txt' mayor_municipality_2011_1_protocols"
+sqlite3 db/all_elections.db ".mode csv" ".separator ';'" ".import './files/mayor_2011_1/кмет на община/el2011_mayor_munic_sections.txt' mayor_municipality_2011_1_sections"
+sqlite3 db/all_elections.db ".mode csv" ".separator ';'" ".import './files/mayor_2011_1/кмет на община/el2011_mayor_munic_votes.txt' mayor_municipality_2011_1_votes"
+ 
+
+sqlite3 db/all_elections.db ".mode csv" ".separator ';'" ".import './files/mayor_2011_1/общински съветници/el2011_council_candidates.txt' council_2011_1_candidates"
+sqlite3 db/all_elections.db ".mode csv" ".separator ';'" ".import './files/mayor_2011_1/общински съветници/el2011_council_cikparties.txt' council_2011_1_cik_parties"
+sqlite3 db/all_elections.db ".mode csv" ".separator ';'" ".import './files/mayor_2011_1/общински съветници/el2011_council_coalitions.txt' council_2011_1_coalitions"
+sqlite3 db/all_elections.db ".mode csv" ".separator ';'" ".import './files/mayor_2011_1/общински съветници/el2011_council_protocols.txt' council_2011_1_protocols"
+sqlite3 db/all_elections.db ".mode csv" ".separator ';'" ".import './files/mayor_2011_1/общински съветници/el2011_council_sections.txt' council_2011_1_sections"
+sqlite3 db/all_elections.db ".mode csv" ".separator ';'" ".import './files/mayor_2011_1/общински съветници/el2011_council_votes.txt' council_2011_1_votes"
+ 
+
+sqlite3 db/all_elections.db ".mode csv" ".separator ';'" ".import './files/mayor_2011_2/кмет на кметство/el2011_mayor_mrlty_candidates.txt' mayor_2011_2_candidates"
+sqlite3 db/all_elections.db ".mode csv" ".separator ';'" ".import './files/mayor_2011_2/кмет на кметство/el2011_mayor_mrlty_cikparties.txt' mayor_2011_2_cik_parties"
+sqlite3 db/all_elections.db ".mode csv" ".separator ';'" ".import './files/mayor_2011_2/кмет на кметство/el2011_mayor_mrlty_coalitions.txt' mayor_2011_2_coalitions"
+sqlite3 db/all_elections.db ".mode csv" ".separator ';'" ".import './files/mayor_2011_2/кмет на кметство/el2011_mayor_mrlty_protocols.txt' mayor_2011_2_protocols"
+sqlite3 db/all_elections.db ".mode csv" ".separator ';'" ".import './files/mayor_2011_2/кмет на кметство/el2011_mayor_mrlty_sections.txt' mayor_2011_2_sections"
+sqlite3 db/all_elections.db ".mode csv" ".separator ';'" ".import './files/mayor_2011_2/кмет на кметство/el2011_mayor_mrlty_votes.txt' mayor_2011_2_votes"
+ 
+
+sqlite3 db/all_elections.db ".mode csv" ".separator ';'" ".import './files/mayor_2011_2/кмет на община/el2011_mayor_munic_candidates.txt' mayor_municipality_2011_2_candidates"
+sqlite3 db/all_elections.db ".mode csv" ".separator ';'" ".import './files/mayor_2011_2/кмет на община/el2011_mayor_munic_cikparties.txt' mayor_municipality_2011_2_cik_parties"
+sqlite3 db/all_elections.db ".mode csv" ".separator ';'" ".import './files/mayor_2011_2/кмет на община/el2011_mayor_munic_coalitions.txt' mayor_municipality_2011_2_coalitions"
+sqlite3 db/all_elections.db ".mode csv" ".separator ';'" ".import './files/mayor_2011_2/кмет на община/el2011_mayor_munic_protocols.txt' mayor_municipality_2011_2_protocols"
+sqlite3 db/all_elections.db ".mode csv" ".separator ';'" ".import './files/mayor_2011_2/кмет на община/el2011_mayor_munic_sections.txt' mayor_municipality_2011_2_sections"
+sqlite3 db/all_elections.db ".mode csv" ".separator ';'" ".import './files/mayor_2011_2/кмет на община/el2011_mayor_munic_votes.txt' mayor_municipality_2011_2_votes"
+ 
 
