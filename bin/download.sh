@@ -47,7 +47,9 @@ curl https://results.cik.bg/mipvr2011/el2011_t2.zip --output ./files/president20
 curl https://results.cik.bg/mi2019/csv.zip --output ./files/mayor2019.zip
 
 # https://results.cik.bg/minr2015/tur1/mestni/0101.html
-curl https://results.cik.bg/minr2015/tur1/mi2015.zip --output ./files/mayor2015.zip
+curl https://results.cik.bg/minr2015/tur1/mi2015.zip --output ./files/mayor2015_1.zip
+curl https://results.cik.bg/minr2015/tur2/mi2015.zip --output ./files/mayor2015_2.zip
+
 
 # https://results.cik.bg/mipvr2011/tur1/mestni/0103.html
 curl https://results.cik.bg/mipvr2011/el2011_t1.zip --output ./files/mayor2011_1.zip
@@ -62,20 +64,35 @@ curl https://www.cik.bg/upload/112038/Sekcii-08.09.2019-KM-0.xlsx --output ./fil
 
 
 
-rm -rf ./files/parliament2017
-unzip ./files/parliament2017.zip -d ./files/parliament2017
+rm -rf ./files/parliament_2017
+unzip ./files/parliament2017.zip -d ./files/parliament_2017
 
-rm -rf ./files/parliament2014
-unzip ./files/parliament2014.zip -d ./files/parliament2014
+rm -rf ./files/parliament_2014
+unzip ./files/parliament2014.zip -d ./files/parliament_2014
 
-rm -rf ./files/parliament2013
-unzip ./files/parliament2013.zip -d ./files/parliament2013
-mv ./files/parliament2013/export/* ./files/parliament2013/
-rm -rf ./files/parliament2013/export
+rm -rf ./files/parliament_2013
+unzip ./files/parliament2013.zip -d ./files/parliament_2013
+mv ./files/parliament_2013/export/* ./files/parliament_2013/
+rm -rf ./files/parliament_2013/export
 
-rm -rf ./files/parliament2009
-unzip ./files/parliament2009.zip -d ./files/parliament2009
-iconv -f windows-1251 -t utf8 ./files/parliament2009/pe2009_sections.txt  > /tmp/pe2009_sections.txt
-mv /tmp/pe2009_sections.txt ./files/parliament2009/pe2009_sections.txt
-iconv -f windows-1251 -t utf8 ./files/parliament2009/ReadMe.txt > /tmp/ReadMe.txt
-mv /tmp/ReadMe.txt ./files/parliament2009/ReadMe.txt
+rm -rf ./files/parliament_2009
+unzip ./files/parliament2009.zip -d ./files/parliament_2009
+iconv -f windows-1251 -t utf8 ./files/parliament_2009/pe2009_sections.txt  > /tmp/pe2009_sections.txt
+mv /tmp/pe2009_sections.txt ./files/parliament_2009/pe2009_sections.txt
+iconv -f windows-1251 -t utf8 ./files/parliament_2009/ReadMe.txt > /tmp/ReadMe.txt
+mv /tmp/ReadMe.txt ./files/parliament_2009/ReadMe.txt
+
+unzip ./files/european2019.zip -d ./files/european_2019
+unzip ./files/european2014.zip -d ./files/european_2014
+unzip ./files/european2009.zip -d ./files/european_2009
+iconv -f windows-1251 -t utf-8 ./files/european_2009/euro2009_sections.txt > /tmp/euro2009_sections.txt
+mv /tmp/euro2009_sections.txt ./files/european_2009/euro2009_sections.txt
+iconv -f windows-1251 -t utf-8 ./files/european_2009/ReadMe.txt > /tmp/ReadMe.txt
+mv /tmp/ReadMe.txt ./files/european_2009/ReadMe.txt
+
+####################################################################################################################################
+
+# unzip is unable to uncompress mayor elections files because of encoding issues.
+# for macos uncompress with The Unarchiver and chosing manually Cyrilic (MacOS) works fine.
+
+unzip ./files/president2016.zip -d ./files/president_2016
