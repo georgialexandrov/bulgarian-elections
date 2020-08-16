@@ -93,6 +93,6 @@ mv /tmp/ReadMe.txt ./files/european_2009/ReadMe.txt
 ####################################################################################################################################
 
 # unzip is unable to uncompress mayor elections files because of encoding issues.
-# for macos uncompress with The Unarchiver and chosing manually Cyrilic (MacOS) works fine.
+# for MacOS uncompress with The Unarchiver by chosing manually Cyrilic (MacOS).
 
 unzip ./files/president2016.zip -d ./files/president_2016
