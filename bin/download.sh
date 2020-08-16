@@ -95,4 +95,52 @@ mv /tmp/ReadMe.txt ./files/european_2009/ReadMe.txt
 # unzip is unable to uncompress mayor elections files because of encoding issues.
 # for MacOS uncompress with The Unarchiver by chosing manually Cyrilic (MacOS).
 
+
+iconv -f windows-1251 -t utf8 ./files/mayor_2011_1/кмет\ на\ кметство/el2011_mayor_mrlty_candidates.txt > /tmp/el2011_mayor_mrlty_candidates.txt && mv /tmp/el2011_mayor_mrlty_candidates.txt ./files/mayor_2011_1/кмет\ на\ кметство/el2011_mayor_mrlty_candidates.txt
+iconv -f windows-1251 -t utf8 ./files/mayor_2011_1/кмет\ на\ кметство/el2011_mayor_mrlty_cikparties.txt > /tmp/el2011_mayor_mrlty_cikparties.txt && mv /tmp/el2011_mayor_mrlty_cikparties.txt ./files/mayor_2011_1/кмет\ на\ кметство/el2011_mayor_mrlty_cikparties.txt
+iconv -f windows-1251 -t utf8 ./files/mayor_2011_1/кмет\ на\ кметство/el2011_mayor_mrlty_coalitions.txt > /tmp/el2011_mayor_mrlty_coalitions.txt && mv /tmp/el2011_mayor_mrlty_coalitions.txt ./files/mayor_2011_1/кмет\ на\ кметство/el2011_mayor_mrlty_coalitions.txt
+iconv -f windows-1251 -t utf8 ./files/mayor_2011_1/кмет\ на\ кметство/el2011_mayor_mrlty_protocols.txt > /tmp/el2011_mayor_mrlty_protocols.txt && mv /tmp/el2011_mayor_mrlty_protocols.txt ./files/mayor_2011_1/кмет\ на\ кметство/el2011_mayor_mrlty_protocols.txt
+iconv -f windows-1251 -t utf8 ./files/mayor_2011_1/кмет\ на\ кметство/el2011_mayor_mrlty_sections.txt > /tmp/el2011_mayor_mrlty_sections.txt && mv /tmp/el2011_mayor_mrlty_sections.txt ./files/mayor_2011_1/кмет\ на\ кметство/el2011_mayor_mrlty_sections.txt
+
+iconv -f windows-1251 -t utf8 ./files/mayor_2011_1/кмет\ на\ община/el2011_mayor_munic_candidates.txt > /tmp/el2011_mayor_munic_candidates.txt && mv /tmp/el2011_mayor_munic_candidates.txt ./files/mayor_2011_1/кмет\ на\ община/el2011_mayor_munic_candidates.txt
+iconv -f windows-1251 -t utf8 ./files/mayor_2011_1/кмет\ на\ община/el2011_mayor_munic_cikparties.txt > /tmp/el2011_mayor_munic_cikparties.txt && mv /tmp/el2011_mayor_munic_cikparties.txt ./files/mayor_2011_1/кмет\ на\ община/el2011_mayor_munic_cikparties.txt
+iconv -f windows-1251 -t utf8 ./files/mayor_2011_1/кмет\ на\ община/el2011_mayor_munic_coalitions.txt > /tmp/el2011_mayor_munic_coalitions.txt && mv /tmp/el2011_mayor_munic_coalitions.txt ./files/mayor_2011_1/кмет\ на\ община/el2011_mayor_munic_coalitions.txt
+iconv -f windows-1251 -t utf8 ./files/mayor_2011_1/кмет\ на\ община/el2011_mayor_munic_protocols.txt > /tmp/el2011_mayor_munic_protocols.txt && mv /tmp/el2011_mayor_munic_protocols.txt ./files/mayor_2011_1/кмет\ на\ община/el2011_mayor_munic_protocols.txt
+iconv -f windows-1251 -t utf8 ./files/mayor_2011_1/кмет\ на\ община/el2011_mayor_munic_sections.txt > /tmp/el2011_mayor_munic_sections.txt && mv /tmp/el2011_mayor_munic_sections.txt ./files/mayor_2011_1/кмет\ на\ община/el2011_mayor_munic_sections.txt
+
+iconv -f windows-1251 -t utf8 ./files/mayor_2011_1/общински\ съветници/el2011_council_candidates.txt > /tmp/el2011_council_candidates.txt && mv /tmp/el2011_council_candidates.txt ./files/mayor_2011_1/общински\ съветници/el2011_council_candidates.txt
+iconv -f windows-1251 -t utf8 ./files/mayor_2011_1/общински\ съветници/el2011_council_cikparties.txt > /tmp/el2011_council_cikparties.txt && mv /tmp/el2011_council_cikparties.txt ./files/mayor_2011_1/общински\ съветници/el2011_council_cikparties.txt
+iconv -f windows-1251 -t utf8 ./files/mayor_2011_1/общински\ съветници/el2011_council_coalitions.txt > /tmp/el2011_council_coalitions.txt && mv /tmp/el2011_council_coalitions.txt ./files/mayor_2011_1/общински\ съветници/el2011_council_coalitions.txt
+iconv -f windows-1251 -t utf8 ./files/mayor_2011_1/общински\ съветници/el2011_council_protocols.txt > /tmp/el2011_council_protocols.txt && mv /tmp/el2011_council_protocols.txt ./files/mayor_2011_1/общински\ съветници/el2011_council_protocols.txt
+iconv -f windows-1251 -t utf8 ./files/mayor_2011_1/общински\ съветници/el2011_council_sections.txt > /tmp/el2011_council_sections.txt && mv /tmp/el2011_council_sections.txt ./files/mayor_2011_1/общински\ съветници/el2011_council_sections.txt
+
+iconv -f windows-1251 -t utf8 ./files/mayor_2011_2/кмет\ на\ кметство/el2011_mayor_mrlty_candidates.txt > /tmp/el2011_mayor_mrlty_candidates.txt && mv /tmp/el2011_mayor_mrlty_candidates.txt ./files/mayor_2011_2/кмет\ на\ кметство/el2011_mayor_mrlty_candidates.txt
+iconv -f windows-1251 -t utf8 ./files/mayor_2011_2/кмет\ на\ кметство/el2011_mayor_mrlty_cikparties.txt > /tmp/el2011_mayor_mrlty_cikparties.txt && mv /tmp/el2011_mayor_mrlty_cikparties.txt ./files/mayor_2011_2/кмет\ на\ кметство/el2011_mayor_mrlty_cikparties.txt
+iconv -f windows-1251 -t utf8 ./files/mayor_2011_2/кмет\ на\ кметство/el2011_mayor_mrlty_coalitions.txt > /tmp/el2011_mayor_mrlty_coalitions.txt && mv /tmp/el2011_mayor_mrlty_coalitions.txt ./files/mayor_2011_2/кмет\ на\ кметство/el2011_mayor_mrlty_coalitions.txt
+iconv -f windows-1251 -t utf8 ./files/mayor_2011_2/кмет\ на\ кметство/el2011_mayor_mrlty_protocols.txt > /tmp/el2011_mayor_mrlty_protocols.txt && mv /tmp/el2011_mayor_mrlty_protocols.txt ./files/mayor_2011_2/кмет\ на\ кметство/el2011_mayor_mrlty_protocols.txt
+iconv -f windows-1251 -t utf8 ./files/mayor_2011_2/кмет\ на\ кметство/el2011_mayor_mrlty_sections.txt > /tmp/el2011_mayor_mrlty_sections.txt && mv /tmp/el2011_mayor_mrlty_sections.txt ./files/mayor_2011_2/кмет\ на\ кметство/el2011_mayor_mrlty_sections.txt
+
+iconv -f windows-1251 -t utf8 ./files/mayor_2011_2/кмет\ на\ община/el2011_mayor_munic_candidates.txt > /tmp/el2011_mayor_munic_candidates.txt && mv /tmp/el2011_mayor_munic_candidates.txt ./files/mayor_2011_2/кмет\ на\ община/el2011_mayor_munic_candidates.txt
+iconv -f windows-1251 -t utf8 ./files/mayor_2011_2/кмет\ на\ община/el2011_mayor_munic_cikparties.txt > /tmp/el2011_mayor_munic_cikparties.txt && mv /tmp/el2011_mayor_munic_cikparties.txt ./files/mayor_2011_2/кмет\ на\ община/el2011_mayor_munic_cikparties.txt
+iconv -f windows-1251 -t utf8 ./files/mayor_2011_2/кмет\ на\ община/el2011_mayor_munic_coalitions.txt > /tmp/el2011_mayor_munic_coalitions.txt && mv /tmp/el2011_mayor_munic_coalitions.txt ./files/mayor_2011_2/кмет\ на\ община/el2011_mayor_munic_coalitions.txt
+iconv -f windows-1251 -t utf8 ./files/mayor_2011_2/кмет\ на\ община/el2011_mayor_munic_protocols.txt > /tmp/el2011_mayor_munic_protocols.txt && mv /tmp/el2011_mayor_munic_protocols.txt ./files/mayor_2011_2/кмет\ на\ община/el2011_mayor_munic_protocols.txt
+iconv -f windows-1251 -t utf8 ./files/mayor_2011_2/кмет\ на\ община/el2011_mayor_munic_sections.txt > /tmp/el2011_mayor_munic_sections.txt && mv /tmp/el2011_mayor_munic_sections.txt ./files/mayor_2011_2/кмет\ на\ община/el2011_mayor_munic_sections.txt
+
+iconv -f windows-1251 -t utf8 ./files/mayor_2011_1/кмет\ на\ кметство/el2011_mayor_mrlty_readme.txt > /tmp/el2011_mayor_mrlty_readme.txt && mv /tmp/el2011_mayor_mrlty_readme.txt ./files/mayor_2011_1/кмет\ на\ кметство/el2011_mayor_mrlty_readme.txt
+iconv -f windows-1251 -t utf8 ./files/mayor_2011_1/кмет\ на\ община/el2011_mayor_munic_readme.txt > /tmp/el2011_mayor_munic_readme.txt && mv /tmp/el2011_mayor_munic_readme.txt ./files/mayor_2011_1/кмет\ на\ община/el2011_mayor_munic_readme.txt
+iconv -f windows-1251 -t utf8 ./files/mayor_2011_1/общински\ съветници/el2011_council_readme.txt > /tmp/el2011_council_readme.txt && mv /tmp/el2011_council_readme.txt ./files/mayor_2011_1/общински\ съветници/el2011_council_readme.txt
+iconv -f windows-1251 -t utf8 ./files/mayor_2011_2/кмет\ на\ кметство/el2011_mayor_mrlty_readme.txt > /tmp/el2011_mayor_mrlty_readme.txt && mv /tmp/el2011_mayor_mrlty_readme.txt ./files/mayor_2011_2/кмет\ на\ кметство/el2011_mayor_mrlty_readme.txt
+iconv -f windows-1251 -t utf8 ./files/mayor_2011_2/кмет\ на\ община/el2011_mayor_munic_readme.txt > /tmp/el2011_mayor_munic_readme.txt && mv /tmp/el2011_mayor_munic_readme.txt ./files/mayor_2011_2/кмет\ на\ община/el2011_mayor_munic_readme.txt
+
+iconv -f windows-1251 -t utf8 ./files/mayor_2011_1/кмет\ на\ кметство/el2011_mayor_mrlty_result.txt > /tmp/el2011_mayor_mrlty_result.txt && mv /tmp/el2011_mayor_mrlty_result.txt ./files/mayor_2011_1/кмет\ на\ кметство/el2011_mayor_mrlty_result.txt
+iconv -f windows-1251 -t utf8 ./files/mayor_2011_1/кмет\ на\ община/el2011_mayor_munic_result.txt > /tmp/el2011_mayor_munic_result.txt && mv /tmp/el2011_mayor_munic_result.txt ./files/mayor_2011_1/кмет\ на\ община/el2011_mayor_munic_result.txt
+iconv -f windows-1251 -t utf8 ./files/mayor_2011_1/общински\ съветници/el2011_council_result.txt > /tmp/el2011_council_result.txt && mv /tmp/el2011_council_result.txt ./files/mayor_2011_1/общински\ съветници/el2011_council_result.txt
+iconv -f windows-1251 -t utf8 ./files/mayor_2011_2/кмет\ на\ кметство/el2011_mayor_mrlty_result.txt > /tmp/el2011_mayor_mrlty_result.txt && mv /tmp/el2011_mayor_mrlty_result.txt ./files/mayor_2011_2/кмет\ на\ кметство/el2011_mayor_mrlty_result.txt
+iconv -f windows-1251 -t utf8 ./files/mayor_2011_2/кмет\ на\ община/el2011_mayor_munic_result.txt > /tmp/el2011_mayor_munic_result.txt && mv /tmp/el2011_mayor_munic_result.txt ./files/mayor_2011_2/кмет\ на\ община/el2011_mayor_munic_result.txt
+
+
+iconv -f windows-1251 -t utf8 ./files/parliament_2009/pe2009_sections.txt  > /tmp/pe2009_sections.txt
+mv /tmp/ReadMe.txt ./files/european_2009/ReadMe.txt
+
+
 unzip ./files/president2016.zip -d ./files/president_2016
