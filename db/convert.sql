@@ -65,7 +65,7 @@ CREATE TABLE protocols(
 
 drop table if exists districts;
 CREATE TABLE districts(
-  "id" integer,
+  "id" integer primary key,
   "district_code" text,
   "district_name" text
 );
@@ -866,8 +866,8 @@ insert into protocols (election_id, section_id, total_voters, added_voters, vote
 drop table _2009_european_protocols;
 
 insert into districts (id, district_code, district_name) select distinct region_id, CASE WHEN CAST(region_id as NUMBER) < 10 THEN '0' || region_Id ELSE region_id END, region_name from voting_locations_2019;
-insert into districts (id, district_code, district_name) values(1001, 'Чужбина', 'Чужбина');
-insert into districts (id, district_code, district_name) values(999, 'Цялата страна', 'Цялата страна');
+insert into districts (id, district_code, district_name) values(29, 'Чужбина', 'Чужбина');
+insert into districts (id, district_code, district_name) values(30, 'Цялата страна', 'Цялата страна');
 
 insert into municipalities (id, district_id, municipality_code, municipality_name) select distinct municipality_id, region_id, CASE WHEN CAST(municipality_id as NUMBER) < 10 THEN '0' || municipality_id ELSE municipality_id END, municipality_name from voting_locations_2019;
 
@@ -883,7 +883,7 @@ insert into location_types values
 (6, 'Цялата страна');
 
 
-insert into locations (id, district_id, municipality_id, municipality_region_id, location_type, location_name) select distinct location_id, region_id, municipality_id, municipality_id,
+insert into locations (id, district_id, municipality_id, municipality_region_id, location_type, location_name) select distinct location_id, region_id, (select id from municipalities where district_id=region_id and cast(municipalities.municipality_code as integer)=voting_locations_2019.municipality_id), municipality_region_code
 CASE 
 	WHEN replace(location_name, 'ГР.', '') == region_name THEN 1
 	ELSE 
