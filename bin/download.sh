@@ -60,9 +60,15 @@ curl https://results.cik.bg/mipvr2011/el2011_t2.zip --output ./files/mayor2011_2
 
 
 ## Адреси на изборни секции
-curl https://www.cik.bg/upload/112038/Sekcii-08.09.2019-KM-0.xlsx --output ./files/section_addresses_2019.xlsx
+curl https://www.cik.bg/upload/112038/Sekcii-08.09.2019-KM-0.xlsx --output ./files/section_addresses_2019_fall.xlsx
+curl https://www.cik.bg/upload/83178/Sekcii-IS-05.04.2019-Ep0-BezDop-01.xlsx --output ./files/section_addresses_2019_spring.xlsx
+curl https://www.cik.bg/upload/69121/predvaritelen+spisak+sekcii+v+stranata.xlsx --output ./files/section_addresses_2017.xlsx
+curl https://www.cik.bg/upload/59143/sik_p.xlsx --output ./files/section_addresses_2016.xlsx
+curl https://www.cik.bg/upload/14300/Номера_и_адреси_на_избирателни_сек.xlsx --output ./files/section_addresses_2015.xlsx
 
-
+# Scrape european 2014: https://old.cik.bg/ajax/siks2014.php?rik=3&obs=2
+# Scrape https://old.cik.bg/siks_pi2014? parliament 2014:  https://old.cik.bg/ajax/siks_pi2014.php?rik=1&obs=1
+# Scrape https://old.cik.bg/616? 2013 parliament: https://old.cik.bg/ajax/siks.php?rik=1&obs=2
 
 rm -rf ./files/parliament_2017
 unzip ./files/parliament2017.zip -d ./files/parliament_2017

@@ -2,9 +2,8 @@ node_modules
 db/all_elections.db
 db/all_elections.db.bak
 db/sections.db
-db/voting_locations_2019.sql
 db/queries.sql
-db/voting_locations_2019_n.sql
+db/dumps
 files/parliament2009
 files/parliament2013
 files/parliament2014
@@ -21,5 +20,10 @@ files/mayor_2015_1
 files/mayor_2015_2
 files/mayor_2019
 files/voting_locations_2019.csv
+files/Sekcii-08.09.2019-KM-0.xlsx
+files/section_addresses_2015.xlsx
+files/section_addresses_2016.xlsx
+files/section_addresses_2017.xlsx
+files/section_addresses_2019_spring.xlsx
 .DS_Store
 .env
