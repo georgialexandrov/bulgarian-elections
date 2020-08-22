@@ -33,8 +33,9 @@ CREATE TABLE voting_locations(
   "lng" number,
   "location_neighborhood_id" integer,
   "postcode" text,
-  FOREIGN KEY(location_id) REFERENCES locations(id)
-  FOREIGN KEY(location_neighborhood_id) REFERENCES location_neighborhoods(id)
+  FOREIGN KEY(location_id) REFERENCES locations(id),
+  FOREIGN KEY(location_neighborhood_id) REFERENCES location_neighborhoods(id),
+  UNIQUE(location_id,address)
 );
 
 drop table if exists protocols;
@@ -179,10 +180,6 @@ create table preferences(
   FOREIGN KEY(election_id) REFERENCES elections(id),
   FOREIGN KEY(section_id) REFERENCES sections(id)
 );
-
-CREATE INDEX locations_id ON locations(id);
-CREATE INDEX voting_locations_2019_location ON voting_locations_2019(location_id);
-CREATE INDEX voting_sections_2019_section ON voting_locations_2019(section_id);
 
 insert into election_periods(id, name) values 
 (1, 'Местни избори 2019'),
@@ -901,8 +898,11 @@ insert into locations(id, location_type, location_name) select 999, 6, 'Цяла
 
 insert into location_neighborhoods (location_id, neighborhood) select distinct location_id, replace(neighborhood, '"', '') from voting_locations_2019 where neighborhood != '';
 
-
-insert into voting_locations (location_id, cik_address, address, lat, lng, postcode, location_neighborhood_id) select location_id, address, replace(formatted_address, '"', ''), lat, lng, replace(postcode, '"', ''), (select id from location_neighborhoods where location_neighborhoods.location_id=voting_locations_2019.location_id and neighborhood=replace(voting_locations_2019.neighborhood, '"', '')) from voting_locations_2019;
+INSERT OR IGNORE INTO voting_locations (location_id, cik_address, address, lat, lng, postcode, location_neighborhood_id) select location_id, address, replace(formatted_address, '"', ''), lat, lng, replace(postcode, '"', ''), (select id from location_neighborhoods where location_neighborhoods.location_id=voting_locations_2019.location_id and neighborhood=replace(voting_locations_2019.neighborhood, '"', '')) from voting_locations_2019;
+INSERT OR IGNORE INTO voting_locations (location_id, cik_address, address, lat, lng, postcode, location_neighborhood_id) select location_id, address, replace(formatted_address, '"', ''), lat, lng, replace(postcode, '"', ''), (select id from location_neighborhoods where location_neighborhoods.location_id=voting_locations_2019_spring.location_id and neighborhood=replace(voting_locations_2019_spring.neighborhood, '"', '')) from voting_locations_2019_spring;
+INSERT OR IGNORE INTO voting_locations (location_id, cik_address, address, lat, lng, postcode, location_neighborhood_id) select location_id, address, replace(formatted_address, '"', ''), lat, lng, replace(postcode, '"', ''), (select id from location_neighborhoods where location_neighborhoods.location_id=voting_locations_2017.location_id and neighborhood=replace(voting_locations_2017.neighborhood, '"', '')) from voting_locations_2017;
+INSERT OR IGNORE INTO voting_locations (location_id, cik_address, address, lat, lng, postcode, location_neighborhood_id) select location_id, address, replace(formatted_address, '"', ''), lat, lng, replace(postcode, '"', ''), (select id from location_neighborhoods where location_neighborhoods.location_id=voting_locations_2016.location_id and neighborhood=replace(voting_locations_2016.neighborhood, '"', '')) from voting_locations_2016;
+INSERT OR IGNORE INTO voting_locations (location_id, cik_address, address, lat, lng, postcode, location_neighborhood_id) select location_id, address, replace(formatted_address, '"', ''), lat, lng, replace(postcode, '"', ''), (select id from location_neighborhoods where location_neighborhoods.location_id=voting_locations_2015.location_id and neighborhood=replace(voting_locations_2015.neighborhood, '"', '')) from voting_locations_2015;
 
 insert into temp (region_code, location_id, full_code, location_name) select distinct district_id || CASE WHEN cast(municipality_id as number) < 10 THEN '0' || municipality_id ELSE municipality_id END , id, CASE WHEN cast(district_id as number) < 10 THEN '0' || district_id ELSE district_id END || CASE WHEN cast(municipality_id as number) < 10 THEN '0' || municipality_id ELSE municipality_id END || '. ', location_name from locations;
 
@@ -1412,4 +1412,9 @@ insert into preferences (election_id, section_id, candidate_id, valid_votes) sel
 insert into preferences (election_id, section_id, candidate_id, valid_votes) select 27, section_id, 18, major18_valid from _2009_parliament_majorvotes where major18_valid is not null;
 drop table _2009_parliament_majorvotes;
 
--- drop table temp;
+update sections set address_id=(select id from voting_locations join voting_locations_2019 on voting_locations_2019.address=voting_locations.cik_address and sections.section_id=voting_locations_2019.section_id) where election_period_id=1 and address_id is null;
+update sections set address_id=(select id from voting_locations join voting_locations_2015 on voting_locations_2015.address=voting_locations.cik_address and sections.section_id=voting_locations_2015.section_id) where election_period_id=2 and address_id is null;
+update sections set address_id=(select id from voting_locations join voting_locations_2016 on voting_locations_2016.address=voting_locations.cik_address and sections.section_id=voting_locations_2016.section_id) where election_period_id=4 and address_id is null;
+update sections set address_id=(select id from voting_locations join voting_locations_2017 on voting_locations_2017.address=voting_locations.cik_address and sections.section_id=voting_locations_2017.section_id) where election_period_id=5 and address_id is null;
+update sections set address_id=(select id from voting_locations join voting_locations_2019_spring on voting_locations_2019_spring.address=voting_locations.cik_address and sections.section_id=voting_locations_2019_spring.section_id) where election_period_id=9 and address_id is null;
+

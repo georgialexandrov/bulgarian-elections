@@ -3,7 +3,11 @@
 rm db/all_elections.db
 cat ./db/structure.sql | sqlite3 db/all_elections.db
 
-sqlite3 db/all_elections.db ".mode csv" ".separator ';'" ".read ./db/voting_locations_2019_n.sql"
+sqlite3 db/all_elections.db ".mode csv" ".separator ';'" ".read ./db/voting_locations_2019.sql"
+sqlite3 db/all_elections.db ".mode csv" ".separator ';'" ".read ./db/voting_locations_2019_spring.sql"
+sqlite3 db/all_elections.db ".mode csv" ".separator ';'" ".read ./db/voting_locations_2017.sql"
+sqlite3 db/all_elections.db ".mode csv" ".separator ';'" ".read ./db/voting_locations_2016.sql"
+sqlite3 db/all_elections.db ".mode csv" ".separator ';'" ".read ./db/voting_locations_2015.sql"
 
 # Parliament
 
