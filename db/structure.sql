@@ -1,5 +1,5 @@
 
-CREATE TABLE mayor_2011_1_candidates(
+CREATE TABLE _2011_mayor_1_candidates(
   "district_id" text,      -- 1) Код на ОИК
   "ekatte" integer,        -- 2) ЕКАТТЕ на кметство
   "location_name" text,    -- 2) ЕКАТТЕ на кметство3) Име на кметство
@@ -7,19 +7,20 @@ CREATE TABLE mayor_2011_1_candidates(
   "candidate_name" text    -- 3) Име на кандидата
 );
 
-CREATE TABLE mayor_municipality_2011_1_candidates(
+CREATE TABLE _2011_mayor_municipality_1_candidates(
   "district_id" text,   -- 1) Код на ОИК
   "party_id" integer,   -- 2) Номер на партията/коалицията/инициативния комитет, издигнал кандидата 
   "candidate_name" text -- 3) Име на кандидата
 );
-CREATE TABLE council_2011_1_candidates(
+
+CREATE TABLE _2011_council_region_1_candidates(
   "district_id" text,   -- 1) Код на ОИК
   "party_id" integer,   -- 2) Номер на партията/коалицията/инициативния комитет, издигнал кандидата 
   "candidate_id" text,  -- 3) Номер на кандидата в кандидатската листа
   "candidate_name" text -- 4) Име на кандидата
 );
 
-CREATE TABLE mayor_2011_2_candidates(
+CREATE TABLE _2011_mayor_2_candidates(
   "district_id" text,   -- 1) Код на ОИК
   "ekatte" text,        -- 2) ЕКАТТЕ на кметство
   "location_name" text, -- 3) Име на кметство
@@ -27,14 +28,14 @@ CREATE TABLE mayor_2011_2_candidates(
   "candidate_name" text -- 5) Име на кандидата
 );
   
-CREATE TABLE mayor_municipality_2011_2_candidates(
+CREATE TABLE _2011_mayor_municipality_2_candidates(
   "district_id" text,      -- 1) Код на ОИК
   "candidate_id" integer,  -- 2) Номер на партията/коалицията/инициативния комитет, издигнал кандидата 
   "candidate_name" text    -- 3) Име на кандидата
 );
 
 
-CREATE TABLE mayor_2011_1_coalitions(
+CREATE TABLE _2011_mayor_1_coalitions(
   "district_id" text,            -- 1) Код на ОИК
   "candidate_id" integer,        -- 2) Номер на партията/коалицията/инициативния комитет
   "candidate_name" text,         -- 3) Наименование на партията/коалицията/инициативния комитет
@@ -50,7 +51,7 @@ CREATE TABLE mayor_2011_1_coalitions(
   "coalition_member_10" integer, -- номер на партията участваща в коалиция
   "coalition_member_11" integer  -- номер на партията участваща в коалиция
 );
-CREATE TABLE mayor_municipality_2011_1_coalitions(
+CREATE TABLE _2011_mayor_municipality_1_coalitions(
   "district_id" text,            -- 1) Код на ОИК
   "candidate_id" integer,        -- 2) Номер на партията/коалицията/инициативния комитет
   "candidate_name" text,         -- 3) Наименование на партията/коалицията/инициативния комитет
@@ -66,7 +67,7 @@ CREATE TABLE mayor_municipality_2011_1_coalitions(
   "coalition_member_10" integer, -- номер на партията участваща в коалиция
   "coalition_member_11" integer  -- номер на партията участваща в коалиция
 );
-CREATE TABLE council_2011_1_coalitions(
+CREATE TABLE _2011_council_region_1_coalitions(
   "district_id" text,            -- 1) Код на ОИК
   "candidate_id" integer,        -- 2) Номер на партията/коалицията/инициативния комитет
   "candidate_name" text,         -- 3) Наименование на партията/коалицията/инициативния комитет
@@ -84,7 +85,7 @@ CREATE TABLE council_2011_1_coalitions(
   "coalition_member_12" integer  -- номер на партията участваща в коалиция
 );
 
-CREATE TABLE mayor_2011_2_coalitions(
+CREATE TABLE _2011_mayor_2_coalitions(
   "district_id" text,            -- 1) Код на ОИК
   "candidate_id" integer,        -- 2) Номер на партията/коалицията/инициативния комитет
   "candidate_name" text,         -- 3) Наименование на партията/коалицията/инициативния комитет
@@ -101,7 +102,7 @@ CREATE TABLE mayor_2011_2_coalitions(
   "coalition_member_11" integer  -- номер на партията участваща в коалиция
 );
 
-CREATE TABLE mayor_municipality_2011_2_coalitions(
+CREATE TABLE _2011_mayor_municipality_2_coalitions(
   "district_id" text,            -- 1) Код на ОИК
   "candidate_id" integer,        -- 2) Номер на партията/коалицията/инициативния комитет
   "candidate_name" text,         -- 3) Наименование на партията/коалицията/инициативния комитет
@@ -118,21 +119,21 @@ CREATE TABLE mayor_municipality_2011_2_coalitions(
   "coalition_member_9" integer   -- номер на партията участваща в коалиция
 );
 
-CREATE TABLE president_2011_1_candidates(
+CREATE TABLE _2011_president_1_candidates(
   "party_id" text,            -- 1) Номер на партията/коалицията/инициативния комитет, издигнал кандидата
   "candidate_name" integer,   -- 2) Име на кандидата за президент
   "vice_candidate_name" text, -- 3) Име на кандидата за вицепрезидент
   "party_name" text           -- 4) Име на партията/коалицията/инициативния комитет, издигнал кандидата
 );
 
-CREATE TABLE president_2011_2_candidates(
+CREATE TABLE _2011_president_2_candidates(
   "party_id" text,            -- 1) Номер на партията/коалицията/инициативния комитет, издигнал кандидата
   "candidate_name" integer,   -- 2) Име на кандидата за президент
   "vice_candidate_name" text, -- 3) Име на кандидата за вицепрезидент
   "party_name" text           -- 4) Име на партията/коалицията/инициативния комитет, издигнал кандидата
 );
 
-CREATE TABLE parliament_2013_candidates(
+CREATE TABLE _2013_parliament_candidates(
   "region_id" integer,    -- 1) Код на РИК
   "party_id" integer,     -- 2) Номер на партията/коалицията/инициативния комитет, издигнал кандидата
   "candidate_id" integer, -- 3) Номер на кандидата в листата
@@ -140,7 +141,7 @@ CREATE TABLE parliament_2013_candidates(
   "party_name" text       -- 5) Име на партията/коалицията/инициативния комитет, издигнал кандидата
 );
 
-CREATE TABLE parliament_2014_candidates(
+CREATE TABLE _2014_parliament_candidates(
   "region_id" integer,    -- 1) Номер на РИК
   "party_id" integer,     -- 2) Номер на партия/коалиция/инициативен комитет
   "party_name" integer,   -- 3) Име на партия/коалиция/инициативен комитет
@@ -148,7 +149,7 @@ CREATE TABLE parliament_2014_candidates(
   "candidate_name" text   -- 5) Име на кандидат
 );
 
-CREATE TABLE president_2016_1_candidates(
+CREATE TABLE _2016_president_1_candidates(
   "party_id" text,       -- 1) Номер на партия/коалиция/инициативен комитет
   "party_name" integer,  -- 2) Име на партия/коалиция/инициативен комитет
   "candidate_id" text,   -- 3) Номер на кандидат в листата
@@ -156,7 +157,7 @@ CREATE TABLE president_2016_1_candidates(
   "chosen_one" text      -- 5) Флаг за избран кандидат
 );
 
-CREATE TABLE president_2016_2_candidates(
+CREATE TABLE _2016_president_2_candidates(
   "party_id" text,       -- 1) Номер на партия/коалиция/инициативен комитет
   "party_name" integer,  -- 2) Име на партия/коалиция/инициативен комитет
   "candidate_id" text,   -- 3) Номер на кандидат в листата
@@ -164,7 +165,7 @@ CREATE TABLE president_2016_2_candidates(
   "chosen_one" text      -- 5) Флаг за избран кандидат
 );
 
-CREATE TABLE european_2019_candidates(
+CREATE TABLE _2019_european_candidates(
   "party_id" text,       -- 1) Номер на партия/коалиция/инициативен комитет
   "party_name" integer,  -- 2) Име на партия/коалиция/инициативен комитет
   "candidate_id" text,   -- 3) Номер на кандидат в листата
@@ -172,7 +173,7 @@ CREATE TABLE european_2019_candidates(
   "chosen_one" text      -- 5) Флаг за избран кандидат
 );
 
-CREATE TABLE european_2014_candidates(
+CREATE TABLE _2014_european_candidates(
   "party_id" text,       -- 1) Номер на партия/коалиция/инициативен комитет
   "party_name" integer,  -- 2) Име на партия/коалиция/инициативен комитет
   "candidate_id" text,   -- 3) Номер на кандидат в листата
@@ -180,72 +181,72 @@ CREATE TABLE european_2014_candidates(
 );
 
 
-CREATE TABLE mayor_2011_1_cik_parties(
+CREATE TABLE _2011_mayor_1_cik_parties(
   "party_id" integer, -- 1) Номер, под който е регистрирана в ЦИК партията/коалицията
   "party_name" text   -- 2) Наименование на партията/коалицията
 );
 
-CREATE TABLE mayor_municipality_2011_1_cik_parties(
+CREATE TABLE _2011_mayor_municipality_1_cik_parties(
   "party_id" integer, -- 1) Номер, под който е регистрирана в ЦИК партията/коалицията
   "party_name" text   -- 2) Наименование на партията/коалицията
 );
 
-CREATE TABLE council_2011_1_cik_parties(
+CREATE TABLE _2011_council_region_1_cik_parties(
   "party_id" integer, -- 1) Номер, под който е регистрирана в ЦИК партията/коалицията
   "party_name" text   -- 2) Наименование на партията/коалицията
 );
 
-CREATE TABLE mayor_2011_2_cik_parties(
+CREATE TABLE _2011_mayor_2_cik_parties(
   "party_id" integer, -- 1) Номер, под който е регистрирана в ЦИК партията/коалицията
   "party_name" text   -- 2) Наименование на партията/коалицията
 );
 
-CREATE TABLE mayor_municipality_2011_2_cik_parties(
+CREATE TABLE _2011_mayor_municipality_2_cik_parties(
   "party_id" integer, -- 1) Номер, под който е регистрирана в ЦИК партията/коалицията
   "party_name" text   -- 2) Наименование на партията/коалицията
 );
 
-CREATE TABLE parliament_2017_cik_parties(
+CREATE TABLE _2017_parliament_cik_parties(
   "party_id" integer, -- 1) Номер
   "party_name" text   -- 2) Име  
 );
 
-CREATE TABLE parliament_2014_ind(
+CREATE TABLE _2014_parliament_ind(
   "region_id" integer,  -- Регион
   "party_id" integer,   -- Номер на кандидата в листата
   "candidate_name" text -- Име на кандидата
 );
 
-CREATE TABLE mayor_2015_1_cik_parties(
+CREATE TABLE _2015_mayor_1_cik_parties(
   "party_id" integer, -- 1) Номер
   "party_name" text   -- 2) Име  
 );
-CREATE TABLE mayor_municipality_2015_1_cik_parties(
+CREATE TABLE _2015_mayor_municipality_1_cik_parties(
   "party_id" integer, -- 1) Номер
   "party_name" text   -- 2) Име  
 );
-CREATE TABLE mayor_region_2015_1_cik_parties(
+CREATE TABLE _2015_mayor_region_1_cik_parties(
   "party_id" integer, -- 1) Номер
   "party_name" text   -- 2) Име  
 );
-CREATE TABLE council_2015_1_cik_parties(
+CREATE TABLE _2015_council_region_1_cik_parties(
   "party_id" integer, -- 1) Номер
   "party_name" text   -- 2) Име  
 );
-CREATE TABLE mayor_2015_2_cik_parties(
+CREATE TABLE _2015_mayor_2_cik_parties(
   "party_id" integer, -- 1) Номер
   "party_name" text   -- 2) Име  
 );
-CREATE TABLE mayor_municipality_2015_2_cik_parties(
+CREATE TABLE _2015_mayor_municipality_2_cik_parties(
   "party_id" integer, -- 1) Номер
   "party_name" text   -- 2) Име  
 );
-CREATE TABLE mayor_region_2015_2_cik_parties(
+CREATE TABLE _2015_mayor_region_2_cik_parties(
   "party_id" integer, -- 1) Номер
   "party_name" text   -- 2) Име  
 );
 
-CREATE TABLE mayor_2015_1_local_candidates(
+CREATE TABLE _2015_mayor_1_local_candidates(
   "region_id" integer,    -- 1) Код на ОИК
   "region_name" text,     -- 2) Наименование на Община/Кметство/Район
   "party_id" integer,     -- 3) Номер на партия/коалиция/инициативен комитет
@@ -254,7 +255,7 @@ CREATE TABLE mayor_2015_1_local_candidates(
   "candidate_name" text,  -- 6) Име на кандидат
   "elected" text          -- 7) Флаг за избран кандидат(0-не е избран, 1-избран, 2-балотаж)
 );
-CREATE TABLE mayor_municipality_2015_1_local_candidates(
+CREATE TABLE _2015_mayor_municipality_1_local_candidates(
   "region_id" integer,    -- 1) Код на ОИК
   "region_name" text,     -- 2) Наименование на Община/Кметство/Район
   "party_id" integer,     -- 3) Номер на партия/коалиция/инициативен комитет
@@ -263,7 +264,7 @@ CREATE TABLE mayor_municipality_2015_1_local_candidates(
   "candidate_name" text,  -- 6) Име на кандидат
   "elected" text          -- 7) Флаг за избран кандидат(0-не е избран, 1-избран, 2-балотаж)
 );
-CREATE TABLE mayor_region_2015_1_local_candidates(
+CREATE TABLE _2015_mayor_region_1_local_candidates(
   "region_id" integer,    -- 1) Код на ОИК
   "region_name" text,     -- 2) Наименование на Община/Кметство/Район
   "party_id" integer,     -- 3) Номер на партия/коалиция/инициативен комитет
@@ -272,7 +273,7 @@ CREATE TABLE mayor_region_2015_1_local_candidates(
   "candidate_name" text,  -- 6) Име на кандидат
   "elected" text          -- 7) Флаг за избран кандидат(0-не е избран, 1-избран, 2-балотаж)
 );
-CREATE TABLE council_2015_1_local_candidates(
+CREATE TABLE _2015_council_region_1_local_candidates(
   "region_id" integer,    -- 1) Код на ОИК
   "region_name" text,     -- 2) Наименование на Община/Кметство/Район
   "party_id" integer,     -- 3) Номер на партия/коалиция/инициативен комитет
@@ -281,7 +282,7 @@ CREATE TABLE council_2015_1_local_candidates(
   "candidate_name" text,  -- 6) Име на кандидат
   "elected" text          -- 7) Флаг за избран кандидат(0-не е избран, 1-избран, 2-балотаж)
 );
-CREATE TABLE mayor_2015_2_local_candidates(
+CREATE TABLE _2015_mayor_2_local_candidates(
   "region_id" integer,    -- 1) Код на ОИК
   "region_name" text,     -- 2) Наименование на Община/Кметство/Район
   "party_id" integer,     -- 3) Номер на партия/коалиция/инициативен комитет
@@ -290,7 +291,7 @@ CREATE TABLE mayor_2015_2_local_candidates(
   "candidate_name" text,  -- 6) Име на кандидат
   "elected" text          -- 7) Флаг за избран кандидат(0-не е избран, 1-избран, 2-балотаж)
 );
-CREATE TABLE mayor_municipality_2015_2_local_candidates(
+CREATE TABLE _2015_mayor_municipality_2_local_candidates(
   "region_id" integer,    -- 1) Код на ОИК
   "region_name" text,     -- 2) Наименование на Община/Кметство/Район
   "party_id" integer,     -- 3) Номер на партия/коалиция/инициативен комитет
@@ -299,7 +300,7 @@ CREATE TABLE mayor_municipality_2015_2_local_candidates(
   "candidate_name" text,  -- 6) Име на кандидат
   "elected" text          -- 7) Флаг за избран кандидат(0-не е избран, 1-избран, 2-балотаж)
 );
-CREATE TABLE mayor_region_2015_2_local_candidates(
+CREATE TABLE _2015_mayor_region_2_local_candidates(
   "region_id" integer,    -- 1) Код на ОИК
   "region_name" text,     -- 2) Наименование на Община/Кметство/Район
   "party_id" integer,     -- 3) Номер на партия/коалиция/инициативен комитет
@@ -309,7 +310,7 @@ CREATE TABLE mayor_region_2015_2_local_candidates(
   "elected" text          -- 7) Флаг за избран кандидат(0-не е избран, 1-избран, 2-балотаж)
 );
 
-CREATE TABLE parliament_2017_local_candidates(
+CREATE TABLE _2017_parliament_local_candidates(
   "region_id" integer,    -- 1) Код на РИК
   "region_name" text,     -- 2) Наименование на Район
   "party_id" integer,     -- 3) Номер на партия/коалиция/инициативен комитет
@@ -319,57 +320,57 @@ CREATE TABLE parliament_2017_local_candidates(
   "" text
 );
 
-CREATE TABLE mayor_2015_1_local_parties(
+CREATE TABLE _2015_mayor_1_local_parties(
   "id" integer,       -- 1) Код на ОИК
   "region" text,      -- 2) Наименование на Община/Кметство/Район
   "party_id" integer, -- 3) Номер
   "party_name" text   -- 4) Име
 );
-CREATE TABLE mayor_municipality_2015_1_local_parties(
+CREATE TABLE _2015_mayor_municipality_1_local_parties(
   "id" integer,       -- 1) Код на ОИК
   "region" text,      -- 2) Наименование на Община/Кметство/Район
   "party_id" integer, -- 3) Номер
   "party_name" text   -- 4) Име
 );
-CREATE TABLE mayor_region_2015_1_local_parties(
+CREATE TABLE _2015_mayor_region_1_local_parties(
   "id" integer,       -- 1) Код на ОИК
   "region" text,      -- 2) Наименование на Община/Кметство/Район
   "party_id" integer, -- 3) Номер
   "party_name" text   -- 4) Име
 );
-CREATE TABLE council_2015_1_local_parties(
+CREATE TABLE _2015_council_region_1_local_parties(
   "id" integer,       -- 1) Код на ОИК
   "region" text,      -- 2) Наименование на Община/Кметство/Район
   "party_id" integer, -- 3) Номер
   "party_name" text   -- 4) Име
 );
-CREATE TABLE mayor_2015_2_local_parties(
+CREATE TABLE _2015_mayor_2_local_parties(
   "id" integer,       -- 1) Код на ОИК
   "region" text,      -- 2) Наименование на Община/Кметство/Район
   "party_id" integer, -- 3) Номер
   "party_name" text   -- 4) Име
 );
-CREATE TABLE mayor_municipality_2015_2_local_parties(
+CREATE TABLE _2015_mayor_municipality_2_local_parties(
   "id" integer,       -- 1) Код на ОИК
   "region" text,      -- 2) Наименование на Община/Кметство/Район
   "party_id" integer, -- 3) Номер
   "party_name" text   -- 4) Име
 );
-CREATE TABLE mayor_region_2015_2_local_parties(
+CREATE TABLE _2015_mayor_region_2_local_parties(
   "id" integer,       -- 1) Код на ОИК
   "region" text,      -- 2) Наименование на Община/Кметство/Район
   "party_id" integer, -- 3) Номер
   "party_name" text   -- 4) Име
 );
 
-CREATE TABLE parliament_2017_local_parties(
+CREATE TABLE _2017_parliament_local_parties(
   "id" integer,       -- 1) Код на РИК
   "region" text,      -- 2) Наименование на Район
   "party_id" integer, -- 3) Номер на партия
   "party_name" text   -- 4) Име
 );
 
-CREATE TABLE mayor_2019_1_local_candidates(
+CREATE TABLE _2019_mayor_1_local_candidates(
   "region_id" integer,    -- 1) Код на ОИК
   "region_name" text,     -- 2) Наименование на Община/Кметство/Район
   "party_id" integer,     -- 3) Номер на партия/коалиция/инициативен комитет
@@ -379,7 +380,7 @@ CREATE TABLE mayor_2019_1_local_candidates(
   "" text
 );
 
-CREATE TABLE mayor_municipality_2019_1_local_candidates(
+CREATE TABLE _2019_mayor_municipality_1_local_candidates(
   "region_id" integer,    -- 1) Код на ОИК
   "region_name" text,     -- 2) Наименование на Община/Кметство/Район
   "party_id" integer,     -- 3) Номер на партия/коалиция/инициативен комитет
@@ -389,7 +390,7 @@ CREATE TABLE mayor_municipality_2019_1_local_candidates(
   "" text
 );
 
-CREATE TABLE mayor_region_2019_1_local_candidates(
+CREATE TABLE _2019_mayor_region_1_local_candidates(
   "region_id" integer,    -- 1) Код на ОИК
   "region_name" text,     -- 2) Наименование на Община/Кметство/Район
   "party_id" integer,     -- 3) Номер на партия/коалиция/инициативен комитет
@@ -399,38 +400,7 @@ CREATE TABLE mayor_region_2019_1_local_candidates(
   "" text
 );
 
-CREATE TABLE council_region_2019_1_local_candidates(
-  "region_id" integer,    -- 1) Код на ОИК
-  "region_name" text,     -- 2) Наименование на Община/Кметство/Район
-  "party_id" integer,     -- 3) Номер на партия/коалиция/инициативен комитет
-  "party_name" text,      -- 4) Име на партия/коалиция/инициативен комитет
-  "candidate_id" integer, -- 5) Номер на кандидат в листата
-  "candidate_name" text,  -- 6) Име на кандидат
-  "" text
-);
-
-
-CREATE TABLE mayor_2019_2_local_candidates(
-  "region_id" integer,    -- 1) Код на ОИК
-  "region_name" text,     -- 2) Наименование на Община/Кметство/Район
-  "party_id" integer,     -- 3) Номер на партия/коалиция/инициативен комитет
-  "party_name" text,      -- 4) Име на партия/коалиция/инициативен комитет
-  "candidate_id" integer, -- 5) Номер на кандидат в листата
-  "candidate_name" text,  -- 6) Име на кандидат
-  "" text
-);
-
-CREATE TABLE mayor_municipality_2019_2_local_candidates(
-  "region_id" integer,    -- 1) Код на ОИК
-  "region_name" text,     -- 2) Наименование на Община/Кметство/Район
-  "party_id" integer,     -- 3) Номер на партия/коалиция/инициативен комитет
-  "party_name" text,      -- 4) Име на партия/коалиция/инициативен комитет
-  "candidate_id" integer, -- 5) Номер на кандидат в листата
-  "candidate_name" text,  -- 6) Име на кандидат
-  "" text
-);
-
-CREATE TABLE mayor_region_2019_2_local_candidates(
+CREATE TABLE _2019_council_region_1_local_candidates(
   "region_id" integer,    -- 1) Код на ОИК
   "region_name" text,     -- 2) Наименование на Община/Кметство/Район
   "party_id" integer,     -- 3) Номер на партия/коалиция/инициативен комитет
@@ -441,56 +411,87 @@ CREATE TABLE mayor_region_2019_2_local_candidates(
 );
 
 
-CREATE TABLE mayor_2019_1_local_parties(
+CREATE TABLE _2019_mayor_2_local_candidates(
+  "region_id" integer,    -- 1) Код на ОИК
+  "region_name" text,     -- 2) Наименование на Община/Кметство/Район
+  "party_id" integer,     -- 3) Номер на партия/коалиция/инициативен комитет
+  "party_name" text,      -- 4) Име на партия/коалиция/инициативен комитет
+  "candidate_id" integer, -- 5) Номер на кандидат в листата
+  "candidate_name" text,  -- 6) Име на кандидат
+  "" text
+);
+
+CREATE TABLE _2019_mayor_municipality_2_local_candidates(
+  "region_id" integer,    -- 1) Код на ОИК
+  "region_name" text,     -- 2) Наименование на Община/Кметство/Район
+  "party_id" integer,     -- 3) Номер на партия/коалиция/инициативен комитет
+  "party_name" text,      -- 4) Име на партия/коалиция/инициативен комитет
+  "candidate_id" integer, -- 5) Номер на кандидат в листата
+  "candidate_name" text,  -- 6) Име на кандидат
+  "" text
+);
+
+CREATE TABLE _2019_mayor_region_2_local_candidates(
+  "region_id" integer,    -- 1) Код на ОИК
+  "region_name" text,     -- 2) Наименование на Община/Кметство/Район
+  "party_id" integer,     -- 3) Номер на партия/коалиция/инициативен комитет
+  "party_name" text,      -- 4) Име на партия/коалиция/инициативен комитет
+  "candidate_id" integer, -- 5) Номер на кандидат в листата
+  "candidate_name" text,  -- 6) Име на кандидат
+  "" text
+);
+
+
+CREATE TABLE _2019_mayor_1_local_parties(
   "id" integer,       -- 1) Код ОИК
   "region" text,      -- 2) Наименование на Община/Кметство/Район
   "party_id" integer, -- 3) Номер по жребий
   "party_name" text   -- 4) Име на партия/коалиция/местна коалиция/инициативен комитет
 );
 
-CREATE TABLE mayor_municipality_2019_1_local_parties(
+CREATE TABLE _2019_mayor_municipality_1_local_parties(
   "id" integer,       -- 1) Код ОИК
   "region" text,      -- 2) Наименование на Община/Кметство/Район
   "party_id" integer, -- 3) Номер по жребий
   "party_name" text   -- 4) Име на партия/коалиция/местна коалиция/инициативен комитет
 );
 
-CREATE TABLE mayor_region_2019_1_local_parties(
+CREATE TABLE _2019_mayor_region_1_local_parties(
   "id" integer,       -- 1) Код ОИК
   "region" text,      -- 2) Наименование на Община/Кметство/Район
   "party_id" integer, -- 3) Номер по жребий
   "party_name" text   -- 4) Име на партия/коалиция/местна коалиция/инициативен комитет
 );
 
-CREATE TABLE council_region_2019_1_local_parties(
+CREATE TABLE _2019_council_region_1_local_parties(
   "id" integer,       -- 1) Код ОИК
   "region" text,      -- 2) Наименование на Община/Кметство/Район
   "party_id" integer, -- 3) Номер по жребий
   "party_name" text   -- 4) Име на партия/коалиция/местна коалиция/инициативен комитет
 );
 
-CREATE TABLE mayor_2019_2_local_parties(
+CREATE TABLE _2019_mayor_2_local_parties(
   "id" integer,       -- 1) Код ОИК
   "region" text,      -- 2) Наименование на Община/Кметство/Район
   "party_id" integer, -- 3) Номер по жребий
   "party_name" text   -- 4) Име на партия/коалиция/местна коалиция/инициативен комитет
 );
 
-CREATE TABLE mayor_municipality_2019_2_local_parties(
+CREATE TABLE _2019_mayor_municipality_2_local_parties(
   "id" integer,       -- 1) Код ОИК
   "region" text,      -- 2) Наименование на Община/Кметство/Район
   "party_id" integer, -- 3) Номер по жребий
   "party_name" text   -- 4) Име на партия/коалиция/местна коалиция/инициативен комитет
 );
 
-CREATE TABLE mayor_region_2019_2_local_parties(
+CREATE TABLE _2019_mayor_region_2_local_parties(
   "id" integer,       -- 1) Код ОИК
   "region" text,      -- 2) Наименование на Община/Кметство/Район
   "party_id" integer, -- 3) Номер по жребий
   "party_name" text   -- 4) Име на партия/коалиция/местна коалиция/инициативен комитет
 );
 
-CREATE TABLE parliament_2009_majorvotes(
+CREATE TABLE _2009_parliament_majorvotes(
   "section_id" text,       -- 1) Пълен код на секция(код на район(2), община(2), адм. район(2), секция(3));
   "major1_valid" integer,  -- Гласовете за мажоритарни кандидати за съответния район, подредени по техния пореден номер. За партиите, които не издигат кандидат в съответния район се вписва празна стойност.
   "major2_valid" integer,  -- Гласовете за мажоритарни кандидати за съответния район, подредени по техния пореден номер. За партиите, които не издигат кандидат в съответния район се вписва празна стойност.
@@ -514,63 +515,63 @@ CREATE TABLE parliament_2009_majorvotes(
   "major20_valid" integer  -- Гласовете за мажоритарни кандидати за съответния район, подредени по техния пореден номер. За партиите, които не издигат кандидат в съответния район се вписва празна стойност.
 );
 
-CREATE TABLE parliament_2013_parties(
+CREATE TABLE _2013_parliament_parties(
   "region_id" integer, -- 1) Код на РИК, попълва се само за инициативните комитети, издигащи независим кандидат
   "party_id" integer,  -- 2) Номер, под който е регистрирана партията/коалицията/инициативният комитет
   "party_name" text    -- 3) Наименование на партията/коалицията/инициативният комитет
 );
 
-CREATE TABLE parliament_2014_parties(
+CREATE TABLE _2014_parliament_parties(
   "party_id" integer, -- 1) Номер
   "party_name" text   -- 2) Име
 );
 
-CREATE TABLE european_2019_parties(
+CREATE TABLE _2019_european_parties(
   "party_id" integer, -- 1) Номер
   "party_name" text   -- 2) Име
 );
 
-CREATE TABLE european_2014_parties(
+CREATE TABLE _2014_european_parties(
   "party_id" integer, -- 1) Номер
   "party_name" text   -- 2) Име
 );
 
 
-CREATE TABLE mayor_2019_1_cik_parties(
+CREATE TABLE _2019_mayor_1_cik_parties(
   "party_id" integer, -- 1) Номер
   "party_name" text   -- 2) Име
 );
 
-CREATE TABLE mayor_municipality_2019_1_cik_parties(
+CREATE TABLE _2019_mayor_municipality_1_cik_parties(
   "party_id" integer, -- 1) Номер
   "party_name" text   -- 2) Име
 );
 
-CREATE TABLE council_region_2019_1_cik_parties(
+CREATE TABLE _2019_council_region_1_cik_parties(
   "party_id" integer, -- 1) Номер
   "party_name" text   -- 2) Име
 );
-CREATE TABLE mayor_region_2019_1_cik_parties(
-  "party_id" integer, -- 1) Номер
-  "party_name" text   -- 2) Име
-);
-
-CREATE TABLE mayor_2019_2_cik_parties(
+CREATE TABLE _2019_mayor_region_1_cik_parties(
   "party_id" integer, -- 1) Номер
   "party_name" text   -- 2) Име
 );
 
-CREATE TABLE mayor_municipality_2019_2_cik_parties(
+CREATE TABLE _2019_mayor_2_cik_parties(
   "party_id" integer, -- 1) Номер
   "party_name" text   -- 2) Име
 );
 
-CREATE TABLE mayor_region_2019_2_cik_parties(
+CREATE TABLE _2019_mayor_municipality_2_cik_parties(
   "party_id" integer, -- 1) Номер
   "party_name" text   -- 2) Име
 );
 
-CREATE TABLE parliament_2009_partyvotes(
+CREATE TABLE _2019_mayor_region_2_cik_parties(
+  "party_id" integer, -- 1) Номер
+  "party_name" text   -- 2) Име
+);
+
+CREATE TABLE _2009_parliament_partyvotes(
   "section_id" text,       -- 1) Пълен код на секция(код на район(2), община(2), адм. район(2), секция(3));
   "party1_valid" integer,  -- Гласовете за партии за съответния район, подредени по техния пореден номер. За партиите, които не издигат кандидатски листи в съответния район се вписва празна стойност.
   "party2_valid" integer,  -- Гласовете за партии за съответния район, подредени по техния пореден номер. За партиите, които не издигат кандидатски листи в съответния район се вписва празна стойност.
@@ -593,261 +594,269 @@ CREATE TABLE parliament_2009_partyvotes(
   "party19_valid" integer  -- Гласовете за партии за съответния район, подредени по техния пореден номер. За партиите, които не издигат кандидатски листи в съответния район се вписва празна стойност.
 );
 
-CREATE TABLE european_2009_preferences(
+CREATE TABLE _2009_european_preferences(
   "section_id" text,      -- 1) Пълен код на секция(код на район(2), община(2), адм. район(2), секция(3))
-  "column_1" integer,
-  "column_2" integer,
-  "column_3" integer,
-  "column_4" integer,
-  "column_5" integer,
-  "column_6" integer,
-  "column_7" integer,
-  "column_8" integer,
-  "column_9" integer,
-  "column_10" integer,
-  "column_11" integer,
-  "column_12" integer,
-  "column_13" integer,
-  "column_14" integer,
-  "column_15" integer,
-  "column_16" integer,
-  "column_17" integer,
-  "column_18" integer,
-  "column_19" integer,
-  "column_20" integer,
-  "column_21" integer,
-  "column_22" integer,
-  "column_23" integer,
-  "column_24" integer,
-  "column_25" integer,
-  "column_26" integer,
-  "column_27" integer,
-  "column_28" integer,
-  "column_29" integer,
-  "column_30" integer,
-  "column_31" integer,
-  "column_32" integer,
-  "column_33" integer,
-  "column_34" integer,
-  "column_35" integer,
-  "column_36" integer,
-  "column_37" integer,
-  "column_38" integer,
-  "column_39" integer,
-  "column_40" integer,
-  "column_41" integer,
-  "column_42" integer,
-  "column_43" integer,
-  "column_44" integer,
-  "column_45" integer,
-  "column_46" integer,
-  "column_47" integer,
-  "column_48" integer,
-  "column_49" integer,
-  "column_50" integer,
-  "column_51" integer,
-  "column_52" integer,
-  "column_53" integer,
-  "column_54" integer,
-  "column_55" integer,
-  "column_56" integer,
-  "column_57" integer,
-  "column_58" integer,
-  "column_59" integer,
-  "column_60" integer,
-  "column_61" integer,
-  "column_62" integer,
-  "column_63" integer,
-  "column_64" integer,
-  "column_65" integer,
-  "column_66" integer,
-  "column_67" integer,
-  "column_68" integer,
-  "column_69" integer,
-  "column_70" integer,
-  "column_71" integer,
-  "column_72" integer,
-  "column_73" integer,
-  "column_74" integer,
-  "column_75" integer,
-  "column_76" integer,
-  "column_77" integer,
-  "column_78" integer,
-  "column_79" integer,
-  "column_80" integer,
-  "column_81" integer,
-  "column_82" integer,
-  "column_83" integer,
-  "column_84" integer,
-  "column_85" integer,
-  "column_86" integer,
-  "column_87" integer,
-  "column_88" integer,
-  "column_89" integer,
-  "column_90" integer,
-  "column_91" integer,
-  "column_92" integer,
-  "column_93" integer,
-  "column_94" integer,
-  "column_95" integer,
-  "column_96" integer,
-  "column_97" integer,
-  "column_98" integer,
-  "column_99" integer,
-  "column_100" integer,
-  "column_101" integer,
-  "column_102" integer,
-  "column_103" integer,
-  "column_104" integer,
-  "column_105" integer,
-  "column_106" integer,
-  "column_107" integer,
-  "column_108" integer,
-  "column_109" integer,
-  "column_110" integer,
-  "column_111" integer,
-  "column_112" integer,
-  "column_113" integer,
-  "column_114" integer,
-  "column_115" integer,
-  "column_116" integer,
-  "column_117" integer,
-  "column_118" integer,
-  "column_119" integer,
-  "column_120" integer,
-  "column_121" integer,
-  "column_122" integer,
-  "column_123" integer,
-  "column_124" integer,
-  "column_125" integer,
-  "column_126" integer,
-  "column_127" integer,
-  "column_128" integer,
-  "column_129" integer,
-  "column_130" integer,
-  "column_131" integer,
-  "column_132" integer,
-  "column_133" integer,
-  "column_134" integer,
-  "column_135" integer,
-  "column_136" integer,
-  "column_137" integer,
-  "column_138" integer,
-  "column_139" integer,
-  "column_140" integer,
-  "column_141" integer,
-  "column_142" integer,
-  "column_143" integer,
-  "column_144" integer,
-  "column_145" integer,
-  "column_146" integer,
-  "column_147" integer,
-  "column_148" integer,
-  "column_149" integer,
-  "column_150" integer,
-  "column_151" integer,
-  "column_152" integer,
-  "column_153" integer,
-  "column_154" integer,
-  "column_155" integer,
-  "column_156" integer,
-  "column_157" integer,
-  "column_158" integer,
-  "column_159" integer,
-  "column_160" integer,
-  "column_161" integer,
-  "column_162" integer,
-  "column_163" integer,
-  "column_164" integer,
-  "column_165" integer,
-  "column_166" integer,
-  "column_167" integer,
-  "column_168" integer,
-  "column_169" integer,
-  "column_170" integer,
-  "column_171" integer,
-  "column_172" integer,
-  "column_173" integer,
-  "column_174" integer,
-  "column_175" integer,
-  "column_176" integer,
-  "column_177" integer,
-  "column_178" integer,
-  "column_179" integer,
-  "column_180" integer,
-  "column_181" integer,
-  "column_182" integer,
-  "column_183" integer,
-  "column_184" integer,
-  "column_185" integer,
-  "column_186" integer,
-  "column_187" integer,
-  "column_188" integer,
-  "column_189" integer,
-  "column_190" integer,
-  "column_191" integer,
-  "column_192" integer,
-  "column_193" integer,
-  "column_194" integer,
-  "column_195" integer,
-  "column_196" integer,
-  "column_197" integer,
-  "column_198" integer,
-  "column_199" integer,
-  "column_200" integer,
-  "column_201" integer,
-  "column_202" integer,
-  "column_203" integer,
-  "column_204" integer,
-  "column_205" integer,
-  "column_206" integer,
-  "column_207" integer,
-  "column_208" integer,
-  "column_209" integer,
-  "column_210" integer,
-  "column_211" integer,
-  "column_212" integer,
-  "column_213" integer,
-  "column_214" integer,
+  "party_1_candidate_1" integer,
+  "party_1_candidate_2" integer,
+  "party_1_candidate_3" integer,
+  "party_1_candidate_4" integer,
+  "party_1_candidate_5" integer,
+  "party_1_candidate_6" integer,
+  "party_1_candidate_7" integer,
+  "party_1_candidate_8" integer,
+  "party_1_candidate_9" integer,
+  "party_1_candidate_10" integer,
+  "party_1_candidate_11" integer,
+  "party_1_candidate_12" integer,
+  "party_1_candidate_13" integer,
+  "party_1_candidate_14" integer,
+  "party_1_candidate_15" integer,
+  "party_1_candidate_16" integer,
+  "party_1_candidate_17" integer,
+  "party_2_candidate_1" integer,
+  "party_2_candidate_2" integer,
+  "party_2_candidate_3" integer,
+  "party_2_candidate_4" integer,
+  "party_2_candidate_5" integer,
+  "party_2_candidate_6" integer,
+  "party_2_candidate_7" integer,
+  "party_2_candidate_8" integer,
+  "party_2_candidate_9" integer,
+  "party_2_candidate_10" integer,
+  "party_2_candidate_11" integer,
+  "party_2_candidate_12" integer,
+  "party_2_candidate_13" integer,
+  "party_2_candidate_14" integer,
+  "party_2_candidate_15" integer,
+  "party_2_candidate_16" integer,
+  "party_2_candidate_17" integer,
+  "party_3_candidate_1" integer,
+  "party_3_candidate_2" integer,
+  "party_3_candidate_3" integer,
+  "party_3_candidate_4" integer,
+  "party_3_candidate_5" integer,
+  "party_3_candidate_6" integer,
+  "party_3_candidate_7" integer,
+  "party_3_candidate_8" integer,
+  "party_3_candidate_9" integer,
+  "party_3_candidate_10" integer,
+  "party_3_candidate_11" integer,
+  "party_3_candidate_12" integer,
+  "party_3_candidate_13" integer,
+  "party_3_candidate_14" integer,
+  "party_3_candidate_15" integer,
+  "party_3_candidate_16" integer,
+  "party_3_candidate_17" integer,
+  "party_4_candidate_1" integer,
+  "party_4_candidate_2" integer,
+  "party_4_candidate_3" integer,
+  "party_4_candidate_4" integer,
+  "party_4_candidate_5" integer,
+  "party_4_candidate_6" integer,
+  "party_4_candidate_7" integer,
+  "party_4_candidate_8" integer,
+  "party_4_candidate_9" integer,
+  "party_4_candidate_10" integer,
+  "party_4_candidate_11" integer,
+  "party_4_candidate_12" integer,
+  "party_4_candidate_13" integer,
+  "party_4_candidate_14" integer,
+  "party_4_candidate_15" integer,
+  "party_4_candidate_16" integer,
+  "party_4_candidate_17" integer,
+  "party_5_candidate_1" integer,
+  "party_5_candidate_2" integer,
+  "party_5_candidate_3" integer,
+  "party_5_candidate_4" integer,
+  "party_5_candidate_5" integer,
+  "party_5_candidate_6" integer,
+  "party_5_candidate_7" integer,
+  "party_5_candidate_8" integer,
+  "party_5_candidate_9" integer,
+  "party_5_candidate_10" integer,
+  "party_5_candidate_11" integer,
+  "party_5_candidate_12" integer,
+  "party_5_candidate_13" integer,
+  "party_5_candidate_14" integer,
+  "party_5_candidate_15" integer,
+  "party_5_candidate_16" integer,
+  "party_5_candidate_17" integer,
+  "party_6_candidate_1" integer,
+  "party_6_candidate_2" integer,
+  "party_6_candidate_3" integer,
+  "party_6_candidate_4" integer,
+  "party_6_candidate_5" integer,
+  "party_6_candidate_6" integer,
+  "party_6_candidate_7" integer,
+  "party_6_candidate_8" integer,
+  "party_6_candidate_9" integer,
+  "party_6_candidate_10" integer,
+  "party_6_candidate_11" integer,
+  "party_6_candidate_12" integer,
+  "party_6_candidate_13" integer,
+  "party_6_candidate_14" integer,
+  "party_6_candidate_15" integer,
+  "party_6_candidate_16" integer,
+  "party_6_candidate_17" integer,
+  "party_7_candidate_1" integer,
+  "party_7_candidate_2" integer,
+  "party_7_candidate_3" integer,
+  "party_7_candidate_4" integer,
+  "party_7_candidate_5" integer,
+  "party_7_candidate_6" integer,
+  "party_7_candidate_7" integer,
+  "party_7_candidate_8" integer,
+  "party_7_candidate_9" integer,
+  "party_7_candidate_10" integer,
+  "party_7_candidate_11" integer,
+  "party_7_candidate_12" integer,
+  "party_7_candidate_13" integer,
+  "party_7_candidate_14" integer,
+  "party_7_candidate_15" integer,
+  "party_7_candidate_16" integer,
+  "party_7_candidate_17" integer,
+  "party_8_candidate_1" integer,
+  "party_8_candidate_2" integer,
+  "party_8_candidate_3" integer,
+  "party_8_candidate_4" integer,
+  "party_8_candidate_5" integer,
+  "party_8_candidate_6" integer,
+  "party_8_candidate_7" integer,
+  "party_8_candidate_8" integer,
+  "party_8_candidate_9" integer,
+  "party_8_candidate_10" integer,
+  "party_8_candidate_11" integer,
+  "party_8_candidate_12" integer,
+  "party_8_candidate_13" integer,
+  "party_8_candidate_14" integer,
+  "party_8_candidate_15" integer,
+  "party_8_candidate_16" integer,
+  "party_8_candidate_17" integer,
+  "party_9_candidate_1" integer,
+  "party_9_candidate_2" integer,
+  "party_9_candidate_3" integer,
+  "party_9_candidate_4" integer,
+  "party_9_candidate_5" integer,
+  "party_9_candidate_6" integer,
+  "party_9_candidate_7" integer,
+  "party_9_candidate_8" integer,
+  "party_9_candidate_9" integer,
+  "party_9_candidate_10" integer,
+  "party_9_candidate_11" integer,
+  "party_9_candidate_12" integer,
+  "party_9_candidate_13" integer,
+  "party_9_candidate_14" integer,
+  "party_9_candidate_15" integer,
+  "party_9_candidate_16" integer,
+  "party_9_candidate_17" integer,
+  "party_10_candidate_1" integer,
+  "party_10_candidate_2" integer,
+  "party_10_candidate_3" integer,
+  "party_10_candidate_4" integer,
+  "party_10_candidate_5" integer,
+  "party_10_candidate_6" integer,
+  "party_10_candidate_7" integer,
+  "party_10_candidate_8" integer,
+  "party_10_candidate_9" integer,
+  "party_10_candidate_10" integer,
+  "party_10_candidate_11" integer,
+  "party_10_candidate_12" integer,
+  "party_10_candidate_13" integer,
+  "party_10_candidate_14" integer,
+  "party_10_candidate_15" integer,
+  "party_10_candidate_16" integer,
+  "party_10_candidate_17" integer,
+  "party_11_candidate_1" integer,
+  "party_11_candidate_2" integer,
+  "party_11_candidate_3" integer,
+  "party_11_candidate_4" integer,
+  "party_11_candidate_5" integer,
+  "party_11_candidate_6" integer,
+  "party_11_candidate_7" integer,
+  "party_11_candidate_8" integer,
+  "party_11_candidate_9" integer,
+  "party_11_candidate_10" integer,
+  "party_11_candidate_11" integer,
+  "party_11_candidate_12" integer,
+  "party_11_candidate_13" integer,
+  "party_11_candidate_14" integer,
+  "party_11_candidate_15" integer,
+  "party_11_candidate_16" integer,
+  "party_11_candidate_17" integer,
+  "party_12_candidate_1" integer,
+  "party_12_candidate_2" integer,
+  "party_12_candidate_3" integer,
+  "party_12_candidate_4" integer,
+  "party_12_candidate_5" integer,
+  "party_12_candidate_6" integer,
+  "party_12_candidate_7" integer,
+  "party_12_candidate_8" integer,
+  "party_12_candidate_9" integer,
+  "party_12_candidate_10" integer,
+  "party_12_candidate_11" integer,
+  "party_12_candidate_12" integer,
+  "party_12_candidate_13" integer,
+  "party_12_candidate_14" integer,
+  "party_12_candidate_15" integer,
+  "party_12_candidate_16" integer,
+  "party_12_candidate_17" integer,
+  "party_13_candidate_1" integer,
+  "party_13_candidate_2" integer,
+  "party_13_candidate_3" integer,
+  "party_13_candidate_4" integer,
+  "party_13_candidate_5" integer,
+  "party_13_candidate_6" integer,
+  "party_13_candidate_7" integer,
+  "party_13_candidate_8" integer,
+  "party_13_candidate_9" integer,
+  "party_13_candidate_10" integer,
+  "party_13_candidate_11" integer,
+  "party_13_candidate_12" integer,
+  "party_13_candidate_13" integer,
+  "party_13_candidate_14" integer,
+  "party_13_candidate_15" integer,
+  "party_13_candidate_16" integer,
+  "party_13_candidate_17" integer,
+  "party_14_candidate_1" integer
   "" text
 );
 
-CREATE TABLE parliament_2014_preferences(
+CREATE TABLE _2014_parliament_preferences(
   "section_id" text,      -- 1) Пълен код на секция(код на район(2), община(2), адм. район(2), секция(3))
   "party_id" integer,     -- 2) Номер на партия
   "candidate_id" integer, -- 3) Номер на кандидат в кандидатска листа (0 - за поле "без")
   "votes" integer         -- 4) Брой гласове
 );
 
-CREATE TABLE parliament_2017_preferences(
+CREATE TABLE _2017_parliament_preferences(
   "section_id" text,        -- 1) Пълен код на секция(код на район(2), община(2), адм. район(2), секция(3))
   "party_id" integer,       -- 2) Номер на партия
   "valid_ballots" integer,  -- 3) Номер на кандидат в кандидатска листа
   "invalid_ballots" integer -- 4) Брой гласове
 );
 
-CREATE TABLE european_2019_preferences(
+CREATE TABLE _2019_european_preferences(
   "section_id" text,        -- 1) Пълен код на секция (код на район(2), община(2), адм. район(2), секция(3))
   "party_id" integer,       -- 2) Номер на партия
   "candidate_id" integer,   -- 3) Номер на кандидат в кандидатска листа
   "preferences" integer     -- 4) Брой предпочитания (преференции)
 );
 
-CREATE TABLE european_2014_preferences(
+CREATE TABLE _2014_european_preferences(
   "section_id" text,        -- 1) Пълен код на секция(код на район(2), община(2), адм. район(2), секция(3))
   "party_id" integer,       -- 2) Номер на партия
   "candidate_id" integer,   -- 3) Номер на кандидат в кандидатска листа
   "preferences" integer     -- 4) Брой гласове
 );
 
-CREATE TABLE european_2019_preferences_mv(
+CREATE TABLE _2019_european_preferences_mv(
   "section_id" text,        -- 1) Пълен код на секция (код на район(2), община(2), адм. район(2), секция(3))
   "party_id" integer,       -- 2) Номер на партия
   "candidate_id" integer,   -- 3) Номер на кандидат в кандидатска листа
   "preferences" integer     -- 4) Брой предпочитания (преференции)
 );
 
-CREATE TABLE parliament_2009_protocols(
+CREATE TABLE _2009_parliament_protocols(
   "section_id" text,                             -- 1) Пълен код на секция(код на район(2), община(2), адм. район(2), секция(3));
   "total_voters" integer,                        -- 2) (т.1) Брой на избирателите в основния и допълнителния избирателен списък (т. 1 = т. 2 + т. 3 + т. 4)
   "total_voters_in_section" integer,             -- 3) (т.2) Брой на избирателите в основния избирателен списък (равен на броя на избирателите в избирателния списък и в списъка за гласуване с подвижна избирателна кутия (когато има такъв) при предаването му на СИК) 
@@ -865,7 +874,7 @@ CREATE TABLE parliament_2009_protocols(
   "empty_major_ballots" integer,                 -- 15) (т.14) Брой на намерените бюлетини за мажоритарни кандидати по установения образец, в които не е отразен вотът на избирателя  и които съдържат два печата на СИК
   "major_ballots_multiple_choice" integer,       -- 16) (т.15) Брой на намерените бюлетини за мажоритарни кандидати по установения образец, с отбелязан вот за двама или повече кандидати и които съдържат два печата на СИК
   "major_ballots_without_stamp" integer,         -- 17) (т.16) Брой на намерените бюлетини за мажоритарни кандидати, които не съдържат два печата на СИК
-  "total_ballots_in_box" integer,                -- 18) (т.17) Брой на недействителните гласове за мажоритарни кандидати (т. 17 = т. 12 + т. 13 + т. 14 + т. 15 + т. 16)
+  "ballots_in_box" integer,                      -- 18) (т.17) Брой на недействителните гласове за мажоритарни кандидати (т. 17 = т. 12 + т. 13 + т. 14 + т. 15 + т. 16)
   "total_major_invalid_ballots" integer,         -- 19) (т.18) Брой на намерените бюлетини за мажоритарни кандидати по установения образец с отбелязан вот за един кандидат и които съдържат два печата на СИК (брой на действителните гласове за мажоритарни кандидати)
   "ballots_with_special_symbols" integer,        -- 20) (т.20) Брой на намерените в избирателните кутии бюлетини за кандидатски листи
   "empty_ballots" integer,                       -- 21) (т.21) Брой на намерените бюлетини за кандидатски листи, които не са по установения образец
@@ -878,7 +887,7 @@ CREATE TABLE parliament_2009_protocols(
   "total_invalid_881011" integer                 -- 28) (т.29) Брой на недействителните бюлетини по чл. 88, ал. 10 и 11 от ЗИНП 
 );
 
-CREATE TABLE european_2009_protocols(
+CREATE TABLE _2009_european_protocols(
   "section_id" text,                               -- 1) Пълен код на секция(код на район(2), община(2), адм. район(2), секция(3));
   "total_voters" integer,                          -- 2) Брой на избирателите в основния и допълнителния избирателен списък (т.1 = т.2 + т.3 + т.4)
   "total_voters_in_section" integer,               -- 3) Брой на избирателите в основния избирателен списък (равен на броя на избирателите в част I и част II на основния избирателен списък при предаването му на СИК)
@@ -921,7 +930,7 @@ CREATE TABLE european_2009_protocols(
 );
 
 
-CREATE TABLE mayor_2011_1_protocols(
+CREATE TABLE _2011_mayor_1_protocols(
   "section_type" integer,                       -- 1) Знак, определящ вида на секционния протокол
   "section_id" text,                            -- 2) Пълен код на секция(код на област(2), община(2), адм. район(2), секция(3));
   "total_voters" integer,                       -- 3) С: Брой на избирателите според част І и част ІІ на избирателния списък при предаване му на СИК
@@ -942,7 +951,7 @@ CREATE TABLE mayor_2011_1_protocols(
   "invalid_ballots_public" integer,             -- 8) С: Брой на недействителните бюлетини за кмет на община по чл. 180 от ИК (показване начина на гласуване)
                                                 --    П: Брой на сгрешените бюлетини за кмет на община (по чл. 201, ал. 2 от ИК), унищожена с надпис «сгрешена» и подпечатана с печата на СИК
                                                 --    Е: Брой на избирателите в допълнителните избирателни списъци (сумата от числата от т. 3 от протоколите на СИК)
-  "invalid_ballots_picture" integer,            -- 9) С: Брой на недействителните бюлетини за кмет на община по чл. 181 от ИК (заснемане с техниески средства начина на гласуване)
+  "invalid_ballots_photo" integer,              -- 9) С: Брой на недействителните бюлетини за кмет на община по чл. 181 от ИК (заснемане с техниески средства начина на гласуване)
                                                 --    П: Брой на придружителите, вписани в графа "Забележки" на списъка (чл. 205, ал. 5, изр. 2 от ИК)
                                                 --    Е: Брой на регистрираните кандидатски листи на партии, коалиции и независими кандидати за кмет на община
   "invalid_mistake" integer,                    -- 10) С: Брой на сгрешените бюлетини за кмет на община (по чл. 201, ал. 2 от ИК), унищожени с надпис «сгрешена» и подпечатани с печата на СИК
@@ -983,7 +992,7 @@ CREATE TABLE mayor_2011_1_protocols(
   "e_total_invalid_ballots" integer,            -- 23) Е: Брой на недействителните гласове (бюлетини) за кмет на община (сумата от числата по т. 16, т. 17, т. 18, т. 19, т. 20)
   "e_total_valid_ballots" integer               -- 24) Е: Брой на действителните гласове (бюлетини)за кмет на община (бюлетини по установения образец с отбелязан вот със знак "Х" и с химикал, пишещ със син цвят, за една кандидатска листа, които съдържат два печата на съответната секционна избирателна комисия)
 );
-CREATE TABLE mayor_municipality_2011_1_protocols(
+CREATE TABLE _2011_mayor_municipality_1_protocols(
   "section_type" integer,                       -- 1) Знак, определящ вида на секционния протокол
   "section_id" text,                            -- 2) Пълен код на секция(код на област(2), община(2), адм. район(2), секция(3));
   "total_voters" integer,                       -- 3) С: Брой на избирателите според част І и част ІІ на избирателния списък при предаване му на СИК
@@ -1004,7 +1013,7 @@ CREATE TABLE mayor_municipality_2011_1_protocols(
   "invalid_ballots_public" integer,             -- 8) С: Брой на недействителните бюлетини за кмет на община по чл. 180 от ИК (показване начина на гласуване)
                                                 --    П: Брой на сгрешените бюлетини за кмет на община (по чл. 201, ал. 2 от ИК), унищожена с надпис «сгрешена» и подпечатана с печата на СИК
                                                 --    Е: Брой на избирателите в допълнителните избирателни списъци (сумата от числата от т. 3 от протоколите на СИК)
-  "invalid_ballots_picture" integer,            -- 9) С: Брой на недействителните бюлетини за кмет на община по чл. 181 от ИК (заснемане с техниески средства начина на гласуване)
+  "invalid_ballots_photo" integer,              -- 9) С: Брой на недействителните бюлетини за кмет на община по чл. 181 от ИК (заснемане с техниески средства начина на гласуване)
                                                 --    П: Брой на придружителите, вписани в графа "Забележки" на списъка (чл. 205, ал. 5, изр. 2 от ИК)
                                                 --    Е: Брой на регистрираните кандидатски листи на партии, коалиции и независими кандидати за кмет на община
   "invalid_mistake" integer,                    -- 10) С: Брой на сгрешените бюлетини за кмет на община (по чл. 201, ал. 2 от ИК), унищожени с надпис «сгрешена» и подпечатани с печата на СИК
@@ -1045,7 +1054,7 @@ CREATE TABLE mayor_municipality_2011_1_protocols(
   "e_total_invalid_ballots" integer,            -- 23) Е: Брой на недействителните гласове (бюлетини) за кмет на община (сумата от числата по т. 16, т. 17, т. 18, т. 19, т. 20)
   "e_total_valid_ballots" integer               -- 24) Е: Брой на действителните гласове (бюлетини)за кмет на община (бюлетини по установения образец с отбелязан вот със знак "Х" и с химикал, пишещ със син цвят, за една кандидатска листа, които съдържат два печата на съответната секционна избирателна комисия)
 );
-CREATE TABLE council_2011_1_protocols(
+CREATE TABLE _2011_council_region_1_protocols(
   "section_type" integer,                       -- 1) Знак, определящ вида на секционния протокол
   "section_id" text,                            -- 2) Пълен код на секция(код на област(2), община(2), адм. район(2), секция(3));
   "total_voters" integer,                       -- 3) С: Брой на избирателите според част І и част ІІ на избирателния списък при предаване му на СИК
@@ -1066,7 +1075,7 @@ CREATE TABLE council_2011_1_protocols(
   "invalid_ballots_public" integer,             -- 8) С: Брой на недействителните бюлетини за кмет на община по чл. 180 от ИК (показване начина на гласуване)
                                                 --    П: Брой на сгрешените бюлетини за кмет на община (по чл. 201, ал. 2 от ИК), унищожена с надпис «сгрешена» и подпечатана с печата на СИК
                                                 --    Е: Брой на избирателите в допълнителните избирателни списъци (сумата от числата от т. 3 от протоколите на СИК)
-  "invalid_ballots_picture" integer,            -- 9) С: Брой на недействителните бюлетини за кмет на община по чл. 181 от ИК (заснемане с техниески средства начина на гласуване)
+  "invalid_ballots_photo" integer,              -- 9) С: Брой на недействителните бюлетини за кмет на община по чл. 181 от ИК (заснемане с техниески средства начина на гласуване)
                                                 --    П: Брой на придружителите, вписани в графа "Забележки" на списъка (чл. 205, ал. 5, изр. 2 от ИК)
                                                 --    Е: Брой на регистрираните кандидатски листи на партии, коалиции и независими кандидати за кмет на община
   "invalid_mistake" integer,                    -- 10) С: Брой на сгрешените бюлетини за кмет на община (по чл. 201, ал. 2 от ИК), унищожени с надпис «сгрешена» и подпечатани с печата на СИК
@@ -1107,7 +1116,7 @@ CREATE TABLE council_2011_1_protocols(
   "e_total_invalid_ballots" integer,            -- 23) Е: Брой на недействителните гласове (бюлетини) за кмет на община (сумата от числата по т. 16, т. 17, т. 18, т. 19, т. 20)
   "e_total_valid_ballots" integer               -- 24) Е: Брой на действителните гласове (бюлетини)за кмет на община (бюлетини по установения образец с отбелязан вот със знак "Х" и с химикал, пишещ със син цвят, за една кандидатска листа, които съдържат два печата на съответната секционна избирателна комисия)
 );
-CREATE TABLE mayor_2011_2_protocols(
+CREATE TABLE _2011_mayor_2_protocols(
   "section_type" integer,                       -- 1) Знак, определящ вида на секционния протокол
   "section_id" text,                            -- 2) Пълен код на секция(код на област(2), община(2), адм. район(2), секция(3));
   "total_voters" integer,                       -- 3) С: Брой на избирателите според част І и част ІІ на избирателния списък при предаване му на СИК
@@ -1128,7 +1137,7 @@ CREATE TABLE mayor_2011_2_protocols(
   "invalid_ballots_public" integer,             -- 8) С: Брой на недействителните бюлетини за кмет на община по чл. 180 от ИК (показване начина на гласуване)
                                                 --    П: Брой на сгрешените бюлетини за кмет на община (по чл. 201, ал. 2 от ИК), унищожена с надпис «сгрешена» и подпечатана с печата на СИК
                                                 --    Е: Брой на избирателите в допълнителните избирателни списъци (сумата от числата от т. 3 от протоколите на СИК)
-  "invalid_ballots_picture" integer,            -- 9) С: Брой на недействителните бюлетини за кмет на община по чл. 181 от ИК (заснемане с техниески средства начина на гласуване)
+  "invalid_ballots_photo" integer,              -- 9) С: Брой на недействителните бюлетини за кмет на община по чл. 181 от ИК (заснемане с техниески средства начина на гласуване)
                                                 --    П: Брой на придружителите, вписани в графа "Забележки" на списъка (чл. 205, ал. 5, изр. 2 от ИК)
                                                 --    Е: Брой на регистрираните кандидатски листи на партии, коалиции и независими кандидати за кмет на община
   "invalid_mistake" integer,                    -- 10) С: Брой на сгрешените бюлетини за кмет на община (по чл. 201, ал. 2 от ИК), унищожени с надпис «сгрешена» и подпечатани с печата на СИК
@@ -1169,7 +1178,7 @@ CREATE TABLE mayor_2011_2_protocols(
   "e_total_invalid_ballots" integer,            -- 23) Е: Брой на недействителните гласове (бюлетини) за кмет на община (сумата от числата по т. 16, т. 17, т. 18, т. 19, т. 20)
   "e_total_valid_ballots" integer               -- 24) Е: Брой на действителните гласове (бюлетини)за кмет на община (бюлетини по установения образец с отбелязан вот със знак "Х" и с химикал, пишещ със син цвят, за една кандидатска листа, които съдържат два печата на съответната секционна избирателна комисия)
 );
-CREATE TABLE mayor_municipality_2011_2_protocols(
+CREATE TABLE _2011_mayor_municipality_2_protocols(
   "section_type" integer,                       -- 1) Знак, определящ вида на секционния протокол
   "section_id" text,                            -- 2) Пълен код на секция(код на област(2), община(2), адм. район(2), секция(3));
   "total_voters" integer,                       -- 3) С: Брой на избирателите според част І и част ІІ на избирателния списък при предаване му на СИК
@@ -1190,7 +1199,7 @@ CREATE TABLE mayor_municipality_2011_2_protocols(
   "invalid_ballots_public" integer,             -- 8) С: Брой на недействителните бюлетини за кмет на община по чл. 180 от ИК (показване начина на гласуване)
                                                 --    П: Брой на сгрешените бюлетини за кмет на община (по чл. 201, ал. 2 от ИК), унищожена с надпис «сгрешена» и подпечатана с печата на СИК
                                                 --    Е: Брой на избирателите в допълнителните избирателни списъци (сумата от числата от т. 3 от протоколите на СИК)
-  "invalid_ballots_picture" integer,            -- 9) С: Брой на недействителните бюлетини за кмет на община по чл. 181 от ИК (заснемане с техниески средства начина на гласуване)
+  "invalid_ballots_photo" integer,              -- 9) С: Брой на недействителните бюлетини за кмет на община по чл. 181 от ИК (заснемане с техниески средства начина на гласуване)
                                                 --    П: Брой на придружителите, вписани в графа "Забележки" на списъка (чл. 205, ал. 5, изр. 2 от ИК)
                                                 --    Е: Брой на регистрираните кандидатски листи на партии, коалиции и независими кандидати за кмет на община
   "invalid_mistake" integer,                    -- 10) С: Брой на сгрешените бюлетини за кмет на община (по чл. 201, ал. 2 от ИК), унищожени с надпис «сгрешена» и подпечатани с печата на СИК
@@ -1232,7 +1241,7 @@ CREATE TABLE mayor_municipality_2011_2_protocols(
   "e_total_valid_ballots" integer               -- 24) Е: Брой на действителните гласове (бюлетини)за кмет на община (бюлетини по установения образец с отбелязан вот със знак "Х" и с химикал, пишещ със син цвят, за една кандидатска листа, които съдържат два печата на съответната секционна избирателна комисия)
 );
 
-CREATE TABLE president_2011_1_protocols(
+CREATE TABLE _2011_president_1_protocols(
   "section_type" integer,                       --1) Знак, определящ вида на секционния протокол
   "section_id" text,                            --2) Пълен код на секция(код на област(2), община(2), адм. район(2), секция(3));
   "total_voters" integer,                       --3) Секция: Брой на избирателите според избирателния списък при предаването му на СИК
@@ -1241,7 +1250,7 @@ CREATE TABLE president_2011_1_protocols(
   "number_of_candidates" integer,               --6) Секция: Брой на регистрираните кандидатски листи на партии, коалиции от партии и независими кандидати за президент и вицепрезидент на републиката
   "voters_by_signature" integer,                --7) Секция: Брой на гласувалите избиратели според положените подписи в избирателния списък, включително и подписите в допълнителната страница (под чертата), както и тези от допълнителния избирателен списък
   "invalid_ballots_public" integer,             --8) Секция: Брой на недействителните бюлетини за президент и вицепрезидент на републиката по чл. 180 от ИК (показване начина на гласуване)
-  "invalid_ballots_picture" integer,            --9) Секция: Брой на недействителните бюлетини за президент и вицепрезидент на републиката по чл. 181 от ИК (заснемане с технически средства начина на гласуване)
+  "invalid_ballots_photo" integer,              --9) Секция: Брой на недействителните бюлетини за президент и вицепрезидент на републиката по чл. 181 от ИК (заснемане с технически средства начина на гласуване)
   "invalid_mistake" integer,                    -- 10)Секция:  Брой на сгрешените бюлетини за президент и вицепрезидент на републиката (по чл. 201, ал. 2 от ИК - унищожени с надпис „сгрешена” и подпечатани с печата на СИК)
   "vote_another_place" integer,                 -- 11)Секция:  Брой на удостоверенията за гласуване на друго място  (на лица, служебно заети в произвеждането на изборите по смисъла на §1, т. 13 от ДР на ИК)
   "vote_specific_place" integer,                -- 12)Секция:  Брой на удостоверенията за гласуване в определено населено място (съгласно § 5, т.1 от ДР на ИК)
@@ -1262,7 +1271,7 @@ CREATE TABLE president_2011_1_protocols(
   "total_valid_ballots" integer                 -- 27)Секция:  Брой на действителните гласове (бюлетини) за президент и вицепрезидент на републиката (бюлетини по установения образец с отбелязан вот със знак "Х" и с химикал, пишещ със син цвят, за една кандидатска листа, които съдържат два броя печати на съответната секционна избирателна комисия)
 );
 
-CREATE TABLE president_2011_2_protocols(
+CREATE TABLE _2011_president_2_protocols(
   "section_type" integer,                       --1) Знак, определящ вида на секционния протокол
   "section_id" text,                            --2) Пълен код на секция(код на област(2), община(2), адм. район(2), секция(3));
   "total_voters" integer,                       --3) Секция: Брой на избирателите според избирателния списък при предаването му на СИК
@@ -1271,7 +1280,7 @@ CREATE TABLE president_2011_2_protocols(
   "number_of_candidates" integer,               --6) Секция: Брой на регистрираните кандидатски листи на партии, коалиции от партии и независими кандидати за президент и вицепрезидент на републиката
   "voters_by_signature" integer,                --7) Секция: Брой на гласувалите избиратели според положените подписи в избирателния списък, включително и подписите в допълнителната страница (под чертата), както и тези от допълнителния избирателен списък
   "invalid_ballots_public" integer,             --8) Секция: Брой на недействителните бюлетини за президент и вицепрезидент на републиката по чл. 180 от ИК (показване начина на гласуване)
-  "invalid_ballots_picture" integer,            --9) Секция: Брой на недействителните бюлетини за президент и вицепрезидент на републиката по чл. 181 от ИК (заснемане с технически средства начина на гласуване)
+  "invalid_ballots_photo" integer,              --9) Секция: Брой на недействителните бюлетини за президент и вицепрезидент на републиката по чл. 181 от ИК (заснемане с технически средства начина на гласуване)
   "invalid_mistake" integer,                    -- 10)Секция:  Брой на сгрешените бюлетини за президент и вицепрезидент на републиката (по чл. 201, ал. 2 от ИК - унищожени с надпис „сгрешена” и подпечатани с печата на СИК)
   "vote_another_place" integer,                 -- 11)Секция:  Брой на удостоверенията за гласуване на друго място  (на лица, служебно заети в произвеждането на изборите по смисъла на §1, т. 13 от ДР на ИК)
   "vote_specific_place" integer,                -- 12)Секция:  Брой на удостоверенията за гласуване в определено населено място (съгласно § 5, т.1 от ДР на ИК)
@@ -1292,7 +1301,7 @@ CREATE TABLE president_2011_2_protocols(
   "total_valid_ballots" integer                 -- 27)Секция:  Брой на действителните гласове (бюлетини) за президент и вицепрезидент на републиката (бюлетини по установения образец с отбелязан вот със знак "Х" и с химикал, пишещ със син цвят, за една кандидатска листа, които съдържат два броя печати на съответната секционна избирателна комисия)
 );
 
-CREATE TABLE parliament_2013_protocols(
+CREATE TABLE _2013_parliament_protocols(
   "protocol_type" text,              -- 1) Знак, определящ вида на секционния протокол
   "section_id" text,                 -- 2) Пълен код на секция(код на област(2), община(2), адм. район(2), секция(3));
   "parties_number" integer,          -- 3) За протоколите на Секционната избирателна комисия: Брой на регистрираните кандидатски листи на партии, коалиции от партии и независими кандидати за народни представители.
@@ -1313,9 +1322,9 @@ CREATE TABLE parliament_2013_protocols(
                                      --    За протоколите на ДКП(РИК 32): бюлетини по установен образец, в които не е отразен със знак „Х“ и с химикал, пишещ със син цвят, вотът на избирателя
   "decl_48b" integer,                -- 11) За протоколите на Секционната избирателна комисия: удостоверения по чл. 48б, ал. 1 от ИК – Приложение № 14 от изборните книжа.
                                      --    За протоколите на ДКП(РИК 32): бюлетини по установен образец, в които не отразен вотът на избирателя
-  "decl_203" integer,                -- 12) За протоколите на Секционната избирателна комисия: декларации по чл. 203, ал. 3 от ИК – Приложение № 70 от изборните книжа.
+  "_203"decl integer,                -- 12) За протоколите на Секционната избирателна комисия: декларации по чл. 203, ал. 3 от ИК – Приложение № 70 от изборните книжа.
                                      --    За протоколите на ДКП(РИК 32): бюлетини по установен образец с отбелязан знак „Х“ или друг знак и с химикал, пишещ със син цвят или друг цвят, вот на избирателя за две или повече кандидатски листи
-  "decl_207" integer,                -- 13) За протоколите на Секционната избирателна комисия: декларации по чл. 207, ал. 1, т. 3 от ИК - Приложение № 71 от изборните книжа.
+  "_207"decl integer,                -- 13) За протоколите на Секционната избирателна комисия: декларации по чл. 207, ал. 1, т. 3 от ИК - Приложение № 71 от изборните книжа.
                                      --    За протоколите на ДКП(РИК 32): бюлетини по установен образец с отбелязан знак „Х“, който засяга повече от едно квадратче за гласуване и не може да се установи еднозначно волята на избирателя
   "voters_another_place" integer,    -- 14) За протоколите на Секционната избирателна комисия: удостоверения за гласуване на друго място (чл. 206 във връзка с чл. 49 от ИК) За протоколите на Секционната избирателна комисия: - Приложение № 18 от изборните книжа.
                                      --    За протоколите на ДКП(РИК 32): бюлетини по установен образец, които не съдържат два броя печата на съответната секционна избирателна комисия
@@ -1331,7 +1340,7 @@ CREATE TABLE parliament_2013_protocols(
   "destroyed_ballots_180" integer,   -- 22) брой на недействителните бюлетини по чл. 180 от ИК 
   "destroyed_ballots_181" integer,   -- 23) брой на недействителните бюлетини по чл. 181 от ИК 
   "invalid_ballots_mistake" integer, -- 24) брой на сгрешените бюлетини по чл. 201, ал. 3 от ИК
-  "invalid_ballots_201" integer,     -- 25) Брой на намерените в избирателната урна бюлетини
+  "_201"invalid_ballots integer,     -- 25) Брой на намерените в избирателната урна бюлетини
   "ballots_in_box" integer,          -- 26) бюлетини, които не са по установен образец
   "invalid_ballots" integer,         -- 27) бюлетини върху които има изписани специални символи, като букви, цифри или други знаци)
   "invalid_ballots_signs" integer,   -- 28) бюлетини по установен образец, в които не е отразен със знак „Х“ и с химикал, пишещ със син цвят, вотът на избирателя
@@ -1343,7 +1352,7 @@ CREATE TABLE parliament_2013_protocols(
   "total_invalid_votes" integer      -- 34) Брой на действителните гласове (броят на действителните гласове е равен на броя на бюлетините по установения образец, съдържащи два печата на гърба на съответната СИК, върху които вотът на избирателя е отбелязан със знак „Х“ с химикал, пишещ със син цвят, само в едно от квадратчетата за гласуване)
 );
 
-CREATE TABLE parliament_2014_protocols(
+CREATE TABLE _2014_parliament_protocols(
   "section_id" text,                          -- 1) Пълен код на секция(код на район(2), община(2), адм. район(2), секция(3));
   "number_of_candidates" integer,             -- 2)  А.Брой на регистрираните кандидатски листи на партии, коалиции и независими кандидати за народни представители
   "ballots_available" integer,                -- 3)  Б.Брой на бюлетините, получени по реда на чл. 215, ал. 1 от ИК, вписани в т. 4 протокола по чл. 215, ал. 4 от ИК – Приложение № 77-НС от изборните книжа
@@ -1366,7 +1375,7 @@ CREATE TABLE parliament_2014_protocols(
   "serial_numbers" integer                    -- 20) Серийни номера на страници на протокол, разделени с |
 );
 
-CREATE TABLE european_2014_protocols(
+CREATE TABLE _2014_european_protocols(
   "section_id" text,                          -- 1) Пълен код на секция(код на район(2), община(2), адм. район(2), секция(3));
   "number_of_candidates" integer,             -- 2)  А.Брой на регистрираните кандидатски листи на партии, коалиции и независими кандидати за членове на Европейския парламент от Република България
   "ballots_available" integer,                -- 3)  Б.Брой на бюлетините, получени по реда на чл. 215, ал. 1 от ИК, вписани в т. 4 протокола по чл. 215, ал. 4 от ИК – Приложение № 78 от изборните книжа
@@ -1390,7 +1399,7 @@ CREATE TABLE european_2014_protocols(
   "serial_numbers" integer                    -- 21) Серийни номера на страници на протокол, разделени с |
 );
 
-CREATE TABLE mayor_2015_1_cik_protocols(
+CREATE TABLE _2015_mayor_1_cik_protocols(
   "form_number" integer,                  -- 1) № формуляр
   "section_id" text,                      -- 2) Пълен код на секция(код на район(2), община(2), адм. район(2), секция(3));
   "district_id" integer,                  -- 3) Идентификатор на административна единица, за която се отнася протокола(община, кметство, район)
@@ -1415,7 +1424,7 @@ CREATE TABLE mayor_2015_1_cik_protocols(
   "valid_ballots_in_box" integer,         -- 22)  8.Брой намерени в избирателната кутия действителни гласове (бюлетини)
   "invalid_empty_or_onclear" integer     -- 23)  -.Празни бюлетини или бюлетини, в които е гласувано за повече от една листа, както и бюлетини, в които не може да се установи еднозначно вотът на избирателя
 );
-CREATE TABLE mayor_municipality_2015_1_cik_protocols(
+CREATE TABLE _2015_mayor_municipality_1_cik_protocols(
   "form_number" integer,                  -- 1) № формуляр
   "section_id" text,                      -- 2) Пълен код на секция(код на район(2), община(2), адм. район(2), секция(3));
   "district_id" integer,                  -- 3) Идентификатор на административна единица, за която се отнася протокола(община, кметство, район)
@@ -1440,7 +1449,7 @@ CREATE TABLE mayor_municipality_2015_1_cik_protocols(
   "valid_ballots_in_box" integer,         -- 22)  8.Брой намерени в избирателната кутия действителни гласове (бюлетини)
   "invalid_empty_or_onclear" integer     -- 23)  -.Празни бюлетини или бюлетини, в които е гласувано за повече от една листа, както и бюлетини, в които не може да се установи еднозначно вотът на избирателя
 );
-CREATE TABLE mayor_region_2015_1_cik_protocols(
+CREATE TABLE _2015_mayor_region_1_cik_protocols(
   "form_number" integer,                  -- 1) № формуляр
   "section_id" text,                      -- 2) Пълен код на секция(код на район(2), община(2), адм. район(2), секция(3));
   "district_id" integer,                  -- 3) Идентификатор на административна единица, за която се отнася протокола(община, кметство, район)
@@ -1465,7 +1474,7 @@ CREATE TABLE mayor_region_2015_1_cik_protocols(
   "valid_ballots_in_box" integer,         -- 22)  8.Брой намерени в избирателната кутия действителни гласове (бюлетини)
   "invalid_empty_or_onclear" integer     -- 23)  -.Празни бюлетини или бюлетини, в които е гласувано за повече от една листа, както и бюлетини, в които не може да се установи еднозначно вотът на избирателя
 );
-CREATE TABLE council_2015_1_cik_protocols(
+CREATE TABLE _2015_council_region_1_cik_protocols(
   "form_number" integer,                  -- 1) № формуляр
   "section_id" text,                      -- 2) Пълен код на секция(код на район(2), община(2), адм. район(2), секция(3));
   "district_id" integer,                  -- 3) Идентификатор на административна единица, за която се отнася протокола(община, кметство, район)
@@ -1494,7 +1503,7 @@ CREATE TABLE council_2015_1_cik_protocols(
   "_3" text,
   "_4" text
 );
-CREATE TABLE mayor_2015_2_cik_protocols(
+CREATE TABLE _2015_mayor_2_cik_protocols(
   "form_number" integer,                  -- 1) № формуляр
   "section_id" text,                      -- 2) Пълен код на секция(код на район(2), община(2), адм. район(2), секция(3));
   "district_id" integer,                  -- 3) Идентификатор на административна единица, за която се отнася протокола(община, кметство, район)
@@ -1519,7 +1528,7 @@ CREATE TABLE mayor_2015_2_cik_protocols(
   "valid_ballots_in_box" integer,         -- 22)  8.Брой намерени в избирателната кутия действителни гласове (бюлетини)
   "invalid_empty_or_onclear" integer     -- 23)  -.Празни бюлетини или бюлетини, в които е гласувано за повече от една листа, както и бюлетини, в които не може да се установи еднозначно вотът на избирателя
 );
-CREATE TABLE mayor_municipality_2015_2_cik_protocols(
+CREATE TABLE _2015_mayor_municipality_2_cik_protocols(
   "form_number" integer,                  -- 1) № формуляр
   "section_id" text,                      -- 2) Пълен код на секция(код на район(2), община(2), адм. район(2), секция(3));
   "district_id" integer,                  -- 3) Идентификатор на административна единица, за която се отнася протокола(община, кметство, район)
@@ -1544,7 +1553,7 @@ CREATE TABLE mayor_municipality_2015_2_cik_protocols(
   "valid_ballots_in_box" integer,         -- 22)  8.Брой намерени в избирателната кутия действителни гласове (бюлетини)
   "invalid_empty_or_onclear" integer     -- 23)  -.Празни бюлетини или бюлетини, в които е гласувано за повече от една листа, както и бюлетини, в които не може да се установи еднозначно вотът на избирателя
 );
-CREATE TABLE mayor_region_2015_2_cik_protocols(
+CREATE TABLE _2015_mayor_region_2_cik_protocols(
   "form_number" integer,                  -- 1) № формуляр
   "section_id" text,                      -- 2) Пълен код на секция(код на район(2), община(2), адм. район(2), секция(3));
   "district_id" integer,                  -- 3) Идентификатор на административна единица, за която се отнася протокола(община, кметство, район)
@@ -1570,7 +1579,7 @@ CREATE TABLE mayor_region_2015_2_cik_protocols(
   "invalid_empty_or_onclear" integer     -- 23)  -.Празни бюлетини или бюлетини, в които е гласувано за повече от една листа, както и бюлетини, в които не може да се установи еднозначно вотът на избирателя
 );
 
-CREATE TABLE president_2016_1_protocols(
+CREATE TABLE _2016_president_1_protocols(
   "form_number" text,                   -- 1) № формуляр
   "section_id" text,                    -- 2) Пълен код на секция(код на район(2), община(2), адм. район(2), секция(3));
   "district_id" text,                   -- 3) Идентификатор на административна единица, за която се отнася протокола(община, кметство, район)
@@ -1646,7 +1655,7 @@ CREATE TABLE president_2016_1_protocols(
                                         --      Формуляр № 7:   -.Празни бюлетини (хартиени бюлетини); бюлетини, в които е гласувано в повече от едно квадратче; бюлетини, в които не може да се установи еднозначно вотът на избирателя и други видове недействителни гласове
                                         --      Формуляр № 8:   -.Общо МГ + Б
 );
-CREATE TABLE president_2016_2_protocols(
+CREATE TABLE _2016_president_2_protocols(
   "form_number" text,                   -- 1) № формуляр
   "section_id" text,                    -- 2) Пълен код на секция(код на район(2), община(2), адм. район(2), секция(3));
   "district_id" text,                   -- 3) Идентификатор на административна единица, за която се отнася протокола(община, кметство, район)
@@ -1723,7 +1732,7 @@ CREATE TABLE president_2016_2_protocols(
                                         --      Формуляр № 8:   -.Общо МГ + Б
 );
 
-CREATE TABLE parliament_2017_protocols(
+CREATE TABLE _2017_parliament_protocols(
   "form_number" integer,                -- 1) № формуляр
   "section_id" text,                    -- 2) Пълен код на секция(код на район(2), община(2), адм. район(2), секция(3));
   "district_id" integer,                -- 3) Идентификатор на административна единица, за която се отнася протокола(община, кметство, район)
@@ -1754,7 +1763,7 @@ CREATE TABLE parliament_2017_protocols(
   "invalid_empty_or_onclear" integer   -- 20)  9.Празни бюлетини; бюлетини, в които е гласувано в повече от едно квадратче; бюлетини, в които не може да се установи еднозначно вотът на избирателя и други видове недействителни гласове
 );
 
-CREATE TABLE european_2019_protocols(
+CREATE TABLE _2019_european_protocols(
   "form_number" integer,                -- 1) № формуляр
   "section_id" text,                    -- 2) Пълен код на секция(код на район(2), община(2), адм. район(2), секция(3));
   "district_id" integer,                -- 3) Формуляр № 1 - по приложение Приложение № 85-х      Идентификатор на административна единица, за която се отнася протокола  (община, кметство, район)
@@ -1824,7 +1833,7 @@ CREATE TABLE european_2019_protocols(
 );
 
 
-CREATE TABLE mayor_2019_1_protocols(
+CREATE TABLE _2019_mayor_1_protocols(
   "form_number" integer,                --  1)      № формуляр (1)
   "section_id" text,                    --  2)      Пълен код на секция (код на район(2), община(2), адм. район(2), секция(3))
   "district_id" integer,                --  3)      Идентификатор на административна единица, за която се отнася протокола (община, кметство, район)
@@ -1849,7 +1858,7 @@ CREATE TABLE mayor_2019_1_protocols(
   "invalid_empty_or_onclear" integer    --  22) 9.   Празни бюлетини или бюлетини, в които е гласувано за повече от една листа, както и бюлетини, в които не може да се установи еднозначно вотът на избирателя
 );
 
-CREATE TABLE mayor_municipality_2019_1_protocols(
+CREATE TABLE _2019_mayor_municipality_1_protocols(
   "form_number" integer,                --  1)      № формуляр (1)
   "section_id" text,                    --  2)      Пълен код на секция (код на район(2), община(2), адм. район(2), секция(3))
   "district_id" integer,                --  3)      Идентификатор на административна единица, за която се отнася протокола (община, кметство, район)
@@ -1874,7 +1883,7 @@ CREATE TABLE mayor_municipality_2019_1_protocols(
   "invalid_empty_or_onclear" integer    --  22) 9.   Празни бюлетини или бюлетини, в които е гласувано за повече от една листа, както и бюлетини, в които не може да се установи еднозначно вотът на избирателя
 );
 
-CREATE TABLE mayor_region_2019_1_protocols(
+CREATE TABLE _2019_mayor_region_1_protocols(
   "form_number" integer,                --  1)      № формуляр (1)
   "section_id" text,                    --  2)      Пълен код на секция (код на район(2), община(2), адм. район(2), секция(3))
   "district_id" integer,                --  3)      Идентификатор на административна единица, за която се отнася протокола (община, кметство, район)
@@ -1899,7 +1908,7 @@ CREATE TABLE mayor_region_2019_1_protocols(
   "invalid_empty_or_onclear" integer    --  22) 9.   Празни бюлетини или бюлетини, в които е гласувано за повече от една листа, както и бюлетини, в които не може да се установи еднозначно вотът на избирателя
 );
 
-CREATE TABLE council_region_2019_1_protocols(
+CREATE TABLE _2019_council_region_1_protocols(
   "form_number" integer,                --  1)      № формуляр (1)
   "section_id" text,                    --  2)      Пълен код на секция (код на район(2), община(2), адм. район(2), секция(3))
   "district_id" integer,                --  3)      Идентификатор на административна единица, за която се отнася протокола (община, кметство, район)
@@ -1924,7 +1933,7 @@ CREATE TABLE council_region_2019_1_protocols(
   "invalid_empty_or_onclear" integer    --  22) 9.   Празни бюлетини или бюлетини, в които е гласувано за повече от една листа, както и бюлетини, в които не може да се установи еднозначно вотът на избирателя
 );
 
-CREATE TABLE mayor_2019_2_protocols(
+CREATE TABLE _2019_mayor_2_protocols(
   "form_number" integer,                --  1)      № формуляр (1)
   "section_id" text,                    --  2)      Пълен код на секция (код на район(2), община(2), адм. район(2), секция(3))
   "district_id" integer,                --  3)      Идентификатор на административна единица, за която се отнася протокола (община, кметство, район)
@@ -1949,7 +1958,7 @@ CREATE TABLE mayor_2019_2_protocols(
   "invalid_empty_or_onclear" integer    --  22) 9.   Празни бюлетини или бюлетини, в които е гласувано за повече от една листа, както и бюлетини, в които не може да се установи еднозначно вотът на избирателя
 );
 
-CREATE TABLE mayor_municipality_2019_2_protocols(
+CREATE TABLE _2019_mayor_municipality_2_protocols(
   "form_number" integer,                --  1)      № формуляр (1)
   "section_id" text,                    --  2)      Пълен код на секция (код на район(2), община(2), адм. район(2), секция(3))
   "district_id" integer,                --  3)      Идентификатор на административна единица, за която се отнася протокола (община, кметство, район)
@@ -1974,7 +1983,7 @@ CREATE TABLE mayor_municipality_2019_2_protocols(
   "invalid_empty_or_onclear" integer    --  22) 9.   Празни бюлетини или бюлетини, в които е гласувано за повече от една листа, както и бюлетини, в които не може да се установи еднозначно вотът на избирателя
 );
 
-CREATE TABLE mayor_region_2019_2_protocols(
+CREATE TABLE _2019_mayor_region_2_protocols(
   "form_number" integer,                --  1)      № формуляр (1)
   "section_id" text,                    --  2)      Пълен код на секция (код на район(2), община(2), адм. район(2), секция(3))
   "district_id" integer,                --  3)      Идентификатор на административна единица, за която се отнася протокола (община, кметство, район)
@@ -1999,22 +2008,28 @@ CREATE TABLE mayor_region_2019_2_protocols(
   "invalid_empty_or_onclear" integer    --  22) 9.   Празни бюлетини или бюлетини, в които е гласувано за повече от една листа, както и бюлетини, в които не може да се установи еднозначно вотът на избирателя
 );
 
+CREATE TABLE _2019_council_region_1_preferences(
+  "section_id" text,      --  1) Пълен код на секция(код на район(2), община(2), адм. район(2), секция(3))
+  "party_id" integer,     --  2) Номер на партия
+  "candidate_id" integer, --  3) Номер на кандидат в кандидатска листа
+  "total_votes" integer   --  4) Брой гласове
+);
 
-CREATE TABLE parliament_2009_sections(
+CREATE TABLE _2009_parliament_sections(
   "section_id" text,    -- 1) Пълен код на секция(код на район(2), община(2), адм. район(2), секция(3))
   "location_name" text, -- 2) Име на Населено място
   "ekatte" integer,     -- 3) ЕКАТТЕ на населеното място
   "" text
 );
 
-CREATE TABLE european_2009_sections(
+CREATE TABLE _2009_european_sections(
   "section_id" text,    -- 1) Пълен код на секция(код на район(2), община(2), адм. район(2), секция(3))
   "location_name" text, -- 2) Име на Населено място
   "ekatte" integer,     -- 3) ЕКАТТЕ на населеното място
   "" text
 );
 
-CREATE TABLE mayor_2011_1_sections(
+CREATE TABLE _2011_mayor_1_sections(
   "section_type" text,       -- 1) Знак, определящ вида на секцията
   "section_id" text,         -- 2) Пълен код на секция(код на област(2), община(2), адм. район(2), секция(3))
   "district_name" text,      -- 3) Име на област
@@ -2025,7 +2040,7 @@ CREATE TABLE mayor_2011_1_sections(
   "ekatte_location" integer  -- 8) ЕКАТТЕ на кметството
 );
 
-CREATE TABLE mayor_municipality_2011_1_sections(
+CREATE TABLE _2011_mayor_municipality_1_sections(
   "section_type" text,      -- 1) Знак, определящ вида на секцията
   "section_id" text,        -- 2) Пълен код на секция(код на област(2), община(2), адм. район(2), секция(3))
   "district_name" text,     -- 3) Име на област
@@ -2033,7 +2048,7 @@ CREATE TABLE mayor_municipality_2011_1_sections(
   "location_name" text,     -- 5) Име на населено място
   "ekatte" integer          -- 6) ЕКАТТЕ на населеното място
 );
-CREATE TABLE council_2011_1_sections(
+CREATE TABLE _2011_council_region_1_sections(
   "section_type" text,      -- 1) Знак, определящ вида на секцията
   "section_id" text,        -- 2) Пълен код на секция(код на област(2), община(2), адм. район(2), секция(3))
   "district_name" text,     -- 3) Име на област
@@ -2042,7 +2057,7 @@ CREATE TABLE council_2011_1_sections(
   "ekatte" integer          -- 6) ЕКАТТЕ на населеното място
 );
 
-CREATE TABLE mayor_2011_2_sections(
+CREATE TABLE _2011_mayor_2_sections(
   "section_type" text,       -- 1) Знак, определящ вида на секцията
   "section_id" text,         -- 2) Пълен код на секция(код на област(2), община(2), адм. район(2), секция(3))
   "district_name" text,      -- 3) Име на област
@@ -2053,7 +2068,7 @@ CREATE TABLE mayor_2011_2_sections(
   "ekatte_location" integer  -- 8) ЕКАТТЕ на кметството
 );
 
-CREATE TABLE mayor_municipality_2011_2_sections(
+CREATE TABLE _2011_mayor_municipality_2_sections(
   "section_type" text,      -- 1) Знак, определящ вида на секцията
   "section_id" text,        -- 2) Пълен код на секция(код на област(2), община(2), адм. район(2), секция(3))
   "district_name" text,     -- 3) Име на област
@@ -2062,7 +2077,7 @@ CREATE TABLE mayor_municipality_2011_2_sections(
   "ekatte" integer          -- 6) ЕКАТТЕ на населеното място
 );
 
-CREATE TABLE president_2011_1_sections(
+CREATE TABLE _2011_president_1_sections(
   "section_type" text,      -- 1) Знак, определящ вида на секцията
   "section_id" text,        -- 2) Пълен код на секция(код на област(2), община(2), адм. район(2), секция(3))
   "district_name" text,     -- 3) Име на област(ако е чужбинска секция - държава)
@@ -2071,7 +2086,7 @@ CREATE TABLE president_2011_1_sections(
   "ekatte" integer          -- 6) ЕКАТТЕ на населеното място(ако е чужбинска секция - празно)
 );
 
-CREATE TABLE president_2011_2_sections(
+CREATE TABLE _2011_president_2_sections(
   "section_type" text,      -- 1) Знак, определящ вида на секцията
   "section_id" text,        -- 2) Пълен код на секция(код на област(2), община(2), адм. район(2), секция(3))
   "district_name" text,     -- 3) Име на област(ако е чужбинска секция - държава)
@@ -2080,7 +2095,7 @@ CREATE TABLE president_2011_2_sections(
   "ekatte" integer          -- 6) ЕКАТТЕ на населеното място(ако е чужбинска секция - празно)
 );
 
-CREATE TABLE parliament_2013_sections(
+CREATE TABLE _2013_parliament_sections(
   "section_type" text,      -- 1) Знак, определящ вида на секцията
   "section_id" text,        -- 2) Пълен код на секция(код на област(2), община(2), адм. район(2), секция(3))
   "district_name" text,     -- 3) Име на област(ако е чужбинска секция - държава)
@@ -2089,115 +2104,115 @@ CREATE TABLE parliament_2013_sections(
   "ekatte" integer          -- 6) ЕКАТТЕ на населеното място(ако е чужбинска секция - празно)
 );
 
-CREATE TABLE parliament_2014_sections(
+CREATE TABLE _2014_parliament_sections(
   "section_id" text,        -- 1) Пълен код на секция(код на район(2), община(2), адм. район(2), секция(3))
   "location_name" text,     -- 2) Име на Населено място
   "ekatte" integer,         -- 3) ЕКАТТЕ на населеното място
   "mobile_section" boolean, -- 4) Флаг мобилна секция
   "ship_section" boolean,   -- 5) Флаг корабна секция
-  "machine_section" boolean -- 6) Флаг машинно гласуване
+  "machine_voting" boolean  -- 6) Флаг машинно гласуване
 );
 
-CREATE TABLE mayor_2015_1_sections(
+CREATE TABLE _2015_mayor_1_sections(
   "section_id" text,           -- 1) Пълен код на секция(код на район(2), община(2), адм. район(2), секция(3))
   "section_local_id" integer,  -- 2) Идентификатор на административна единица, за която се гласува в секцията
   "district_name" text,        -- 3) Име на административна единица, за която се гласува в секцията
   "ekatte" text,               -- 4) ЕКАТТЕ на населеното място
   "location_name" text,        -- 5) Име на Населено място, където е регистрирана секцията (за секциите извън страната - Държава, Населено място)
   "mobile_section" boolean,    -- 6) Флаг мобилна секция
-  "ekaship_sectionte" boolean, -- 7) Флаг корабна секция
-  "machine_section" boolean    -- 8) Флаг машинно гласуване
+  "ship_section" boolean,      -- 7) Флаг корабна секция
+  "machine_voting" boolean     -- 8) Флаг машинно гласуване
 );
 
-CREATE TABLE mayor_municipality_2015_1_sections(
+CREATE TABLE _2015_mayor_municipality_1_sections(
   "section_id" text,           -- 1) Пълен код на секция(код на район(2), община(2), адм. район(2), секция(3))
   "section_local_id" integer,  -- 2) Идентификатор на административна единица, за която се гласува в секцията
   "district_name" text,        -- 3) Име на административна единица, за която се гласува в секцията
   "ekatte" text,               -- 4) ЕКАТТЕ на населеното място
   "location_name" text,        -- 5) Име на Населено място, където е регистрирана секцията (за секциите извън страната - Държава, Населено място)
   "mobile_section" boolean,    -- 6) Флаг мобилна секция
-  "ekaship_sectionte" boolean, -- 7) Флаг корабна секция
-  "machine_section" boolean    -- 8) Флаг машинно гласуване
+  "ship_section" boolean,      -- 7) Флаг корабна секция
+  "machine_voting" boolean     -- 8) Флаг машинно гласуване
 );
 
-CREATE TABLE mayor_region_2015_1_sections(
+CREATE TABLE _2015_mayor_region_1_sections(
   "section_id" text,           -- 1) Пълен код на секция(код на район(2), община(2), адм. район(2), секция(3))
   "section_local_id" integer,  -- 2) Идентификатор на административна единица, за която се гласува в секцията
   "district_name" text,        -- 3) Име на административна единица, за която се гласува в секцията
   "ekatte" text,               -- 4) ЕКАТТЕ на населеното място
   "location_name" text,        -- 5) Име на Населено място, където е регистрирана секцията (за секциите извън страната - Държава, Населено място)
   "mobile_section" boolean,    -- 6) Флаг мобилна секция
-  "ekaship_sectionte" boolean, -- 7) Флаг корабна секция
-  "machine_section" boolean    -- 8) Флаг машинно гласуване
+  "ship_section" boolean,      -- 7) Флаг корабна секция
+  "machine_voting" boolean     -- 8) Флаг машинно гласуване
 );
 
-CREATE TABLE council_2015_1_sections(
+CREATE TABLE _2015_council_region_1_sections(
   "section_id" text,           -- 1) Пълен код на секция(код на район(2), община(2), адм. район(2), секция(3))
   "section_local_id" integer,  -- 2) Идентификатор на административна единица, за която се гласува в секцията
   "district_name" text,        -- 3) Име на административна единица, за която се гласува в секцията
   "ekatte" text,               -- 4) ЕКАТТЕ на населеното място
   "location_name" text,        -- 5) Име на Населено място, където е регистрирана секцията (за секциите извън страната - Държава, Населено място)
   "mobile_section" boolean,    -- 6) Флаг мобилна секция
-  "ekaship_sectionte" boolean, -- 7) Флаг корабна секция
-  "machine_section" boolean    -- 8) Флаг машинно гласуване
+  "ship_section" boolean,      -- 7) Флаг корабна секция
+  "machine_voting" boolean     -- 8) Флаг машинно гласуване
 );
 
-CREATE TABLE mayor_2015_2_sections(
+CREATE TABLE _2015_mayor_2_sections(
   "section_id" text,           -- 1) Пълен код на секция(код на район(2), община(2), адм. район(2), секция(3))
   "section_local_id" integer,  -- 2) Идентификатор на административна единица, за която се гласува в секцията
   "district_name" text,        -- 3) Име на административна единица, за която се гласува в секцията
   "ekatte" text,               -- 4) ЕКАТТЕ на населеното място
   "location_name" text,        -- 5) Име на Населено място, където е регистрирана секцията (за секциите извън страната - Държава, Населено място)
   "mobile_section" boolean,    -- 6) Флаг мобилна секция
-  "ekaship_sectionte" boolean, -- 7) Флаг корабна секция
-  "machine_section" boolean    -- 8) Флаг машинно гласуване
+  "ship_section" boolean,      -- 7) Флаг корабна секция
+  "machine_voting" boolean     -- 8) Флаг машинно гласуване
 );
 
-CREATE TABLE mayor_municipality_2015_2_sections(
+CREATE TABLE _2015_mayor_municipality_2_sections(
   "section_id" text,           -- 1) Пълен код на секция(код на район(2), община(2), адм. район(2), секция(3))
   "section_local_id" integer,  -- 2) Идентификатор на административна единица, за която се гласува в секцията
   "district_name" text,        -- 3) Име на административна единица, за която се гласува в секцията
   "ekatte" text,               -- 4) ЕКАТТЕ на населеното място
   "location_name" text,        -- 5) Име на Населено място, където е регистрирана секцията (за секциите извън страната - Държава, Населено място)
   "mobile_section" boolean,    -- 6) Флаг мобилна секция
-  "ekaship_sectionte" boolean, -- 7) Флаг корабна секция
-  "machine_section" boolean    -- 8) Флаг машинно гласуване
+  "ship_section" boolean,      -- 7) Флаг корабна секция
+  "machine_voting" boolean     -- 8) Флаг машинно гласуване
 );
 
-CREATE TABLE mayor_region_2015_2_sections(
+CREATE TABLE _2015_mayor_region_2_sections(
   "section_id" text,           -- 1) Пълен код на секция(код на район(2), община(2), адм. район(2), секция(3))
   "section_local_id" integer,  -- 2) Идентификатор на административна единица, за която се гласува в секцията
   "district_name" text,        -- 3) Име на административна единица, за която се гласува в секцията
   "ekatte" text,               -- 4) ЕКАТТЕ на населеното място
   "location_name" text,        -- 5) Име на Населено място, където е регистрирана секцията (за секциите извън страната - Държава, Населено място)
   "mobile_section" boolean,    -- 6) Флаг мобилна секция
-  "ekaship_sectionte" boolean, -- 7) Флаг корабна секция
-  "machine_section" boolean    -- 8) Флаг машинно гласуване
+  "ship_section" boolean,      -- 7) Флаг корабна секция
+  "machine_voting" boolean     -- 8) Флаг машинно гласуване
 );
 
 
-CREATE TABLE president_2016_1_sections(
+CREATE TABLE _2016_president_1_sections(
   "section_id" text,           -- 1) Пълен код на секция(код на район(2), община(2), адм. район(2), секция(3))
   "section_local_id" integer,  -- 2) Идентификатор на административна единица, за която се гласува в секцията
   "district_name" text,        -- 3) Име на административна единица, за която се гласува в секцията
   "ekatte" text,               -- 4) ЕКАТТЕ на населеното място
   "location_name" text,        -- 5) Име на Населено място, където е регистрирана секцията (за секциите извън страната - Държава, Населено място)
   "mobile_section" boolean,    -- 6) Флаг мобилна секция
-  "ekaship_sectionte" boolean, -- 7) Флаг корабна секция
-  "machine_section" boolean    -- 8) Флаг машинно гласуване
+  "ship_section" boolean,      -- 7) Флаг корабна секция
+  "machine_voting" boolean     -- 8) Флаг машинно гласуване
 );
-CREATE TABLE president_2016_2_sections(
+CREATE TABLE _2016_president_2_sections(
   "section_id" text,           -- 1) Пълен код на секция(код на район(2), община(2), адм. район(2), секция(3))
   "section_local_id" integer,  -- 2) Идентификатор на административна единица, за която се гласува в секцията
   "district_name" text,        -- 3) Име на административна единица, за която се гласува в секцията
   "ekatte" text,               -- 4) ЕКАТТЕ на населеното място
   "location_name" text,        -- 5) Име на Населено място, където е регистрирана секцията (за секциите извън страната - Държава, Населено място)
   "mobile_section" boolean,    -- 6) Флаг мобилна секция
-  "ekaship_sectionte" boolean, -- 7) Флаг корабна секция
-  "machine_section" boolean    -- 8) Флаг машинно гласуване
+  "ship_section" boolean,      -- 7) Флаг корабна секция
+  "machine_voting" boolean     -- 8) Флаг машинно гласуване
 );
 
-CREATE TABLE parliament_2017_sections(
+CREATE TABLE _2017_parliament_sections(
   "section_id" text,           -- 1) Пълен код на секция(код на район(2), община(2), адм. район(2), секция(3))
   "section_local_id" integer,  -- 2) Идентификатор на административна единица, за която се гласува в секцията
   "district_name" text,        -- 3) Име на административна единица, за която се гласува в секцията
@@ -2207,7 +2222,7 @@ CREATE TABLE parliament_2017_sections(
   "ship_section" boolean       -- 7) Флаг корабна секция
 );
 
-CREATE TABLE european_2019_sections(
+CREATE TABLE _2019_european_sections(
   "section_id" text,           -- 1) Пълен код на секция(код на район(2), община(2), адм. район(2), секция(3))
   "section_local_id" integer,  -- 2) Идентификатор на административна единица, за която се гласува в секцията
   "district_name" text,        -- 3) Име на административна единица, за която се гласува в секцията
@@ -2215,130 +2230,131 @@ CREATE TABLE european_2019_sections(
   "location_name" text,        -- 5) Име на Населено място, където е регистрирана секцията (за секциите извън страната - Държава, Населено място)
   "mobile_section" boolean,    -- 6) Флаг мобилна секция
   "ship_section" boolean,      -- 7) Флаг корабна секция
-  "machine_section" boolean    -- 8) Флаг машинно гласуване
+  "machine_voting" boolean     -- 8) Флаг машинно гласуване
 );
 
-CREATE TABLE european_2014_sections(
+CREATE TABLE _2014_european_sections(
   "section_id" text,        -- 1) Пълен код на секция(код на район(2), община(2), адм. район(2), секция(3))
   "location_name" text,     -- 2) Име на Населено място
   "ekatte" integer,         -- 3) ЕКАТТЕ на населеното място
   "mobile_section" boolean, -- 4) Флаг мобилна секция
   "ship_section" boolean,   -- 5) Флаг корабна секция
-  "machine_section" boolean -- 6) Флаг машинно гласуване
+  "machine_voting" boolean  -- 6) Флаг машинно гласуване
 );
 
-CREATE TABLE mayor_2019_1_sections(
+CREATE TABLE _2019_mayor_1_sections(
   "section_id" text,        -- 1) Пълен код на секция(код на район(2), община(2), адм. район(2), секция(3))
   "district_id" text,       -- 2) Идентификатор на административна единица, за която се гласува в секцията
-  "location_name" text,     -- 3) Име на административна единица, за която се гласува в секцията
+  "municipality_name" text,     -- 3) Име на административна единица, за която се гласува в секцията
   "ekatte" integer,         -- 4) ЕКАТТЕ на населеното място
-  "ship_section" boolean,   -- 5) Име на Населено място, където е регистрирана секцията (за секциите извън страната - Държава, Населено място)
+  "location_name" text,     -- 5) Име на Населено място, където е регистрирана секцията (за секциите извън страната - Държава, Населено място)
   "mobile_section" boolean  -- 6) Флаг подвижна секция
 );
-CREATE TABLE mayor_municipality_2019_1_sections(
+CREATE TABLE _2019_mayor_municipality_1_sections(
   "section_id" text,        -- 1) Пълен код на секция(код на район(2), община(2), адм. район(2), секция(3))
   "district_id" text,       -- 2) Идентификатор на административна единица, за която се гласува в секцията
-  "location_name" text,     -- 3) Име на административна единица, за която се гласува в секцията
+  "municipality_name" text,     -- 3) Име на административна единица, за която се гласува в секцията
   "ekatte" integer,         -- 4) ЕКАТТЕ на населеното място
-  "ship_section" boolean,   -- 5) Име на Населено място, където е регистрирана секцията (за секциите извън страната - Държава, Населено място)
-  "mobile_section" boolean  -- 6) Флаг подвижна секция
-);
-
-CREATE TABLE mayor_region_2019_1_sections(
-  "section_id" text,        -- 1) Пълен код на секция(код на район(2), община(2), адм. район(2), секция(3))
-  "district_id" text,       -- 2) Идентификатор на административна единица, за която се гласува в секцията
-  "location_name" text,     -- 3) Име на административна единица, за която се гласува в секцията
-  "ekatte" integer,         -- 4) ЕКАТТЕ на населеното място
-  "ship_section" boolean,   -- 5) Име на Населено място, където е регистрирана секцията (за секциите извън страната - Държава, Населено място)
-  "mobile_section" boolean  -- 6) Флаг подвижна секция
-);
-CREATE TABLE council_region_2019_1_sections(
-  "section_id" text,        -- 1) Пълен код на секция(код на район(2), община(2), адм. район(2), секция(3))
-  "district_id" text,       -- 2) Идентификатор на административна единица, за която се гласува в секцията
-  "location_name" text,     -- 3) Име на административна единица, за която се гласува в секцията
-  "ekatte" integer,         -- 4) ЕКАТТЕ на населеното място
-  "ship_section" boolean,   -- 5) Име на Населено място, където е регистрирана секцията (за секциите извън страната - Държава, Населено място)
+  "location_name" text,     -- 5) Име на Населено място, където е регистрирана секцията (за секциите извън страната - Държава, Населено място)
   "mobile_section" boolean  -- 6) Флаг подвижна секция
 );
 
-CREATE TABLE mayor_2019_2_sections(
+CREATE TABLE _2019_mayor_region_1_sections(
   "section_id" text,        -- 1) Пълен код на секция(код на район(2), община(2), адм. район(2), секция(3))
   "district_id" text,       -- 2) Идентификатор на административна единица, за която се гласува в секцията
-  "location_name" text,     -- 3) Име на административна единица, за която се гласува в секцията
+  "municipality_name" text,     -- 3) Име на административна единица, за която се гласува в секцията
   "ekatte" integer,         -- 4) ЕКАТТЕ на населеното място
-  "ship_section" boolean,   -- 5) Име на Населено място, където е регистрирана секцията (за секциите извън страната - Държава, Населено място)
+  "location_name" text,     -- 5) Име на Населено място, където е регистрирана секцията (за секциите извън страната - Държава, Населено място)
   "mobile_section" boolean  -- 6) Флаг подвижна секция
 );
 
-CREATE TABLE mayor_municipality_2019_2_sections(
+CREATE TABLE _2019_council_region_1_sections(
   "section_id" text,        -- 1) Пълен код на секция(код на район(2), община(2), адм. район(2), секция(3))
   "district_id" text,       -- 2) Идентификатор на административна единица, за която се гласува в секцията
-  "location_name" text,     -- 3) Име на административна единица, за която се гласува в секцията
+  "municipality_name" text,     -- 3) Име на административна единица, за която се гласува в секцията
   "ekatte" integer,         -- 4) ЕКАТТЕ на населеното място
-  "ship_section" boolean,   -- 5) Име на Населено място, където е регистрирана секцията (за секциите извън страната - Държава, Населено място)
+  "location_name" text,     -- 5) Име на Населено място, където е регистрирана секцията (за секциите извън страната - Държава, Населено място)
   "mobile_section" boolean  -- 6) Флаг подвижна секция
 );
 
-CREATE TABLE mayor_region_2019_2_sections(
+CREATE TABLE _2019_mayor_2_sections(
   "section_id" text,        -- 1) Пълен код на секция(код на район(2), община(2), адм. район(2), секция(3))
   "district_id" text,       -- 2) Идентификатор на административна единица, за която се гласува в секцията
-  "location_name" text,     -- 3) Име на административна единица, за която се гласува в секцията
+  "municipality_name" text,     -- 3) Име на административна единица, за която се гласува в секцията
   "ekatte" integer,         -- 4) ЕКАТТЕ на населеното място
-  "ship_section" boolean,   -- 5) Име на Населено място, където е регистрирана секцията (за секциите извън страната - Държава, Населено място)
+  "location_name" text,     -- 5) Име на Населено място, където е регистрирана секцията (за секциите извън страната - Държава, Населено място)
   "mobile_section" boolean  -- 6) Флаг подвижна секция
 );
 
-CREATE TABLE president_2011_1_votes(
-  "section_type" text,     -- 1) Знак, определящ вида на секционния протокол
-  "section_id" text,       -- 2) Пълен код на секция(код на област(2), община(2), адм. район(2), секция(3));
-  "party1_id" integer,     -- Номер на партия/коалиция/независим кандидат
-  "party1_votes" integer,  -- Гласове за съответния РИК
-  "party2_id" integer,     -- Номер на партия/коалиция/независим кандидат
-  "party2_votes" integer,  -- Гласове за съответния РИК
-  "party3_id" integer,     -- Номер на партия/коалиция/независим кандидат
-  "party3_votes" integer,  -- Гласове за съответния РИК
-  "party4_id" integer,     -- Номер на партия/коалиция/независим кандидат
-  "party4_votes" integer,  -- Гласове за съответния РИК
-  "party5_id" integer,     -- Номер на партия/коалиция/независим кандидат
-  "party5_votes" integer,  -- Гласове за съответния РИК
-  "party6_id" integer,     -- Номер на партия/коалиция/независим кандидат
-  "party6_votes" integer,  -- Гласове за съответния РИК
-  "party7_id" integer,     -- Номер на партия/коалиция/независим кандидат
-  "party7_votes" integer,  -- Гласове за съответния РИК
-  "party8_id" integer,     -- Номер на партия/коалиция/независим кандидат
-  "party8_votes" integer,  -- Гласове за съответния РИК
-  "party9_id" integer,     -- Номер на партия/коалиция/независим кандидат
-  "party9_votes" integer,  -- Гласове за съответния РИК
-  "party10_id" integer,    -- Номер на партия/коалиция/независим кандидат
-  "party10_votes" integer, -- Гласове за съответния РИК
-  "party11_id" integer,    -- Номер на партия/коалиция/независим кандидат
-  "party11_votes" integer, -- Гласове за съответния РИК
-  "party12_id" integer,    -- Номер на партия/коалиция/независим кандидат
-  "party12_votes" integer, -- Гласове за съответния РИК
-  "party13_id" integer,    -- Номер на партия/коалиция/независим кандидат
-  "party13_votes" integer, -- Гласове за съответния РИК
-  "party14_id" integer,    -- Номер на партия/коалиция/независим кандидат
-  "party14_votes" integer, -- Гласове за съответния РИК
-  "party15_id" integer,    -- Номер на партия/коалиция/независим кандидат
-  "party15_votes" integer, -- Гласове за съответния РИК
-  "party16_id" integer,    -- Номер на партия/коалиция/независим кандидат
-  "party16_votes" integer, -- Гласове за съответния РИК
-  "party17_id" integer,    -- Номер на партия/коалиция/независим кандидат
-  "party17_votes" integer, -- Гласове за съответния РИК
-  "party18_id" integer,    -- Номер на партия/коалиция/независим кандидат
-  "party18_votes" integer  -- Гласове за съответния РИК
+CREATE TABLE _2019_mayor_municipality_2_sections(
+  "section_id" text,        -- 1) Пълен код на секция(код на район(2), община(2), адм. район(2), секция(3))
+  "district_id" text,       -- 2) Идентификатор на административна единица, за която се гласува в секцията
+  "municipality_name" text,     -- 3) Име на административна единица, за която се гласува в секцията
+  "ekatte" integer,         -- 4) ЕКАТТЕ на населеното място
+  "location_name" text,     -- 5) Име на Населено място, където е регистрирана секцията (за секциите извън страната - Държава, Населено място)
+  "mobile_section" boolean  -- 6) Флаг подвижна секция
 );
 
-CREATE TABLE president_2011_2_votes(
-  "section_type" text,     -- 1) Знак, определящ вида на секционния протокол
-  "section_id" text,       -- 2) Пълен код на секция(код на област(2), община(2), адм. район(2), секция(3));
-  "party1_id" integer,     -- Номер на партия/коалиция/независим кандидат
-  "party1_votes" integer,  -- Гласове за съответния РИК
-  "party2_id" integer,     -- Номер на партия/коалиция/независим кандидат
-  "party2_votes" integer   -- Гласове за съответния РИК
+CREATE TABLE _2019_mayor_region_2_sections(
+  "section_id" text,        -- 1) Пълен код на секция(код на район(2), община(2), адм. район(2), секция(3))
+  "district_id" text,       -- 2) Идентификатор на административна единица, за която се гласува в секцията
+  "municipality_name" text,     -- 3) Име на административна единица, за която се гласува в секцията
+  "ekatte" integer,         -- 4) ЕКАТТЕ на населеното място
+  "location_name" text,     -- 5) Име на Населено място, където е регистрирана секцията (за секциите извън страната - Държава, Населено място)
+  "mobile_section" boolean  -- 6) Флаг подвижна секция
 );
 
-CREATE TABLE parliament_2013_votes(
+CREATE TABLE _2011_president_1_votes(
+  "section_type" text,             -- 1) Знак, определящ вида на секционния протокол
+  "section_id" text,               -- 2) Пълен код на секция(код на област(2), община(2), адм. район(2), секция(3));
+  "party1_id" integer,             -- Номер на партия/коалиция/независим кандидат
+  "party1_valid_ballots" integer,  -- Гласове за съответния РИК
+  "party2_id" integer,             -- Номер на партия/коалиция/независим кандидат
+  "party2_valid_ballots" integer,  -- Гласове за съответния РИК
+  "party3_id" integer,             -- Номер на партия/коалиция/независим кандидат
+  "party3_valid_ballots" integer,  -- Гласове за съответния РИК
+  "party4_id" integer,             -- Номер на партия/коалиция/независим кандидат
+  "party4_valid_ballots" integer,  -- Гласове за съответния РИК
+  "party5_id" integer,             -- Номер на партия/коалиция/независим кандидат
+  "party5_valid_ballots" integer,  -- Гласове за съответния РИК
+  "party6_id" integer,             -- Номер на партия/коалиция/независим кандидат
+  "party6_valid_ballots" integer,  -- Гласове за съответния РИК
+  "party7_id" integer,             -- Номер на партия/коалиция/независим кандидат
+  "party7_valid_ballots" integer,  -- Гласове за съответния РИК
+  "party8_id" integer,             -- Номер на партия/коалиция/независим кандидат
+  "party8_valid_ballots" integer,  -- Гласове за съответния РИК
+  "party9_id" integer,             -- Номер на партия/коалиция/независим кандидат
+  "party9_valid_ballots" integer,  -- Гласове за съответния РИК
+  "party10_id" integer,            -- Номер на партия/коалиция/независим кандидат
+  "party10_valid_ballots" integer, -- Гласове за съответния РИК
+  "party11_id" integer,            -- Номер на партия/коалиция/независим кандидат
+  "party11_valid_ballots" integer, -- Гласове за съответния РИК
+  "party12_id" integer,            -- Номер на партия/коалиция/независим кандидат
+  "party12_valid_ballots" integer, -- Гласове за съответния РИК
+  "party13_id" integer,            -- Номер на партия/коалиция/независим кандидат
+  "party13_valid_ballots" integer, -- Гласове за съответния РИК
+  "party14_id" integer,            -- Номер на партия/коалиция/независим кандидат
+  "party14_valid_ballots" integer, -- Гласове за съответния РИК
+  "party15_id" integer,            -- Номер на партия/коалиция/независим кандидат
+  "party15_valid_ballots" integer, -- Гласове за съответния РИК
+  "party16_id" integer,            -- Номер на партия/коалиция/независим кандидат
+  "party16_valid_ballots" integer, -- Гласове за съответния РИК
+  "party17_id" integer,            -- Номер на партия/коалиция/независим кандидат
+  "party17_valid_ballots" integer, -- Гласове за съответния РИК
+  "party18_id" integer,            -- Номер на партия/коалиция/независим кандидат
+  "party18_valid_ballots" integer  -- Гласове за съответния РИК
+);
+
+CREATE TABLE _2011_president_2_votes(
+"section_type" text,              -- 1) Знак, определящ вида на секционния протокол
+  "section_id" text,              -- 2) Пълен код на секция(код на област(2), община(2), адм. район(2), секция(3));
+  "party1_id" integer,            -- Номер на партия/коалиция/независим кандидат
+  "party1_valid_ballots" integer, -- Гласове за съответния РИК
+  "party2_id" integer,            -- Номер на партия/коалиция/независим кандидат
+  "party2_valid_ballots" integer  -- Гласове за съответния РИК
+);
+
+CREATE TABLE _2013_parliament_votes(
   "section_type" integer,  -- 1) Знак, определящ вида на секционния протокол
   "section_id" text,       -- 2) Пълен код на секция(код на област(2), община(2), адм. район(2), секция(3));
   "party1_id" integer,     -- Номер на партия/коалиция/независим кандидат
@@ -2435,7 +2451,7 @@ CREATE TABLE parliament_2013_votes(
   "party46_votes" integer  -- Гласове за съответния РИК
 );
 
-CREATE TABLE parliament_2014_votes(
+CREATE TABLE _2014_parliament_votes(
   "section_id" text,         -- 1) Пълен код на секция(код на район(2), община(2), адм. район(2), секция(3));
   "party1_valid" integer,    -- 2) Действителни гласове за:  1. Движение 21
   "party1_invalid" integer,  -- 2) Недействителни гласове за:  1. Движение 21
@@ -2493,7 +2509,7 @@ CREATE TABLE parliament_2014_votes(
   "" text
 );
 
-CREATE TABLE parliament_2017_votes(
+CREATE TABLE _2017_parliament_votes(
   "section_id" text,         -- 1) Пълен код на секция(код на район(2), община(2), адм. район(2), секция(3));
   "region_id" integer,       -- 2) Идентификатор на административна единица, за която се отнася протокола(община, кметство, район)
   "party1_id" integer,       -- № П/К/ИК
@@ -2567,132 +2583,132 @@ CREATE TABLE parliament_2017_votes(
   "party23_invalid" integer  --  Недействителни гласове
 );
 
-CREATE TABLE president_2016_1_votes(
+CREATE TABLE _2016_president_1_votes(
   "section_id" text,                      -- 1) Пълен код на секция(код на район(2), община(2), адм. район(2), секция(3));
   "district_id" integer,                  -- 2) Идентификатор на административна единица, за която се отнася протокола(община, кметство, район)
-  "candidate_1_id" integer,               -- № П/К/ИК;
-  "candidate_1_valid_votes" integer,      -- действителни гласове
-  "candidate_1_valid_machine_b" integer,  -- действителни гласове (Б) от протоколите с машинно гласуване
-  "candidate_1_valid_machine_m" integer,  -- действителни гласове (М) от протоколите с машинно гласуване
-  "candidate_1_invalid_votes" integer,    -- недействителни гласове
-  "candidate_2_id" integer,               -- № П/К/ИК;
-  "candidate_2_valid_votes" integer,      -- действителни гласове
-  "candidate_2_valid_machine_b" integer,  -- действителни гласове (Б) от протоколите с машинно гласуване
-  "candidate_2_valid_machine_m" integer,  -- действителни гласове (М) от протоколите с машинно гласуване
-  "candidate_2_invalid_votes" integer,    -- недействителни гласове
-  "candidate_3_id" integer,               -- № П/К/ИК;
-  "candidate_3_valid_votes" integer,      -- действителни гласове
-  "candidate_3_valid_machine_b" integer,  -- действителни гласове (Б) от протоколите с машинно гласуване
-  "candidate_3_valid_machine_m" integer,  -- действителни гласове (М) от протоколите с машинно гласуване
-  "candidate_3_invalid_votes" integer,    -- недействителни гласове
-  "candidate_4_id" integer,               -- № П/К/ИК;
-  "candidate_4_valid_votes" integer,      -- действителни гласове
-  "candidate_4_valid_machine_b" integer,  -- действителни гласове (Б) от протоколите с машинно гласуване
-  "candidate_4_valid_machine_m" integer,  -- действителни гласове (М) от протоколите с машинно гласуване
-  "candidate_4_invalid_votes" integer,    -- недействителни гласове
-  "candidate_5_id" integer,               -- № П/К/ИК;
-  "candidate_5_valid_votes" integer,      -- действителни гласове
-  "candidate_5_valid_machine_b" integer,  -- действителни гласове (Б) от протоколите с машинно гласуване
-  "candidate_5_valid_machine_m" integer,  -- действителни гласове (М) от протоколите с машинно гласуване
-  "candidate_5_invalid_votes" integer,    -- недействителни гласове
-  "candidate_6_id" integer,               -- № П/К/ИК;
-  "candidate_6_valid_votes" integer,      -- действителни гласове
-  "candidate_6_valid_machine_b" integer,  -- действителни гласове (Б) от протоколите с машинно гласуване
-  "candidate_6_valid_machine_m" integer,  -- действителни гласове (М) от протоколите с машинно гласуване
-  "candidate_6_invalid_votes" integer,    -- недействителни гласове
-  "candidate_7_id" integer,               -- № П/К/ИК;
-  "candidate_7_valid_votes" integer,      -- действителни гласове
-  "candidate_7_valid_machine_b" integer,  -- действителни гласове (Б) от протоколите с машинно гласуване
-  "candidate_7_valid_machine_m" integer,  -- действителни гласове (М) от протоколите с машинно гласуване
-  "candidate_7_invalid_votes" integer,    -- недействителни гласове
-  "candidate_8_id" integer,               -- № П/К/ИК;
-  "candidate_8_valid_votes" integer,      -- действителни гласове
-  "candidate_8_valid_machine_b" integer,  -- действителни гласове (Б) от протоколите с машинно гласуване
-  "candidate_8_valid_machine_m" integer,  -- действителни гласове (М) от протоколите с машинно гласуване
-  "candidate_8_invalid_votes" integer,    -- недействителни гласове
-  "candidate_9_id" integer,               -- № П/К/ИК;
-  "candidate_9_valid_votes" integer,      -- действителни гласове
-  "candidate_9_valid_machine_b" integer,  -- действителни гласове (Б) от протоколите с машинно гласуване
-  "candidate_9_valid_machine_m" integer,  -- действителни гласове (М) от протоколите с машинно гласуване
-  "candidate_9_invalid_votes" integer,    -- недействителни гласове
-  "candidate_10_id" integer,              -- № П/К/ИК;
-  "candidate_10_valid_votes" integer,     -- действителни гласове
-  "candidate_10_valid_machine_b" integer, -- действителни гласове (Б) от протоколите с машинно гласуване
-  "candidate_10_valid_machine_m" integer, -- действителни гласове (М) от протоколите с машинно гласуване
-  "candidate_10_invalid_votes" integer,   -- недействителни гласове
-  "candidate_11_id" integer,              -- № П/К/ИК;
-  "candidate_11_valid_votes" integer,     -- действителни гласове
-  "candidate_11_valid_machine_b" integer, -- действителни гласове (Б) от протоколите с машинно гласуване
-  "candidate_11_valid_machine_m" integer, -- действителни гласове (М) от протоколите с машинно гласуване
-  "candidate_11_invalid_votes" integer,   -- недействителни гласове
-  "candidate_12_id" integer,              -- № П/К/ИК;
-  "candidate_12_valid_votes" integer,     -- действителни гласове
-  "candidate_12_valid_machine_b" integer, -- действителни гласове (Б) от протоколите с машинно гласуване
-  "candidate_12_valid_machine_m" integer, -- действителни гласове (М) от протоколите с машинно гласуване
-  "candidate_12_invalid_votes" integer,   -- недействителни гласове
-  "candidate_13_id" integer,              -- № П/К/ИК;
-  "candidate_13_valid_votes" integer,     -- действителни гласове
-  "candidate_13_valid_machine_b" integer, -- действителни гласове (Б) от протоколите с машинно гласуване
-  "candidate_13_valid_machine_m" integer, -- действителни гласове (М) от протоколите с машинно гласуване
-  "candidate_13_invalid_votes" integer,   -- недействителни гласове
-  "candidate_14_id" integer,              -- № П/К/ИК;
-  "candidate_14_valid_votes" integer,     -- действителни гласове
-  "candidate_14_valid_machine_b" integer, -- действителни гласове (Б) от протоколите с машинно гласуване
-  "candidate_14_valid_machine_m" integer, -- действителни гласове (М) от протоколите с машинно гласуване
-  "candidate_14_invalid_votes" integer,   -- недействителни гласове
-  "candidate_15_id" integer,              -- № П/К/ИК;
-  "candidate_15_valid_votes" integer,     -- действителни гласове
-  "candidate_15_valid_machine_b" integer, -- действителни гласове (Б) от протоколите с машинно гласуване
-  "candidate_15_valid_machine_m" integer, -- действителни гласове (М) от протоколите с машинно гласуване
-  "candidate_15_invalid_votes" integer,   -- недействителни гласове
-  "candidate_16_id" integer,              -- № П/К/ИК;
-  "candidate_16_valid_votes" integer,     -- действителни гласове
-  "candidate_16_valid_machine_b" integer, -- действителни гласове (Б) от протоколите с машинно гласуване
-  "candidate_16_valid_machine_m" integer, -- действителни гласове (М) от протоколите с машинно гласуване
-  "candidate_16_invalid_votes" integer,   -- недействителни гласове
-  "candidate_17_id" integer,              -- № П/К/ИК;
-  "candidate_17_valid_votes" integer,     -- действителни гласове
-  "candidate_17_valid_machine_b" integer, -- действителни гласове (Б) от протоколите с машинно гласуване
-  "candidate_17_valid_machine_m" integer, -- действителни гласове (М) от протоколите с машинно гласуване
-  "candidate_17_invalid_votes" integer,   -- недействителни гласове
-  "candidate_18_id" integer,              -- № П/К/ИК;
-  "candidate_18_valid_votes" integer,     -- действителни гласове
-  "candidate_18_valid_machine_b" integer, -- действителни гласове (Б) от протоколите с машинно гласуване
-  "candidate_18_valid_machine_m" integer, -- действителни гласове (М) от протоколите с машинно гласуване
-  "candidate_18_invalid_votes" integer,   -- недействителни гласове
-  "candidate_19_id" integer,              -- № П/К/ИК;
-  "candidate_19_valid_votes" integer,     -- действителни гласове
-  "candidate_19_valid_machine_b" integer, -- действителни гласове (Б) от протоколите с машинно гласуване
-  "candidate_19_valid_machine_m" integer, -- действителни гласове (М) от протоколите с машинно гласуване
-  "candidate_19_invalid_votes" integer,   -- недействителни гласове
-  "candidate_20_id" integer,              -- № П/К/ИК;
-  "candidate_20_valid_votes" integer,     -- действителни гласове
-  "candidate_20_valid_machine_b" integer, -- действителни гласове (Б) от протоколите с машинно гласуване
-  "candidate_20_valid_machine_m" integer, -- действителни гласове (М) от протоколите с машинно гласуване
-  "candidate_20_invalid_votes" integer,   -- недействителни гласове
-  "candidate_21_id" integer,              -- № П/К/ИК;
-  "candidate_21_valid_votes" integer,     -- действителни гласове
-  "candidate_21_valid_machine_b" integer, -- действителни гласове (Б) от протоколите с машинно гласуване
-  "candidate_21_valid_machine_m" integer, -- действителни гласове (М) от протоколите с машинно гласуване
-  "candidate_21_invalid_votes" integer    -- недействителни гласове
+  "party1_id" integer,               -- № П/К/ИК;
+  "party1_valid_ballots" integer,    -- действителни гласове
+  "party1_valid_machine_b" integer,  -- действителни гласове (Б) от протоколите с машинно гласуване
+  "party1_valid_machine_m" integer,  -- действителни гласове (М) от протоколите с машинно гласуване
+  "party1_invalid_ballots" integer,  -- недействителни гласове
+  "party2_id" integer,               -- № П/К/ИК;
+  "party2_valid_ballots" integer,    -- действителни гласове
+  "party2_valid_machine_b" integer,  -- действителни гласове (Б) от протоколите с машинно гласуване
+  "party2_valid_machine_m" integer,  -- действителни гласове (М) от протоколите с машинно гласуване
+  "party2_invalid_ballots" integer,  -- недействителни гласове
+  "party3_id" integer,               -- № П/К/ИК;
+  "party3_valid_ballots" integer,    -- действителни гласове
+  "party3_valid_machine_b" integer,  -- действителни гласове (Б) от протоколите с машинно гласуване
+  "party3_valid_machine_m" integer,  -- действителни гласове (М) от протоколите с машинно гласуване
+  "party3_invalid_ballots" integer,  -- недействителни гласове
+  "party4_id" integer,               -- № П/К/ИК;
+  "party4_valid_ballots" integer,    -- действителни гласове
+  "party4_valid_machine_b" integer,  -- действителни гласове (Б) от протоколите с машинно гласуване
+  "party4_valid_machine_m" integer,  -- действителни гласове (М) от протоколите с машинно гласуване
+  "party4_invalid_ballots" integer,  -- недействителни гласове
+  "party5_id" integer,               -- № П/К/ИК;
+  "party5_valid_ballots" integer,    -- действителни гласове
+  "party5_valid_machine_b" integer,  -- действителни гласове (Б) от протоколите с машинно гласуване
+  "party5_valid_machine_m" integer,  -- действителни гласове (М) от протоколите с машинно гласуване
+  "party5_invalid_ballots" integer,  -- недействителни гласове
+  "party6_id" integer,               -- № П/К/ИК;
+  "party6_valid_ballots" integer,    -- действителни гласове
+  "party6_valid_machine_b" integer,  -- действителни гласове (Б) от протоколите с машинно гласуване
+  "party6_valid_machine_m" integer,  -- действителни гласове (М) от протоколите с машинно гласуване
+  "party6_invalid_ballots" integer,  -- недействителни гласове
+  "party7_id" integer,               -- № П/К/ИК;
+  "party7_valid_ballots" integer,    -- действителни гласове
+  "party7_valid_machine_b" integer,  -- действителни гласове (Б) от протоколите с машинно гласуване
+  "party7_valid_machine_m" integer,  -- действителни гласове (М) от протоколите с машинно гласуване
+  "party7_invalid_ballots" integer,  -- недействителни гласове
+  "party8_id" integer,               -- № П/К/ИК;
+  "party8_valid_ballots" integer,    -- действителни гласове
+  "party8_valid_machine_b" integer,  -- действителни гласове (Б) от протоколите с машинно гласуване
+  "party8_valid_machine_m" integer,  -- действителни гласове (М) от протоколите с машинно гласуване
+  "party8_invalid_ballots" integer,  -- недействителни гласове
+  "party9_id" integer,               -- № П/К/ИК;
+  "party9_valid_ballots" integer,    -- действителни гласове
+  "party9_valid_machine_b" integer,  -- действителни гласове (Б) от протоколите с машинно гласуване
+  "party9_valid_machine_m" integer,  -- действителни гласове (М) от протоколите с машинно гласуване
+  "party9_invalid_ballots" integer,  -- недействителни гласове
+  "party10_id" integer,              -- № П/К/ИК;
+  "party10_valid_ballots" integer,   -- действителни гласове
+  "party10_valid_machine_b" integer, -- действителни гласове (Б) от протоколите с машинно гласуване
+  "party10_valid_machine_m" integer, -- действителни гласове (М) от протоколите с машинно гласуване
+  "party10_invalid_ballots" integer, -- недействителни гласове
+  "party11_id" integer,              -- № П/К/ИК;
+  "party11_valid_ballots" integer,   -- действителни гласове
+  "party11_valid_machine_b" integer, -- действителни гласове (Б) от протоколите с машинно гласуване
+  "party11_valid_machine_m" integer, -- действителни гласове (М) от протоколите с машинно гласуване
+  "party11_invalid_ballots" integer, -- недействителни гласове
+  "party12_id" integer,              -- № П/К/ИК;
+  "party12_valid_ballots" integer,   -- действителни гласове
+  "party12_valid_machine_b" integer, -- действителни гласове (Б) от протоколите с машинно гласуване
+  "party12_valid_machine_m" integer, -- действителни гласове (М) от протоколите с машинно гласуване
+  "party12_invalid_ballots" integer, -- недействителни гласове
+  "party13_id" integer,              -- № П/К/ИК;
+  "party13_valid_ballots" integer,   -- действителни гласове
+  "party13_valid_machine_b" integer, -- действителни гласове (Б) от протоколите с машинно гласуване
+  "party13_valid_machine_m" integer, -- действителни гласове (М) от протоколите с машинно гласуване
+  "party13_invalid_ballots" integer, -- недействителни гласове
+  "party14_id" integer,              -- № П/К/ИК;
+  "party14_valid_ballots" integer,   -- действителни гласове
+  "party14_valid_machine_b" integer, -- действителни гласове (Б) от протоколите с машинно гласуване
+  "party14_valid_machine_m" integer, -- действителни гласове (М) от протоколите с машинно гласуване
+  "party14_invalid_ballots" integer, -- недействителни гласове
+  "party15_id" integer,              -- № П/К/ИК;
+  "party15_valid_ballots" integer,   -- действителни гласове
+  "party15_valid_machine_b" integer, -- действителни гласове (Б) от протоколите с машинно гласуване
+  "party15_valid_machine_m" integer, -- действителни гласове (М) от протоколите с машинно гласуване
+  "party15_invalid_ballots" integer, -- недействителни гласове
+  "party16_id" integer,              -- № П/К/ИК;
+  "party16_valid_ballots" integer,   -- действителни гласове
+  "party16_valid_machine_b" integer, -- действителни гласове (Б) от протоколите с машинно гласуване
+  "party16_valid_machine_m" integer, -- действителни гласове (М) от протоколите с машинно гласуване
+  "party16_invalid_ballots" integer, -- недействителни гласове
+  "party17_id" integer,              -- № П/К/ИК;
+  "party17_valid_ballots" integer,   -- действителни гласове
+  "party17_valid_machine_b" integer, -- действителни гласове (Б) от протоколите с машинно гласуване
+  "party17_valid_machine_m" integer, -- действителни гласове (М) от протоколите с машинно гласуване
+  "party17_invalid_ballots" integer, -- недействителни гласове
+  "party18_id" integer,              -- № П/К/ИК;
+  "party18_valid_ballots" integer,   -- действителни гласове
+  "party18_valid_machine_b" integer, -- действителни гласове (Б) от протоколите с машинно гласуване
+  "party18_valid_machine_m" integer, -- действителни гласове (М) от протоколите с машинно гласуване
+  "party18_invalid_ballots" integer, -- недействителни гласове
+  "party19_id" integer,              -- № П/К/ИК;
+  "party19_valid_ballots" integer,   -- действителни гласове
+  "party19_valid_machine_b" integer, -- действителни гласове (Б) от протоколите с машинно гласуване
+  "party19_valid_machine_m" integer, -- действителни гласове (М) от протоколите с машинно гласуване
+  "party19_invalid_ballots" integer, -- недействителни гласове
+  "party20_id" integer,              -- № П/К/ИК;
+  "party20_valid_ballots" integer,   -- действителни гласове
+  "party20_valid_machine_b" integer, -- действителни гласове (Б) от протоколите с машинно гласуване
+  "party20_valid_machine_m" integer, -- действителни гласове (М) от протоколите с машинно гласуване
+  "party20_invalid_ballots" integer, -- недействителни гласове
+  "party21_id" integer,              -- № П/К/ИК;
+  "party21_valid_ballots" integer,   -- действителни гласове
+  "party21_valid_machine_b" integer, -- действителни гласове (Б) от протоколите с машинно гласуване
+  "party21_valid_machine_m" integer, -- действителни гласове (М) от протоколите с машинно гласуване
+  "party21_invalid_ballots" integer  -- недействителни гласове
 );
 
-CREATE TABLE president_2016_2_votes(
+CREATE TABLE _2016_president_2_votes(
   "section_id" text,                     -- 1) Пълен код на секция(код на район(2), община(2), адм. район(2), секция(3));
   "district_id" integer,                 -- 2) Идентификатор на административна единица, за която се отнася протокола(община, кметство, район)
-  "candidate_1_id" integer,              -- № П/К/ИК;
-  "candidate_1_valid_votes" integer,     -- действителни гласове
-  "candidate_1_valid_machine_b" integer, -- действителни гласове (Б) от протоколите с машинно гласуване
-  "candidate_1_valid_machine_m" integer, -- действителни гласове (М) от протоколите с машинно гласуване
-  "candidate_1_invalid_votes" integer,   -- недействителни гласове
-  "candidate_2_id" integer,              -- № П/К/ИК;
-  "candidate_2_valid_votes" integer,     -- действителни гласове
-  "candidate_2_valid_machine_b" integer, -- действителни гласове (Б) от протоколите с машинно гласуване
-  "candidate_2_valid_machine_m" integer, -- действителни гласове (М) от протоколите с машинно гласуване
-  "candidate_2_invalid_votes" integer    -- недействителни гласове
+  "party1_id" integer,              -- № П/К/ИК;
+  "party1_valid_ballots" integer,   -- действителни гласове
+  "party1_valid_machine_b" integer, -- действителни гласове (Б) от протоколите с машинно гласуване
+  "party1_valid_machine_m" integer, -- действителни гласове (М) от протоколите с машинно гласуване
+  "party1_invalid_ballots" integer, -- недействителни гласове
+  "party2_id" integer,              -- № П/К/ИК;
+  "party2_valid_ballots" integer,   -- действителни гласове
+  "party2_valid_machine_b" integer, -- действителни гласове (Б) от протоколите с машинно гласуване
+  "party2_valid_machine_m" integer, -- действителни гласове (М) от протоколите с машинно гласуване
+  "party2_invalid_ballots" integer  -- недействителни гласове
 );
 
-CREATE TABLE european_2019_votes(
+CREATE TABLE _2019_european_votes(
   "section_id" text,         -- 1) Пълен код на секция (код на район(2), община(2), адм. район(2), секция(3))
   "district_id" integer,     -- 2) Идентификатор на административна единица, за която се отнася протокола (община, кметство, район)
   "party1_id" integer,       -- № П/К/ИК
@@ -2778,7 +2794,7 @@ CREATE TABLE european_2019_votes(
   "party27_invalid" integer  --  Недействителни гласове
 );
 
-CREATE TABLE european_2019_votes_mv(
+CREATE TABLE _2019_european_votes_mv(
   "section_id" text,         -- 1) Пълен код на секция (код на район(2), община(2), адм. район(2), секция(3))
   "district_id" integer,     -- 2) Идентификатор на административна единица, за която се отнася протокола (община, кметство, район)
   "party1_id" integer,       -- № П/К/ИК
@@ -2864,7 +2880,7 @@ CREATE TABLE european_2019_votes_mv(
   "party27_invalid" integer  --  Недействителни гласове
 );
 
-CREATE TABLE european_2014_votes(
+CREATE TABLE _2014_european_votes(
   "section_id" text,      -- 1) Пълен код на секция(код на район(2), община(2), адм. район(2), секция(3));
   "party1_valid" integer,    -- 2) Гласове(действителни) за:  1. БЪЛГАРСКАТА ЛЕВИЦА
   "party1_invalid" integer,  -- 2) Гласове(недействителни) за:  1. БЪЛГАРСКАТА ЛЕВИЦА
@@ -2917,7 +2933,7 @@ CREATE TABLE european_2014_votes(
   "" text
 );
 
-CREATE TABLE mayor_2019_1_votes(
+CREATE TABLE _2019_mayor_1_votes(
   "section_id" text,                 -- 1) Пълен код на секция(код на район(2), община(2), адм. район(2), секция(3))
   "district_id" text,                -- 2) Идентификатор на административна единица, за която се отнася протокола (община, кметство, район)
   "party1_id" integer,               -- № П/К/ИК
@@ -2952,7 +2968,7 @@ CREATE TABLE mayor_2019_1_votes(
   "party10_invalid_ballots" integer   -- недействителни гласове
 );
 
-CREATE TABLE mayor_municipality_2019_1_votes(
+CREATE TABLE _2019_mayor_municipality_1_votes(
   "section_id" text,                 -- 1) Пълен код на секция(код на район(2), община(2), адм. район(2), секция(3))
   "district_id" text,                -- 2) Идентификатор на административна единица, за която се отнася протокола (община, кметство, район)
   "party1_id" integer,               -- № П/К/ИК
@@ -3017,7 +3033,7 @@ CREATE TABLE mayor_municipality_2019_1_votes(
   "party20_invalid_ballots" integer  -- недействителни гласове
 );
 
-CREATE TABLE mayor_region_2019_1_votes(
+CREATE TABLE _2019_mayor_region_1_votes(
   "section_id" text,                 -- 1) Пълен код на секция(код на район(2), община(2), адм. район(2), секция(3))
   "district_id" text,                -- 2) Идентификатор на административна единица, за която се отнася протокола (община, кметство, район)
   "party1_id" integer,               -- № П/К/ИК
@@ -3076,7 +3092,7 @@ CREATE TABLE mayor_region_2019_1_votes(
   "party18_invalid_ballots" integer  -- недействителни гласове
 );
 
-CREATE TABLE council_region_2019_1_votes(
+CREATE TABLE _2019_council_region_1_votes(
   "section_id" text,                -- 1) Пълен код на секция(код на район(2), община(2), адм. район(2), секция(3))
   "district_id" text,                -- 2) Идентификатор на административна единица, за която се отнася протокола (община, кметство, район)
   "party1_id" integer,               -- № П/К/ИК
@@ -3183,7 +3199,7 @@ CREATE TABLE council_region_2019_1_votes(
   "party34_invalid_ballots" integer  -- недействителни гласове
 );
 
-CREATE TABLE mayor_2019_2_votes(
+CREATE TABLE _2019_mayor_2_votes(
   "section_id" text,                -- 1) Пълен код на секция(код на район(2), община(2), адм. район(2), секция(3))
   "district_id" text,               -- 2) Идентификатор на административна единица, за която се отнася протокола (община, кметство, район)
   "party1_id" integer,              -- № П/К/ИК
@@ -3197,7 +3213,7 @@ CREATE TABLE mayor_2019_2_votes(
   "party3_invalid_ballots" integer  -- недействителни гласове
 );
 
-CREATE TABLE mayor_municipality_2019_2_votes(
+CREATE TABLE _2019_mayor_municipality_2_votes(
   "section_id" text,                -- 1) Пълен код на секция(код на район(2), община(2), адм. район(2), секция(3))
   "district_id" text,               -- 2) Идентификатор на административна единица, за която се отнася протокола (община, кметство, район)
   "party1_id" integer,              -- № П/К/ИК
@@ -3208,7 +3224,7 @@ CREATE TABLE mayor_municipality_2019_2_votes(
   "party2_invalid_ballots" integer  -- недействителни гласове
 );
 
-CREATE TABLE mayor_region_2019_2_votes(
+CREATE TABLE _2019_mayor_region_2_votes(
   "section_id" text,                -- 1) Пълен код на секция(код на район(2), община(2), адм. район(2), секция(3))
   "district_id" text,                -- 2) Идентификатор на административна единица, за която се отнася протокола (община, кметство, район)
   "party1_id" integer,              -- № П/К/ИК
@@ -3219,7 +3235,7 @@ CREATE TABLE mayor_region_2019_2_votes(
   "party2_invalid_ballots" integer  -- недействителни гласове
 );
 
-CREATE TABLE mayor_2015_1_votes(
+CREATE TABLE _2015_mayor_1_votes(
   "section_id" text,                 -- 1) Пълен код на секция(код на район(2), община(2), адм. район(2), секция(3))
   "district_id" text,                -- 2) Идентификатор на административна единица, за която се отнася протокола (община, кметство, район)
   "party1_id" integer,               -- № П/К/ИК
@@ -3262,7 +3278,7 @@ CREATE TABLE mayor_2015_1_votes(
 
 
 
-CREATE TABLE mayor_municipality_2015_1_votes(
+CREATE TABLE _2015_mayor_municipality_1_votes(
   "section_id" text,                 -- 1) Пълен код на секция(код на район(2), община(2), адм. район(2), секция(3))
   "district_id" text,                -- 2) Идентификатор на административна единица, за която се отнася протокола (община, кметство, район)
   "party1_id" integer,               -- № П/К/ИК
@@ -3331,7 +3347,7 @@ CREATE TABLE mayor_municipality_2015_1_votes(
 );
 
 
-CREATE TABLE mayor_region_2015_1_votes(
+CREATE TABLE _2015_mayor_region_1_votes(
   "section_id" text,                 -- 1) Пълен код на секция(код на район(2), община(2), адм. район(2), секция(3))
   "district_id" text,                -- 2) Идентификатор на административна единица, за която се отнася протокола (община, кметство, район)
   "party1_id" integer,               -- № П/К/ИК
@@ -3414,7 +3430,7 @@ CREATE TABLE mayor_region_2015_1_votes(
   "party26_invalid_ballots" integer  -- недействителни гласове
 );
 
-CREATE TABLE council_2015_1_votes(
+CREATE TABLE _2015_council_region_1_votes(
   "section_id" text,                 -- 1) Пълен код на секция(код на район(2), община(2), адм. район(2), секция(3))
   "district_id" text,                -- 2) Идентификатор на административна единица, за която се отнася протокола (община, кметство, район)
   "party1_id" integer,               -- № П/К/ИК
@@ -3517,7 +3533,7 @@ CREATE TABLE council_2015_1_votes(
 
 
 
-CREATE TABLE mayor_2015_2_votes(
+CREATE TABLE _2015_mayor_2_votes(
   "section_id" text,                -- 1) Пълен код на секция(код на район(2), община(2), адм. район(2), секция(3));
   "district_id" text,               -- 2) Идентификатор на административна единица, за която се отнася протокола(община, кметство, район)
   "party1_id" integer,              -- № П/К/ИК
@@ -3532,7 +3548,7 @@ CREATE TABLE mayor_2015_2_votes(
 );
 
 
-CREATE TABLE mayor_municipality_2015_2_votes(
+CREATE TABLE _2015_mayor_municipality_2_votes(
   "section_id" text,                -- 1) Пълен код на секция(код на район(2), община(2), адм. район(2), секция(3));
   "district_id" text,               -- 2) Идентификатор на административна единица, за която се отнася протокола(община, кметство, район)
   "party1_id" integer,              -- № П/К/ИК
@@ -3544,7 +3560,7 @@ CREATE TABLE mayor_municipality_2015_2_votes(
 );
 
 
-CREATE TABLE mayor_region_2015_2_votes(
+CREATE TABLE _2015_mayor_region_2_votes(
   "section_id" text,                -- 1) Пълен код на секция(код на район(2), община(2), адм. район(2), секция(3));
   "district_id" text,               -- 2) Идентификатор на административна единица, за която се отнася протокола(община, кметство, район)
   "party1_id" integer,              -- № П/К/ИК
@@ -3555,7 +3571,7 @@ CREATE TABLE mayor_region_2015_2_votes(
   "party2_invalid_ballots" integer  -- недействителни гласове
 );
 
-CREATE TABLE mayor_2011_1_votes(
+CREATE TABLE _2011_mayor_1_votes(
   "section_id" text,                 -- 1) Пълен код на секция(код на район(2), община(2), адм. район(2), секция(3))
   "district_id" text,                -- 2) Идентификатор на административна единица, за която се отнася протокола (община, кметство, район)
   "party1_id" integer,               -- № П/К/ИК
@@ -3582,7 +3598,7 @@ CREATE TABLE mayor_2011_1_votes(
   "party11_valid_ballots" integer   -- действителни гласове
 );
 
-CREATE TABLE mayor_municipality_2011_1_votes(
+CREATE TABLE _2011_mayor_municipality_1_votes(
     "section_type" text,               -- 1) Знак, определящ вида на секционния протокол
   "section_id" text,                 -- 2) Пълен код на секция(код на район(2), община(2), адм. район(2), секция(3))
   "party1_id" integer,               -- № П/К/ИК
@@ -3635,7 +3651,7 @@ CREATE TABLE mayor_municipality_2011_1_votes(
   "party24_valid_ballots" integer   -- действителни гласове
 );
 
-CREATE TABLE council_2011_1_votes(
+CREATE TABLE _2011_council_region_1_votes(
   "section_type" text,               -- 1) Знак, определящ вида на секционния протокол
   "section_id" text,                 -- 2) Пълен код на секция(код на област(2), община(2), адм. район(2), секция(3));
   "party1_id" integer,               -- № П/К/ИК
@@ -3734,7 +3750,7 @@ CREATE TABLE council_2011_1_votes(
   "party47_valid_ballots" integer    -- действителни гласове
 );
 
-CREATE TABLE mayor_2011_2_votes(
+CREATE TABLE _2011_mayor_2_votes(
   "section_id" text,                -- 1) Пълен код на секция(код на район(2), община(2), адм. район(2), секция(3));
   "district_id" text,               -- 2) Идентификатор на административна единица, за която се отнася протокола(община, кметство, район)
   "party1_id" integer,              -- № П/К/ИК
@@ -3745,7 +3761,7 @@ CREATE TABLE mayor_2011_2_votes(
   "party3_valid_ballots" integer    -- действителни гласове
 );
 
-CREATE TABLE mayor_municipality_2011_2_votes(
+CREATE TABLE _2011_mayor_municipality_2_votes(
   "section_id" text,              -- 1) Пълен код на секция(код на район(2), община(2), адм. район(2), секция(3));
   "district_id" text,             -- 2) Идентификатор на административна единица, за която се отнася протокола(община, кметство, район)
   "party1_id" integer,            -- № П/К/ИК
