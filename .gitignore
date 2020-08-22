@@ -1,7 +1,10 @@
 node_modules
 db/all_elections.db
+db/all_elections.db.bak
 db/sections.db
 db/voting_locations_2019.sql
+db/queries.sql
+db/voting_locations_2019_n.sql
 files/parliament2009
 files/parliament2013
 files/parliament2014
