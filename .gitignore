@@ -1,11 +1,8 @@
 node_modules
-db/all_elections.db
-db/all_elections.db.bak
-db/sections.db
+db/*.db
+db/*.bak
 db/queries.sql
 db/dumps
-db/mayor_2019.db
-db/mayor_2019.db.bak
 files/parliament2009
 files/parliament2013
 files/parliament2014

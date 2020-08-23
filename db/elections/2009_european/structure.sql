@@ -1,0 +1,275 @@
+CREATE TABLE _2009_european_preferences(
+  "section_id" text,      -- 1) Пълен код на секция(код на район(2), община(2), адм. район(2), секция(3))
+  "party_1_candidate_1" integer,
+  "party_1_candidate_2" integer,
+  "party_1_candidate_3" integer,
+  "party_1_candidate_4" integer,
+  "party_1_candidate_5" integer,
+  "party_1_candidate_6" integer,
+  "party_1_candidate_7" integer,
+  "party_1_candidate_8" integer,
+  "party_1_candidate_9" integer,
+  "party_1_candidate_10" integer,
+  "party_1_candidate_11" integer,
+  "party_1_candidate_12" integer,
+  "party_1_candidate_13" integer,
+  "party_1_candidate_14" integer,
+  "party_1_candidate_15" integer,
+  "party_1_candidate_16" integer,
+  "party_1_candidate_17" integer,
+  "party_2_candidate_1" integer,
+  "party_2_candidate_2" integer,
+  "party_2_candidate_3" integer,
+  "party_2_candidate_4" integer,
+  "party_2_candidate_5" integer,
+  "party_2_candidate_6" integer,
+  "party_2_candidate_7" integer,
+  "party_2_candidate_8" integer,
+  "party_2_candidate_9" integer,
+  "party_2_candidate_10" integer,
+  "party_2_candidate_11" integer,
+  "party_2_candidate_12" integer,
+  "party_2_candidate_13" integer,
+  "party_2_candidate_14" integer,
+  "party_2_candidate_15" integer,
+  "party_2_candidate_16" integer,
+  "party_2_candidate_17" integer,
+  "party_3_candidate_1" integer,
+  "party_3_candidate_2" integer,
+  "party_3_candidate_3" integer,
+  "party_3_candidate_4" integer,
+  "party_3_candidate_5" integer,
+  "party_3_candidate_6" integer,
+  "party_3_candidate_7" integer,
+  "party_3_candidate_8" integer,
+  "party_3_candidate_9" integer,
+  "party_3_candidate_10" integer,
+  "party_3_candidate_11" integer,
+  "party_3_candidate_12" integer,
+  "party_3_candidate_13" integer,
+  "party_3_candidate_14" integer,
+  "party_3_candidate_15" integer,
+  "party_3_candidate_16" integer,
+  "party_3_candidate_17" integer,
+  "party_4_candidate_1" integer,
+  "party_4_candidate_2" integer,
+  "party_4_candidate_3" integer,
+  "party_4_candidate_4" integer,
+  "party_4_candidate_5" integer,
+  "party_4_candidate_6" integer,
+  "party_4_candidate_7" integer,
+  "party_4_candidate_8" integer,
+  "party_4_candidate_9" integer,
+  "party_4_candidate_10" integer,
+  "party_4_candidate_11" integer,
+  "party_4_candidate_12" integer,
+  "party_4_candidate_13" integer,
+  "party_4_candidate_14" integer,
+  "party_4_candidate_15" integer,
+  "party_4_candidate_16" integer,
+  "party_4_candidate_17" integer,
+  "party_5_candidate_1" integer,
+  "party_5_candidate_2" integer,
+  "party_5_candidate_3" integer,
+  "party_5_candidate_4" integer,
+  "party_5_candidate_5" integer,
+  "party_5_candidate_6" integer,
+  "party_5_candidate_7" integer,
+  "party_5_candidate_8" integer,
+  "party_5_candidate_9" integer,
+  "party_5_candidate_10" integer,
+  "party_5_candidate_11" integer,
+  "party_5_candidate_12" integer,
+  "party_5_candidate_13" integer,
+  "party_5_candidate_14" integer,
+  "party_5_candidate_15" integer,
+  "party_5_candidate_16" integer,
+  "party_5_candidate_17" integer,
+  "party_6_candidate_1" integer,
+  "party_6_candidate_2" integer,
+  "party_6_candidate_3" integer,
+  "party_6_candidate_4" integer,
+  "party_6_candidate_5" integer,
+  "party_6_candidate_6" integer,
+  "party_6_candidate_7" integer,
+  "party_6_candidate_8" integer,
+  "party_6_candidate_9" integer,
+  "party_6_candidate_10" integer,
+  "party_6_candidate_11" integer,
+  "party_6_candidate_12" integer,
+  "party_6_candidate_13" integer,
+  "party_6_candidate_14" integer,
+  "party_6_candidate_15" integer,
+  "party_6_candidate_16" integer,
+  "party_6_candidate_17" integer,
+  "party_7_candidate_1" integer,
+  "party_7_candidate_2" integer,
+  "party_7_candidate_3" integer,
+  "party_7_candidate_4" integer,
+  "party_7_candidate_5" integer,
+  "party_7_candidate_6" integer,
+  "party_7_candidate_7" integer,
+  "party_7_candidate_8" integer,
+  "party_7_candidate_9" integer,
+  "party_7_candidate_10" integer,
+  "party_7_candidate_11" integer,
+  "party_7_candidate_12" integer,
+  "party_7_candidate_13" integer,
+  "party_7_candidate_14" integer,
+  "party_7_candidate_15" integer,
+  "party_7_candidate_16" integer,
+  "party_7_candidate_17" integer,
+  "party_8_candidate_1" integer,
+  "party_8_candidate_2" integer,
+  "party_8_candidate_3" integer,
+  "party_8_candidate_4" integer,
+  "party_8_candidate_5" integer,
+  "party_8_candidate_6" integer,
+  "party_8_candidate_7" integer,
+  "party_8_candidate_8" integer,
+  "party_8_candidate_9" integer,
+  "party_8_candidate_10" integer,
+  "party_8_candidate_11" integer,
+  "party_8_candidate_12" integer,
+  "party_8_candidate_13" integer,
+  "party_8_candidate_14" integer,
+  "party_8_candidate_15" integer,
+  "party_8_candidate_16" integer,
+  "party_8_candidate_17" integer,
+  "party_9_candidate_1" integer,
+  "party_9_candidate_2" integer,
+  "party_9_candidate_3" integer,
+  "party_9_candidate_4" integer,
+  "party_9_candidate_5" integer,
+  "party_9_candidate_6" integer,
+  "party_9_candidate_7" integer,
+  "party_9_candidate_8" integer,
+  "party_9_candidate_9" integer,
+  "party_9_candidate_10" integer,
+  "party_9_candidate_11" integer,
+  "party_9_candidate_12" integer,
+  "party_9_candidate_13" integer,
+  "party_9_candidate_14" integer,
+  "party_9_candidate_15" integer,
+  "party_9_candidate_16" integer,
+  "party_9_candidate_17" integer,
+  "party_10_candidate_1" integer,
+  "party_10_candidate_2" integer,
+  "party_10_candidate_3" integer,
+  "party_10_candidate_4" integer,
+  "party_10_candidate_5" integer,
+  "party_10_candidate_6" integer,
+  "party_10_candidate_7" integer,
+  "party_10_candidate_8" integer,
+  "party_10_candidate_9" integer,
+  "party_10_candidate_10" integer,
+  "party_10_candidate_11" integer,
+  "party_10_candidate_12" integer,
+  "party_10_candidate_13" integer,
+  "party_10_candidate_14" integer,
+  "party_10_candidate_15" integer,
+  "party_10_candidate_16" integer,
+  "party_10_candidate_17" integer,
+  "party_11_candidate_1" integer,
+  "party_11_candidate_2" integer,
+  "party_11_candidate_3" integer,
+  "party_11_candidate_4" integer,
+  "party_11_candidate_5" integer,
+  "party_11_candidate_6" integer,
+  "party_11_candidate_7" integer,
+  "party_11_candidate_8" integer,
+  "party_11_candidate_9" integer,
+  "party_11_candidate_10" integer,
+  "party_11_candidate_11" integer,
+  "party_11_candidate_12" integer,
+  "party_11_candidate_13" integer,
+  "party_11_candidate_14" integer,
+  "party_11_candidate_15" integer,
+  "party_11_candidate_16" integer,
+  "party_11_candidate_17" integer,
+  "party_12_candidate_1" integer,
+  "party_12_candidate_2" integer,
+  "party_12_candidate_3" integer,
+  "party_12_candidate_4" integer,
+  "party_12_candidate_5" integer,
+  "party_12_candidate_6" integer,
+  "party_12_candidate_7" integer,
+  "party_12_candidate_8" integer,
+  "party_12_candidate_9" integer,
+  "party_12_candidate_10" integer,
+  "party_12_candidate_11" integer,
+  "party_12_candidate_12" integer,
+  "party_12_candidate_13" integer,
+  "party_12_candidate_14" integer,
+  "party_12_candidate_15" integer,
+  "party_12_candidate_16" integer,
+  "party_12_candidate_17" integer,
+  "party_13_candidate_1" integer,
+  "party_13_candidate_2" integer,
+  "party_13_candidate_3" integer,
+  "party_13_candidate_4" integer,
+  "party_13_candidate_5" integer,
+  "party_13_candidate_6" integer,
+  "party_13_candidate_7" integer,
+  "party_13_candidate_8" integer,
+  "party_13_candidate_9" integer,
+  "party_13_candidate_10" integer,
+  "party_13_candidate_11" integer,
+  "party_13_candidate_12" integer,
+  "party_13_candidate_13" integer,
+  "party_13_candidate_14" integer,
+  "party_13_candidate_15" integer,
+  "party_13_candidate_16" integer,
+  "party_13_candidate_17" integer,
+  "party_14_candidate_1" integer
+  "" text
+);
+
+CREATE TABLE _2009_european_protocols(
+  "section_id" text,                               -- 1) Пълен код на секция(код на район(2), община(2), адм. район(2), секция(3));
+  "total_voters" integer,                          -- 2) Брой на избирателите в основния и допълнителния избирателен списък (т.1 = т.2 + т.3 + т.4)
+  "total_voters_in_section" integer,               -- 3) Брой на избирателите в основния избирателен списък (равен на броя на избирателите в част I и част II на основния избирателен списък при предаването му на СИК)
+  "added_on_elections_day" integer,                -- 4) Брой на избирателите, вписани от СИК в допълнителната страница на основния избирателен списък в изборния ден (т.3 >= т.8 + т.9 + т.10 + т.11 + т.12)
+  "added_voters" integer,                          -- 5) Брой на избирателите в допълнителния избирателен списък (т.4 = т.5 + т.6 + т.7)
+  "vote_another_place_declaration_count" integer,  -- 6) Брой на удостоверенията за гласуване на друго място
+  "student_declaration_count" integer,             -- 7) Брой на декларациите на ученици и студенти по чл. 39, ал.10
+  "voters_with_eye_problems_count" integer,        -- 8) Брой на декларациите на избиратели с физически или зрителни увреждания по чл. 96, ал. 3
+  "decl31_a6" integer,                             -- 9) Брой на декларациите по чл. 31, ал.6
+  "total_declarations_count" integer,              -- 10) Брой на декларациите по чл. 38
+  "declarations_vote_outside_eu" integer,          -- 11) Брой на декларациите по чл. 46, ал.9 (за гласуващите в държави извън ЕС)
+  "declarations_vote_eu" integer,                  -- 12) Брой на декларациите по чл. 46, ал.13 (за гласуващите в други държави-членки на ЕС)
+  "total_declarations_a_91" integer,               -- 13) Брой на декларациите по чл. 91
+  "voters_by_signature" integer,                   -- 14) Брой на гласувалите избиратели според подписите в избирателните списъци (основен и допълнителен)
+  "ballots_in_box" integer,                        -- 15) Брой на намерените в избирателната кутия пликове
+  "missing_ballots" integer,                       -- 16) Брой на пликовете, които не съдържат бюлетини по установения образец, включително празните пликове
+  "ballots_with_special_symbols" integer,          -- 17) Брой на пликовете, които съдържат бюлетини с вписани в тях специални символи като букви и числа, както и с поставени други предмети, позволяващи да се разкрие самоличността на избирателя
+  "more_than_one_ballot" integer,                  -- 18) Брой на пликовете, които съдържат повече от една бюлетина по установения образец за различни кандидатски листи
+  "invalid_votes" integer,                         -- 19) Брой на недействителните гласове (т.18 = т.15 + т.16 + т.17)
+  "more_than_one_identical_ballot" integer,        -- 20) Брой на пликовете, съдържащи една или повече бюлетини по установения образец за една и съща кандидатска листа и еднакво предпочитание (преференция)
+  "more_ballots_different_preferences" integer,    -- 21) Брой на пликовете, в които са намерени повече от една бюлетина по установения образец за една и съща кандидатска листа, но с отбелязани различни предпочитания (преференции)
+  "ballots_without_preference" integer,            -- 22) Брой пликове, съдържащи една или повече бюлетини по установения образец за една и съща кандидатска листа без отбелязани предпочитания (преференции)
+  "invalid_votes_2" integer,                       -- 23) Брой на действителните гласове (т.22 = т.19 + т.20 + т.21)
+  "invalid_ballots" integer,                       -- 24) недействителни бюлетини по чл.95, ал.11
+  "votes_for_party1" integer,                      -- 25) Гласове за:  1. "Ред, законност и справедливост"
+  "votes_for_party2" integer,                      -- 26) Гласове за:  2. ПП "ЛИДЕР"
+  "votes_for_party3" integer,                      -- 27) Гласове за:  3. ГЕРБ
+  "votes_for_party4" integer,                      -- 28) Гласове за:  4. ДПС "Движение за права и свободи"
+  "votes_for_party5" integer,                      -- 29) Гласове за:  5. Партия АТАКА
+  "votes_for_party6" integer,                      -- 30) Гласове за:  6. КОАЛИЦИЯ ЗА БЪЛГАРИЯ
+  "votes_for_party7" integer,                      -- 31) Гласове за:  7. СЪЮЗ НА ПАТРИОТИЧНИТЕ СИЛИ "ЗАЩИТА"
+  "votes_for_party8" integer,                      -- 32) Гласове за:  8. НДСВ
+  "votes_for_party9" integer,                      -- 33) Гласове за:  9. БЪЛГАРСКА СОЦИАЛДЕМОКРАЦИЯ
+  "votes_for_party10" integer,                     -- 34) Гласове за: 10. "Българска нова демокрация" (БНД)
+  "votes_for_party11" integer,                     -- 35) Гласове за: 11. "СИНЯТА КОАЛИЦИЯ"
+  "votes_for_party12" integer,                     -- 36) Гласове за: 12. ПП ЗЕЛЕНИТЕ
+  "votes_for_party13" integer,                     -- 37) Гласове за: 13. НАПРЕД ВМРО - Българско национално движение, Земеделски народен съюз, Движение Гергьовден, Единна Народна Партия
+  "votes_for_party14" integer,                     -- 38) Гласове за: 14. Инициативен комитет Чавдар Иванов Николов
+  "" text
+);
+
+CREATE TABLE _2009_european_sections(
+  "section_id" text,    -- 1) Пълен код на секция(код на район(2), община(2), адм. район(2), секция(3))
+  "location_name" text, -- 2) Име на Населено място
+  "ekatte" integer,     -- 3) ЕКАТТЕ на населеното място
+  "" text
+);
