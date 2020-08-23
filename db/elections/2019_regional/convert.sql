@@ -125,7 +125,7 @@ CASE
 END, replace(replace(location_name, 'ГР.', ''), 'С.', '') from voting_locations_2019;
 insert into locations(id, location_type, location_name) select 999, 6, 'Цялата страна';
 
-insert into temp (region_code, location_id, full_code, location_name) select distinct locations.district_id || CASE WHEN cast(municipality_id as number) < 10 THEN '0' || municipality_id ELSE municipality_id END , locations.id, CASE WHEN cast(locations.district_id as number) < 10 THEN '0' || locations.district_id ELSE locations.district_id END || CASE WHEN cast(municipalities.municipality_code as number) < 10 THEN '0' || municipalities.municipality_code ELSE municipalities.municipality_code END || '. ', location_name from locations join municipalities on municipalities.id=locations.municipality_id;
+insert into temp (region_code, location_id, full_code, location_name) select distinct locations.district_id || municipality_code, locations.id, CASE WHEN cast(locations.district_id as number) < 10 THEN '0' || locations.district_id ELSE locations.district_id END || municipalities.municipality_code || '. ', location_name from locations join municipalities on municipalities.id=locations.municipality_id;
 
 insert into location_neighborhoods (location_id, neighborhood) select distinct location_id, replace(neighborhood, '"', '') from voting_locations_2019 where neighborhood != '';
 INSERT OR IGNORE INTO voting_locations (location_id, cik_address, address, lat, lng, postcode, location_neighborhood_id) select location_id, address, replace(formatted_address, '"', ''), lat, lng, replace(postcode, '"', ''), (select id from location_neighborhoods where location_neighborhoods.location_id=voting_locations_2019.location_id and neighborhood=replace(voting_locations_2019.neighborhood, '"', '')) from voting_locations_2019;
@@ -158,20 +158,22 @@ INSERT OR IGNORE INTO parties (election_id, location_id, ballot_number, name) se
 -- drop table _2019_mayor_2_local_parties;
 INSERT OR IGNORE INTO parties (election_id, location_id, ballot_number, name) select 7, (select location_id from temp where temp.full_code=id), party_id, party_name from _2019_mayor_region_2_local_parties;
 -- drop table _2019_mayor_region_2_local_parties;
+
 insert into candidates (election_id, location_id, party_id, candidate_id, candidate_name) select 1, (select location_id from temp where temp.region_code=cast(region_id as integer)), party_id, candidate_id, candidate_name from _2019_mayor_municipality_1_local_candidates;
 -- drop table _2019_mayor_municipality_1_local_candidates;
-insert into candidates (election_id, location_id, party_id, candidate_id, candidate_name) select 2, (select location_id from temp where temp.full_code=substr(_2019_mayor_1_local_candidates.region_name, 0, 7)), party_id, candidate_id, candidate_name from _2019_mayor_1_local_candidates;
+insert into candidates (election_id, location_id, party_id, candidate_id, candidate_name) select 2, (select location_id from temp where temp.full_code=region_id, party_id), candidate_id, candidate_name from _2019_mayor_1_local_candidates;
 -- drop table _2019_mayor_1_local_candidates;
-insert into candidates (election_id, location_id, party_id, candidate_id, candidate_name) select 3, (select location_id from temp where temp.full_code=substr(_2019_mayor_region_1_local_candidates.region_name, 0, 7)), party_id, candidate_id, candidate_name from _2019_mayor_region_1_local_candidates;
+insert into candidates (election_id, location_id, party_id, candidate_id, candidate_name) select 3, (select location_id from temp where temp.full_code=region_id), party_id, candidate_id, candidate_name from _2019_mayor_region_1_local_candidates;
 -- drop table _2019_mayor_region_1_local_candidates;
-insert into candidates (election_id, location_id, party_id, candidate_id, candidate_name) select 4, (select location_id from temp where temp.full_code=substr(_2019_council_region_1_local_candidates.region_name, 0, 7)), party_id, candidate_id, candidate_name from _2019_council_region_1_local_candidates;
+insert into candidates (election_id, location_id, party_id, candidate_id, candidate_name) select 4, (select location_id from temp where temp.full_code=region_id), party_id, candidate_id, candidate_name from _2019_council_region_1_local_candidates;
 -- drop table _2019_council_region_1_local_candidates;
-insert into candidates (election_id, location_id, party_id, candidate_id, candidate_name) select 5, (select location_id from temp where temp.full_code=substr(_2019_mayor_municipality_2_local_candidates.region_name, 0, 7)), party_id, candidate_id, candidate_name from _2019_mayor_municipality_2_local_candidates;
+insert into candidates (election_id, location_id, party_id, candidate_id, candidate_name) select 5, (select location_id from temp where temp.full_code=region_id), party_id, candidate_id, candidate_name from _2019_mayor_municipality_2_local_candidates;
 -- drop table _2019_mayor_municipality_2_local_candidates;
-insert into candidates (election_id, location_id, party_id, candidate_id, candidate_name) select 6, (select location_id from temp where temp.full_code=substr(_2019_mayor_2_local_candidates.region_name, 0, 7)), party_id, candidate_id, candidate_name from _2019_mayor_2_local_candidates;
+insert into candidates (election_id, location_id, party_id, candidate_id, candidate_name) select 6, (select location_id from temp where temp.full_code=region_id), party_id, candidate_id, candidate_name from _2019_mayor_2_local_candidates;
 -- drop table _2019_mayor_2_local_candidates;
-insert into candidates (election_id, location_id, party_id, candidate_id, candidate_name) select 7, (select location_id from temp where temp.full_code=substr(_2019_mayor_region_2_local_candidates.region_name, 0, 7)), party_id, candidate_id, candidate_name from _2019_mayor_region_2_local_candidates;
+insert into candidates (election_id, location_id, party_id, candidate_id, candidate_name) select 7, (select location_id from temp where temp.full_code=region_id), party_id, candidate_id, candidate_name from _2019_mayor_region_2_local_candidates;
 -- drop table _2019_mayor_region_2_local_candidates;
+
 INSERT OR IGNORE INTO sections (election_period_id, location_id, section_id, mobile_section) select 1, ekatte, section_id, mobile_section from _2019_mayor_municipality_1_sections;
 -- drop table _2019_mayor_municipality_1_sections;
 INSERT OR IGNORE INTO sections (election_period_id, location_id, section_id, mobile_section) select 1, ekatte, section_id, mobile_section from _2019_mayor_1_sections;

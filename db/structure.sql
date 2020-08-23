@@ -71,7 +71,7 @@ CREATE TABLE districts(
 
 drop table if exists municipalities;
 CREATE TABLE municipalities(
-  "id" integer,
+  "id" integer primary key autoincrement,
   "district_id" integer,
   "municipality_code" text,
   "municipality_name" text,
