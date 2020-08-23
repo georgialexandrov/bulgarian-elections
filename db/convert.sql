@@ -34,8 +34,7 @@ CREATE TABLE voting_locations(
   "location_neighborhood_id" integer,
   "postcode" text,
   FOREIGN KEY(location_id) REFERENCES locations(id),
-  FOREIGN KEY(location_neighborhood_id) REFERENCES location_neighborhoods(id),
-  UNIQUE(location_id,address)
+  FOREIGN KEY(location_neighborhood_id) REFERENCES location_neighborhoods(id)
 );
 
 drop table if exists protocols;
@@ -101,12 +100,10 @@ CREATE TABLE locations(
   "id" integer,
   "district_id" integer,
   "municipality_id" integer,
-  "municipality_region_id" integer,
   "location_type" integer,
   "location_name" text,
   FOREIGN KEY(district_id) REFERENCES districts(id),
-  FOREIGN KEY(municipality_id) REFERENCES municipalities(id),
-  FOREIGN KEY(municipality_region_id) REFERENCES municipality_regions(id)
+  FOREIGN KEY(municipality_id) REFERENCES municipalities(id)  
 );
 
 drop table if exists location_types;
@@ -883,7 +880,7 @@ insert into location_types values
 (6, 'Цялата страна');
 
 
-insert into locations (id, district_id, municipality_id, municipality_region_id, location_type, location_name) select distinct location_id, region_id, (select id from municipalities where district_id=region_id and cast(municipalities.municipality_code as integer)=voting_locations_2019.municipality_id), municipality_region_code
+insert into locations (id, district_id, municipality_id, location_type, location_name) select distinct location_id, region_id, (select id from municipalities where district_id=region_id and cast(municipalities.municipality_code as integer)=voting_locations_2019.municipality_id),
 CASE 
 	WHEN replace(location_name, 'ГР.', '') == region_name THEN 1
 	ELSE 
@@ -904,7 +901,7 @@ INSERT OR IGNORE INTO voting_locations (location_id, cik_address, address, lat, 
 INSERT OR IGNORE INTO voting_locations (location_id, cik_address, address, lat, lng, postcode, location_neighborhood_id) select location_id, address, replace(formatted_address, '"', ''), lat, lng, replace(postcode, '"', ''), (select id from location_neighborhoods where location_neighborhoods.location_id=voting_locations_2016.location_id and neighborhood=replace(voting_locations_2016.neighborhood, '"', '')) from voting_locations_2016;
 INSERT OR IGNORE INTO voting_locations (location_id, cik_address, address, lat, lng, postcode, location_neighborhood_id) select location_id, address, replace(formatted_address, '"', ''), lat, lng, replace(postcode, '"', ''), (select id from location_neighborhoods where location_neighborhoods.location_id=voting_locations_2015.location_id and neighborhood=replace(voting_locations_2015.neighborhood, '"', '')) from voting_locations_2015;
 
-insert into temp (region_code, location_id, full_code, location_name) select distinct district_id || CASE WHEN cast(municipality_id as number) < 10 THEN '0' || municipality_id ELSE municipality_id END , id, CASE WHEN cast(district_id as number) < 10 THEN '0' || district_id ELSE district_id END || CASE WHEN cast(municipality_id as number) < 10 THEN '0' || municipality_id ELSE municipality_id END || '. ', location_name from locations;
+insert into temp (region_code, location_id, full_code, location_name) select distinct locations.district_id || CASE WHEN cast(municipality_id as number) < 10 THEN '0' || municipality_id ELSE municipality_id END , locations.id, CASE WHEN cast(locations.district_id as number) < 10 THEN '0' || locations.district_id ELSE locations.district_id END || CASE WHEN cast(municipalities.municipality_code as number) < 10 THEN '0' || municipalities.municipality_code ELSE municipalities.municipality_code END || '. ', location_name from locations join municipalities on municipalities.id=locations.municipality_id;
 
 INSERT OR IGNORE INTO parties (election_id, ballot_number, location_id, name) select 1, party_id, 999, party_name from _2019_mayor_municipality_1_cik_parties;
 drop table _2019_mayor_municipality_1_cik_parties;
