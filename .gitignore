@@ -29,3 +29,4 @@ files/section_addresses_2017.xlsx
 files/section_addresses_2019_spring.xlsx
 .DS_Store
 .env
+server/node_modules
