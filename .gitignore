@@ -30,3 +30,4 @@ files/section_addresses_2019_spring.xlsx
 .DS_Store
 .env
 server/node_modules
+elections/node_modules
