@@ -1,5 +1,10 @@
 #!/bin/bash
 
+# https://results.cik.bg/pi2014/rezultati/index.html
+# curl https://results.cik.bg/pi2014/csv.zip --output ./files/parliament2014.zip
+# rm -rf ./files/parliament_2014
+# unzip ./files/parliament2014.zip -d ./files/parliament_2014
+
 rm db/parliament_2014.db
 cat ./db/elections/2014_parliament/structure.sql | sqlite3 db/parliament_2014.db
 

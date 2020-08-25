@@ -1,5 +1,9 @@
 #!/bin/bash
 
+# curl https://results.cik.bg/ep2019/csv.zip --output ./files/european2019.zip
+# unzip ./files/european2019.zip -d ./files/european_2019
+
+
 rm db/european_2019.db
 cat ./db/elections/2019_european/structure.sql | sqlite3 db/european_2019.db
 

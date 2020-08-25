@@ -62,15 +62,6 @@ insert into municipalities (id, district_id, municipality_code, municipality_nam
 
 insert into municipality_regions (id, municipality_id, region_code, region_name) select distinct municipality_id + municipality_region_code, municipality_region_code, CASE WHEN CAST(municipality_region_code as NUMBER) < 10 THEN '0' || municipality_region_code ELSE municipality_region_code END, municipality_region_name from voting_locations_2019 where municipality_region_code != '';
 
-insert into location_types values 
-(1, 'Областен град'),
-(2, 'Община'),
-(3, 'Град'),
-(4, 'Село'),
-(5, 'Чужбина'),
-(6, 'Цялата страна');
-
-
 insert into locations (id, district_id, municipality_id, location_type, location_name) select distinct location_id, region_id, (select id from municipalities where district_id=region_id and cast(municipalities.municipality_code as integer)=voting_locations_2019.municipality_id),
 CASE 
 	WHEN replace(location_name, 'ГР.', '') == region_name THEN 1

@@ -1,5 +1,9 @@
 #!/bin/bash
 
+# https://results.cik.bg/pvrnr2016/tur1/president/
+# curl https://results.cik.bg/pvrnr2016/tur1/export.zip --output ./files/president2016.zip
+# unzip ./files/president2016.zip -d ./files/president_2016
+
 rm db/president_2016.db
 cat ./db/elections/2016_president/structure.sql | sqlite3 db/president_2016.db
 

@@ -1,6 +1,5 @@
 node_modules
 db/*.db
-db/*.bak
 db/queries.sql
 db/dumps
 files/parliament2009
@@ -27,3 +26,4 @@ files/section_addresses_2019_spring.xlsx
 .DS_Store
 .env
 server/node_modules
+elections/.cache

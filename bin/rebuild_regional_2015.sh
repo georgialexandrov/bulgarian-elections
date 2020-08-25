@@ -1,5 +1,9 @@
 #!/bin/bash
 
+# https://results.cik.bg/minr2015/tur1/mestni/0101.html
+# curl https://results.cik.bg/minr2015/tur1/mi2015.zip --output ./files/mayor2015_1.zip
+# curl https://results.cik.bg/minr2015/tur2/mi2015.zip --output ./files/mayor2015_2.zip
+
 rm db/regional_2015.db
 cat ./db/2015_regional/structure.sql | sqlite3 db/regional_2015.db
 

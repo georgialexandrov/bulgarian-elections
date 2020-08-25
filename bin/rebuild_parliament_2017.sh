@@ -1,5 +1,10 @@
 #!/bin/bash
 
+# https://results.cik.bg/pi2017/aktivnost/index.html
+# curl https://results.cik.bg/pi2017/export.zip --output ./files/parliament2017.zip
+# rm -rf ./files/parliament_2017
+# unzip ./files/parliament2017.zip -d ./files/parliament_2017
+
 rm db/parliament_2017.db
 cat ./db/elections/2017_parliament/structure.sql | sqlite3 db/parliament_2017.db
 

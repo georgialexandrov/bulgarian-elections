@@ -1,5 +1,9 @@
 #!/bin/bash
 
+# https://results.cik.bg/ep2014/rezultati/index.html
+# curl https://results.cik.bg/ep2014/export.zip --output ./files/european2014.zip
+# unzip ./files/european2014.zip -d ./files/european_2014
+
 rm db/european_2014.db
 cat ./db/elections/european_2014/structure.sql | sqlite3 db/european_2014.db
 

@@ -1,5 +1,13 @@
 #!/bin/bash
 
+# https://results.cik.bg/pi2013/rezultati/index.html
+# curl https://results.cik.bg/pi2013/export.zip --output ./files/parliament2013.zip
+# rm -rf ./files/parliament_2013
+# unzip ./files/parliament2013.zip -d ./files/parliament_2013
+# mv ./files/parliament_2013/export/* ./files/parliament_2013/
+# rm -rf ./files/parliament_2013/export
+
+
 rm db/parliament_2013.db
 cat ./db/elections/2013_parliament/structure.sql | sqlite3 db/parliament_2013.db
 
