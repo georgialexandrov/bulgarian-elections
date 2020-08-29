@@ -1,12 +1,11 @@
-drop table if exists election_periods;
-create table election_periods(
+
+create table if not exists election_periods(
   "id" integer,
   "name" text,
   unique(name)
 );
 
-drop table if exists elections;
-create table elections(
+create table if not exists elections(
   "id" integer,
   "name" text,
   "round1_date" date,
@@ -15,8 +14,7 @@ create table elections(
   unique(name)
 );
 
-drop table if exists temp_votes;
-create table temp_votes(
+create table if not exists temp_votes(
   "election_id" integer,
   "round" integer,
   "section_id" integer,
@@ -30,8 +28,7 @@ create table temp_votes(
 );
 
 
-drop table if exists votes;
-create table votes(
+create table if not exists votes(
   "election_id" integer,
   "round" integer,
   "section_id" integer,
@@ -44,8 +41,7 @@ create table votes(
 );
 
 
-drop table if exists voting_locations;
-create table voting_locations(
+create table if not exists voting_locations(
   "id" integer primary key autoincrement,
   "location_id" integer,
   "cik_address" text,
@@ -54,71 +50,52 @@ create table voting_locations(
   "lng" number,
   "location_neighborhood_id" integer,
   "postcode" text,
+  unique(location_id,cik_address),
   foreign key(location_id) references locations(id),
   foreign key(location_neighborhood_id) references location_neighborhoods(id)
 );
 
-drop table if exists temp_protocols;
-create table temp_protocols(
+create table if not exists temp_protocols(
   "election_id" integer,
   "round" integer,
   "section_id" integer,
   "section_code" text,
   "section_type" integer,
-  "ballots_available" integer,
   "total_voters" integer,
-  "added_voters" integer,
   "voters_by_signature" integer,
-  "unused_ballots" integer,
-  "destroyed_ballots" integer,
-  "invalid_ballots_invalid_sn" integer,
-  "invalid_ballots_photo" integer,
-  "invalid_ballots_public" integer,
-  "invalid_ballots_mistake" integer,
   "ballots_in_box" integer,
   "invalid_ballots_in_box" integer,
   "valid_ballots_in_box" integer,
-  "valid_no_one_all" integer,
-  "invalid_empty_or_onclear" integer,
+  "no_one" integer,
+  "machine_voting" boolean,
   foreign key(election_id) references elections(id),
   foreign key(section_id) references voting_locations_2019(section_id)
 );
 
 
-drop table if exists protocols;
-create table protocols(
+create table if not exists protocols(
   "election_id" integer,
   "round" integer,
   "section_id" integer,
   "section_type" integer,
-  "ballots_available" integer,
   "total_voters" integer,
-  "added_voters" integer,
   "voters_by_signature" integer,
-  "unused_ballots" integer,
-  "destroyed_ballots" integer,
-  "invalid_ballots_invalid_sn" integer,
-  "invalid_ballots_photo" integer,
-  "invalid_ballots_public" integer,
-  "invalid_ballots_mistake" integer,
   "ballots_in_box" integer,
   "invalid_ballots_in_box" integer,
   "valid_ballots_in_box" integer,
-  "valid_no_one_all" integer,
-  "invalid_empty_or_onclear" integer,
+  "no_one" integer,
+  "machine_voting" boolean,
   foreign key(election_id) references elections(id),
   foreign key(section_id) references voting_locations_2019(section_id)
 );
 
-drop table if exists districts;
-create table districts(
+create table if not exists districts(
   "id" integer primary key,
   "district_code" text,
   "district_name" text
 );
 
-drop table if exists municipalities;
-create table municipalities(
+create table if not exists municipalities(
   "id" integer primary key autoincrement,
   "district_id" integer,
   "municipality_code" text,
@@ -126,8 +103,7 @@ create table municipalities(
   foreign key(district_id) references districts(id)
 );
 
-drop table if exists municipality_regions;
-create table municipality_regions(
+create table if not exists municipality_regions(
   "id" integer,
   "municipality_id" integer,
   "region_code" text,
@@ -135,16 +111,14 @@ create table municipality_regions(
   foreign key(municipality_id) references municipalities(id)
 );
 
-drop table if exists location_neighborhoods;
-create table location_neighborhoods(
+create table if not exists location_neighborhoods(
   "id" integer primary key autoincrement,
   "location_id" integer,
   "neighborhood" text,
   foreign key(location_id) references locations(id)
 );
 
-drop table if exists locations;
-create table locations(
+create table if not exists locations(
   "id" integer primary key,
   "district_id" integer,
   "municipality_id" integer,
@@ -152,16 +126,15 @@ create table locations(
   "location_name" text,
   "ekatte" text,
   foreign key(district_id) references districts(id),
-  foreign key(municipality_id) references municipalities(id)  
+  foreign key(municipality_id) references municipalities(id)
 );
 
-drop table if exists location_types;
-create table location_types(
+create table if not exists location_types(
   "id" integer,
   "name" text
 );
 
-insert into location_types values 
+insert or ignore into location_types values
 (1, 'Областен град'),
 (2, 'Община'),
 (3, 'Град'),
@@ -169,37 +142,38 @@ insert into location_types values
 (5, 'Чужбина'),
 (6, 'Цялата страна');
 
-drop table if exists parties;
-create table parties(
+create table if not exists parties(
   "id" integer primary key autoincrement,
   "name" text,
-  UNIQUE(name)
+  unique(name)
 );
 
-drop table if exists temp_parties;
-create table temp_parties(
+create table if not exists temp_parties(
   "id" integer primary key autoincrement,
   "election_id" integer,
   "district_id" integer default 999,
   "location_id" integer default 999,
+  "municipality_id" integer default 999,
   "ballot_number" integer,
   "name" text,
-  UNIQUE(election_id,district_id,location_id,ballot_number)
+  unique(election_id,district_id,location_id,ballot_number)
 );
 
-drop table if exists temp;
-create table temp(
+create table if not exists temp(
   "region_code" integer,
+  "district_id" integer,
   "location_id" integer,
+  "municipality_id" integer,
+  "municipality_region_id" integer,
   "full_code" text,
   "location_name" text
 );
 
-drop table if exists candidates;
-create table candidates(
+create table if not exists candidates(
   "id" integer primary key autoincrement,
   "election_id" integer,
   "location_id" integer,
+  "district_id" integer,
   "party_id" integer,
   "party_ballot" integer,
   "candidate_id" integer,
@@ -210,8 +184,7 @@ create table candidates(
   foreign key(party_id) references parties(id)
 );
 
-drop table if exists sections;
-create table sections(
+create table if not exists sections(
   "id" integer primary key autoincrement,
   "election_period_id" integer,
   "location_id" integer,
@@ -220,14 +193,13 @@ create table sections(
   "mobile_section" boolean,
   "ship_section" boolean,
   "machine_voting" boolean,
-  UNIQUE(election_period_id,section_code),
+  unique(election_period_id,section_code),
   foreign key(election_period_id) references election_periods(id),
   foreign key(location_id) references locations(id),
   foreign key(section_code) references sections(id)
 );
 
-drop table if exists preferences;
-create table preferences(
+create table if not exists temp_preferences(
   "id" integer primary key autoincrement,
   "election_id" integer,
   "round" integer,
@@ -242,54 +214,21 @@ create table preferences(
   foreign key(section_id) references sections(id)
 );
 
--- insert into election_periods(id, name) values 
--- (1, 'Местни избори 2019'),
--- (2, 'Местни избори 2015'),
--- (3, 'Местни и президентски избори 2011'),
--- (4, 'Президентски избори 2016'),
--- (5, 'Парламентарни избори 2017'),
--- (6, 'Парламентарни избори 2014'),
--- (7, 'Парламентарни избори 2013'),
--- (8, 'Парламентарни избори 2009'),
--- (9, 'Избори за членове на европейския парламент 2019'),
--- (10, 'Избори за членове на европейския парламент 2014'),
--- (11, 'Избори за членове на европейския парламент 2009');
+create table if not exists preferences(
+  "id" integer primary key autoincrement,
+  "election_id" integer,
+  "round" integer,
+  "section_id" integer,
+  "party_id" integer,
+  "candidate_id" integer,
+  "valid_votes" integer,
+  "invalid_votes" integer,
+  "machine_voting" boolean,
+  foreign key(election_id) references elections(id),
+  foreign key(section_id) references sections(id)
+);
 
--- insert into elections (id, name, date, election_period_id) values
--- (1, 'Избори за кмет на община 2019 I ТУР', '2019-10-27', 1),
--- (2, 'Избори за кмет на кметство 2019 I ТУР', '2019-10-27', 1),
--- (3, 'Избори за кмет на район 2019 I ТУР', '2019-10-27', 1),
--- (4, 'Избори за общински съветници 2019 I ТУР', '2019-10-27', 1),
--- (5, 'Избори за кмет на община 2019 II ТУР', '2019-11-03', 1),
--- (6, 'Избори за кмет на кметство 2019 II ТУР', '2019-11-03', 1),
--- (7, 'Избори за кмет на район 2019 II ТУР', '2019-11-03', 1),
--- (8, 'Избори за кмет на община 2015 I ТУР', '2015-10-25', 2),
--- (9, 'Избори за кмет на кметство 2015 I ТУР', '2015-10-25', 2),
--- (10, 'Избори за кмет на район 2015 I ТУР', '2015-10-25', 2),
--- (11, 'Избори за общински съветници 2015 I ТУР', '2015-10-25', 2),
--- (12, 'Избори за кмет на община 2015 II ТУР', '2015-11-01', 2),
--- (13, 'Избори за кмет на кметство 2015 II ТУР', '2015-11-01', 2),
--- (14, 'Избори за кмет на район 2015 II ТУР', '2015-11-01', 2),
--- (15, 'Избори за кмет на община 2011 I ТУР', '2011-10-23', 3),
--- (16, 'Избори за кмет на кметство 2011 I ТУР', '2011-10-23', 3),
--- (17, 'Избори за общински съветници 2011 I ТУР', '2011-10-23', 3),
--- (18, 'Избори за кмет на община 2011 II ТУР', '2011-11-30', 3),
--- (19, 'Избори за кмет на кметство 2011 II ТУР', '2011-11-30', 3),
--- (20, 'Избори за президент 2016 I тур', '2016-11-06', 4),
--- (21, 'Избори за президент 2016 II тур', '2016-11-13', 4),
--- (22, 'Избори за президент 2011 I тур', '2011-11-23', 3),
--- (23, 'Избори за президент 2011 II тур', '2011-11-30', 3),
--- (24, 'Парламентарни избори 2017', '2017-03-26', 5),
--- (25, 'Парламентарни избори 2014', '2014-10-05', 6),
--- (26, 'Парламентарни избори 2013', '2013-05-12', 7),
--- (27, 'Парламентарни избори 2009', '2009-07-05', 8),
--- (28, 'Избори за членове на европейския парламент 2019', '2019-05-26', 9),
--- (29, 'Избори за членове на европейския парламент 2014', '2014-05-25', 10),
--- (30, 'Избори за членове на европейския парламент 2009', '2009-06-07', 11);
-
-
-
-INSERT INTO "districts" ("id", "district_code", "district_name") VALUES
+insert or ignore into "districts" ("id", "district_code", "district_name") VALUES
 (1, '01', 'Благоевград'),
 (2, '02', 'Бургас'),
 (3, '03', 'Варна'),
@@ -322,7 +261,7 @@ INSERT INTO "districts" ("id", "district_code", "district_name") VALUES
 (30, 'Цялата страна', 'Цялата страна');
 
 
-INSERT INTO "municipalities" ("id", "district_id", "municipality_code", "municipality_name") VALUES
+insert or ignore into "municipalities" ("id", "district_id", "municipality_code", "municipality_name") VALUES
 (1326, 1, '01', 'Банско'),
 (1327, 1, '02', 'Белица'),
 (1328, 1, '03', 'Благоевград'),
@@ -589,44 +528,44 @@ INSERT INTO "municipalities" ("id", "district_id", "municipality_code", "municip
 (1589, 28, '25', 'Тунджа'),
 (1590, 28, '26', 'Ямбол');
 
-INSERT INTO "municipality_regions" ("id", "municipality_id", "region_code", "region_name") VALUES
-(103, 562, '01', 'Одесос'),
-(104, 562, '02', 'Приморски'),
-(105, 562, '03', 'Младост'),
-(106, 562, '04', 'Владислав Варненчик'),
-(107, 562, '05', 'Аспарухово'),
-(108, 683, '01', 'Централен'),
-(109, 683, '02', 'Източен'),
-(110, 683, '03', 'Западен'),
-(111, 683, '04', 'Северен'),
-(112, 683, '05', 'Южен'),
-(113, 683, '06', 'Тракия'),
-(114, 731, '01', 'Средец'),
-(115, 731, '02', 'Красно село'),
-(116, 731, '03', 'Възраждане'),
-(117, 731, '04', 'Оборище'),
-(118, 731, '05', 'Сердика'),
-(119, 731, '06', 'Подуяне'),
-(120, 731, '07', 'Слатина'),
-(121, 731, '08', 'Изгрев'),
-(122, 731, '09', 'Лозенец'),
-(123, 731, '10', 'Триадица'),
-(124, 731, '11', 'Красна поляна'),
-(125, 731, '12', 'Илинден'),
-(126, 731, '13', 'Надежда'),
-(127, 731, '14', 'Искър'),
-(128, 731, '15', 'Младост'),
-(129, 731, '16', 'Студентски'),
-(130, 731, '17', 'Витоша'),
-(131, 731, '18', 'Овча купел'),
-(132, 731, '19', 'Люлин'),
-(133, 731, '20', 'Връбница'),
-(134, 731, '21', 'Нови Искър'),
-(135, 731, '22', 'Кремиковци'),
-(136, 731, '23', 'Панчарево'),
-(137, 731, '24', 'Банкя');
+insert or ignore into "municipality_regions" ("id", "municipality_id", "region_code", "region_name") VALUES
+(103, 1357, '01', 'Одесос'),
+(104, 1357, '02', 'Приморски'),
+(105, 1357, '03', 'Младост'),
+(106, 1357, '04', 'Владислав Варненчик'),
+(107, 1357, '05', 'Аспарухово'),
+(108, 1478, '01', 'Централен'),
+(109, 1478, '02', 'Източен'),
+(110, 1478, '03', 'Западен'),
+(111, 1478, '04', 'Северен'),
+(112, 1478, '05', 'Южен'),
+(113, 1478, '06', 'Тракия'),
+(114, 1526, '01', 'Средец'),
+(115, 1526, '02', 'Красно село'),
+(116, 1526, '03', 'Възраждане'),
+(117, 1526, '04', 'Оборище'),
+(118, 1526, '05', 'Сердика'),
+(119, 1526, '06', 'Подуяне'),
+(120, 1526, '07', 'Слатина'),
+(121, 1526, '08', 'Изгрев'),
+(122, 1526, '09', 'Лозенец'),
+(123, 1526, '10', 'Триадица'),
+(124, 1526, '11', 'Красна поляна'),
+(125, 1526, '12', 'Илинден'),
+(126, 1526, '13', 'Надежда'),
+(127, 1526, '14', 'Искър'),
+(128, 1526, '15', 'Младост'),
+(129, 1526, '16', 'Студентски'),
+(130, 1526, '17', 'Витоша'),
+(131, 1526, '18', 'Овча купел'),
+(132, 1526, '19', 'Люлин'),
+(133, 1526, '20', 'Връбница'),
+(134, 1526, '21', 'Нови Искър'),
+(135, 1526, '22', 'Кремиковци'),
+(136, 1526, '23', 'Панчарево'),
+(137, 1526, '24', 'Банкя');
 
-INSERT INTO "locations" ("id", "district_id", "municipality_id", "location_type", "location_name", "ekatte") VALUES
+insert or ignore into "locations" ("id", "district_id", "municipality_id", "location_type", "location_name", "ekatte") VALUES
 (1, 1, 1326, 2, 'Банско', 2676),
 (2, 1, 1326, 3, 'Добринище', 21498),
 (3, 1, 1326, 4, 'Гостун', 17381),
@@ -4842,3 +4781,5 @@ INSERT INTO "locations" ("id", "district_id", "municipality_id", "location_type"
 (4213, 28, 1589, 4, 'Чарган', 80217),
 (4214, 28, 1589, 4, 'Челник', 80306),
 (4215, 28, 1590, 1, 'Ямбол', 87374);
+
+insert or ignore into temp (region_code, district_id, location_id, municipality_id, municipality_region_id, full_code, location_name) select distinct locations.district_id || municipality_code, locations.district_id, locations.id, municipalities.id, municipality_regions.id, CASE WHEN cast(municipalities.district_id as number) < 10 THEN '0' || municipalities.district_id ELSE municipalities.district_id END || municipalities.municipality_code || '. ', location_name from locations join municipalities on municipalities.id=locations.municipality_id left join municipality_regions on municipality_regions.municipality_id=municipalities.id;

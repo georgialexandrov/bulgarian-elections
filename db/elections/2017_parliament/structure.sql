@@ -1,10 +1,10 @@
 
-CREATE TABLE _2017_parliament_cik_parties(
+create table _2017_parliament_cik_parties(
   "party_id" integer, -- 1) Номер
-  "party_name" text   -- 2) Име  
+  "party_name" text   -- 2) Име
 );
 
-CREATE TABLE _2017_parliament_local_candidates(
+create table _2017_parliament_local_candidates(
   "region_id" integer,    -- 1) Код на РИК
   "region_name" text,     -- 2) Наименование на Район
   "party_id" integer,     -- 3) Номер на партия/коалиция/инициативен комитет
@@ -14,21 +14,21 @@ CREATE TABLE _2017_parliament_local_candidates(
   "" text
 );
 
-CREATE TABLE _2017_parliament_local_parties(
+create table _2017_parliament_local_parties(
   "id" integer,       -- 1) Код на РИК
   "region" text,      -- 2) Наименование на Район
   "party_id" integer, -- 3) Номер на партия
   "party_name" text   -- 4) Име
 );
 
-CREATE TABLE _2017_parliament_preferences(
+create table _2017_parliament_preferences(
   "section_id" text,        -- 1) Пълен код на секция(код на район(2), община(2), адм. район(2), секция(3))
   "party_id" integer,       -- 2) Номер на партия
-  "valid_ballots" integer,  -- 3) Номер на кандидат в кандидатска листа
-  "invalid_ballots" integer -- 4) Брой гласове
+  "candidate_id" integer,   -- 3) Номер на кандидат в кандидатска листа
+  "valid_ballots" integer   -- 4) Брой гласове
 );
 
-CREATE TABLE _2017_parliament_protocols(
+create table _2017_parliament_protocols(
   "form_number" integer,                -- 1) № формуляр
   "section_id" text,                    -- 2) Пълен код на секция(код на район(2), община(2), адм. район(2), секция(3));
   "district_id" integer,                -- 3) Идентификатор на административна единица, за която се отнася протокола(община, кметство, район)
@@ -53,13 +53,13 @@ CREATE TABLE _2017_parliament_protocols(
   "invalid_ballots_in_box" integer,     -- 16)  6.Брой намерени в избирателната кутия недействителни гласове (бюлетини)
   "valid_ballots_in_box" integer,       -- 17) Формуляр № 1: 7.Общ брой намерени в избирателната кутия действителни гласове (бюлетини)
                                         --     Формуляр № 7: 7.Общ брой намерени в избирателната кутия действителните гласове (бюлетини)
-  "valid_ballots_for_party" integer,    -- 18) Формуляр № 1: 7.1брой на действителните гласове, подадени за кандидатските листи на партии, коалиции и инициативни комитети 
+  "valid_ballots_for_party" integer,    -- 18) Формуляр № 1: 7.1брой на действителните гласове, подадени за кандидатските листи на партии, коалиции и инициативни комитети
                                         --     Формуляр № 7: 7.1брой на действителните гласове, подадени за кандидатски листи на партии и коалиции
   "valid_no_one_all" integer,           -- 19) 7.2брой действителни гласове (отбелязвания) само в квадратчето „Не подкрепям никого“
   "invalid_empty_or_onclear" integer   -- 20)  9.Празни бюлетини; бюлетини, в които е гласувано в повече от едно квадратче; бюлетини, в които не може да се установи еднозначно вотът на избирателя и други видове недействителни гласове
 );
 
-CREATE TABLE _2017_parliament_sections(
+create table _2017_parliament_sections(
   "section_id" text,           -- 1) Пълен код на секция(код на район(2), община(2), адм. район(2), секция(3))
   "section_local_id" integer,  -- 2) Идентификатор на административна единица, за която се гласува в секцията
   "district_name" text,        -- 3) Име на административна единица, за която се гласува в секцията
@@ -69,7 +69,7 @@ CREATE TABLE _2017_parliament_sections(
   "ship_section" boolean       -- 7) Флаг корабна секция
 );
 
-CREATE TABLE _2017_parliament_votes(
+create table _2017_parliament_votes(
   "section_id" text,         -- 1) Пълен код на секция(код на район(2), община(2), адм. район(2), секция(3));
   "region_id" integer,       -- 2) Идентификатор на административна единица, за която се отнася протокола(община, кметство, район)
   "party1_id" integer,       -- № П/К/ИК

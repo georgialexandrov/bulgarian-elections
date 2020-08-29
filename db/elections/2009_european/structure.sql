@@ -1,4 +1,4 @@
-CREATE TABLE _2009_european_preferences(
+create table _2009_european_preferences(
   "section_id" text,      -- 1) Пълен код на секция(код на район(2), община(2), адм. район(2), секция(3))
   "party_1_candidate_1" integer,
   "party_1_candidate_2" integer,
@@ -225,7 +225,7 @@ CREATE TABLE _2009_european_preferences(
   "" text
 );
 
-CREATE TABLE _2009_european_protocols(
+create table _2009_european_protocols(
   "section_id" text,                               -- 1) Пълен код на секция(код на район(2), община(2), адм. район(2), секция(3));
   "total_voters" integer,                          -- 2) Брой на избирателите в основния и допълнителния избирателен списък (т.1 = т.2 + т.3 + т.4)
   "total_voters_in_section" integer,               -- 3) Брой на избирателите в основния избирателен списък (равен на броя на избирателите в част I и част II на основния избирателен списък при предаването му на СИК)
@@ -267,7 +267,7 @@ CREATE TABLE _2009_european_protocols(
   "" text
 );
 
-CREATE TABLE _2009_european_sections(
+create table _2009_european_sections(
   "section_id" text,    -- 1) Пълен код на секция(код на район(2), община(2), адм. район(2), секция(3))
   "location_name" text, -- 2) Име на Населено място
   "ekatte" integer,     -- 3) ЕКАТТЕ на населеното място

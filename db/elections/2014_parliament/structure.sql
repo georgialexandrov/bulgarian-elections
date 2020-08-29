@@ -1,4 +1,4 @@
-CREATE TABLE _2014_parliament_candidates(
+create table _2014_parliament_candidates(
   "region_id" integer,    -- 1) Номер на РИК
   "party_id" integer,     -- 2) Номер на партия/коалиция/инициативен комитет
   "party_name" integer,   -- 3) Име на партия/коалиция/инициативен комитет
@@ -6,25 +6,25 @@ CREATE TABLE _2014_parliament_candidates(
   "candidate_name" text   -- 5) Име на кандидат
 );
 
-CREATE TABLE _2014_parliament_ind(
+create table _2014_parliament_ind(
   "region_id" integer,  -- Регион
   "party_id" integer,   -- Номер на кандидата в листата
   "candidate_name" text -- Име на кандидата
 );
 
-CREATE TABLE _2014_parliament_parties(
+create table _2014_parliament_parties(
   "party_id" integer, -- 1) Номер
   "party_name" text   -- 2) Име
 );
 
-CREATE TABLE _2014_parliament_preferences(
+create table _2014_parliament_preferences(
   "section_id" text,      -- 1) Пълен код на секция(код на район(2), община(2), адм. район(2), секция(3))
   "party_id" integer,     -- 2) Номер на партия
   "candidate_id" integer, -- 3) Номер на кандидат в кандидатска листа (0 - за поле "без")
   "votes" integer         -- 4) Брой гласове
 );
 
-CREATE TABLE _2014_parliament_protocols(
+create table _2014_parliament_protocols(
   "section_id" text,                          -- 1) Пълен код на секция(код на район(2), община(2), адм. район(2), секция(3));
   "number_of_candidates" integer,             -- 2)  А.Брой на регистрираните кандидатски листи на партии, коалиции и независими кандидати за народни представители
   "ballots_available" integer,                -- 3)  Б.Брой на бюлетините, получени по реда на чл. 215, ал. 1 от ИК, вписани в т. 4 протокола по чл. 215, ал. 4 от ИК – Приложение № 77-НС от изборните книжа
@@ -41,13 +41,13 @@ CREATE TABLE _2014_parliament_protocols(
   "invalid_ballots_public" integer,           -- 14)5.д)брой на недействителните бюлетини по чл. 228 от ИК (показан публично вот след гласуване)
   "invalid_ballots_mistake" integer,          -- 15)5.е)брой на сгрешените бюлетини по чл. 267, ал. 2 от ИК
   "ballots_in_box" integer,                   -- 16)  6.Брой на намерените в избирателната кутия бюлетини
-  "invalid_ballots" integer,                  -- 17)  7.Брой намерени в избирателната кутия недействителни гласове (бюлетини) 
+  "invalid_ballots" integer,                  -- 17)  7.Брой намерени в избирателната кутия недействителни гласове (бюлетини)
   "valid_ballots" integer,                    -- 18)  8.Брой намерени в избирателната кутия действителните гласове (бюлетини)
   "invalid_empty_or_multiple_choice" integer, -- 19)Празни бюлетини или бюлетини, в които е гласувано за повече от една листа
   "serial_numbers" integer                    -- 20) Серийни номера на страници на протокол, разделени с |
 );
 
-CREATE TABLE _2014_parliament_sections(
+create table _2014_parliament_sections(
   "section_id" text,        -- 1) Пълен код на секция(код на район(2), община(2), адм. район(2), секция(3))
   "location_name" text,     -- 2) Име на Населено място
   "ekatte" integer,         -- 3) ЕКАТТЕ на населеното място
@@ -56,7 +56,7 @@ CREATE TABLE _2014_parliament_sections(
   "machine_voting" boolean  -- 6) Флаг машинно гласуване
 );
 
-CREATE TABLE _2014_parliament_votes(
+create table _2014_parliament_votes(
   "section_id" text,         -- 1) Пълен код на секция(код на район(2), община(2), адм. район(2), секция(3));
   "party1_valid" integer,    -- 2) Действителни гласове за:  1. Движение 21
   "party1_invalid" integer,  -- 2) Недействителни гласове за:  1. Движение 21

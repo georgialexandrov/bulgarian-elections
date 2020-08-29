@@ -1,4 +1,4 @@
-CREATE TABLE voting_locations_2019(
+create table if not exists voting_locations_2019(
   "region_id" integer,             -- Област код
   "region_name" text,              -- Област текст
   "municipality_id" integer,       -- Община код
@@ -18,7 +18,7 @@ CREATE TABLE voting_locations_2019(
   "postcode" text
 );
 
-CREATE TABLE voting_locations_2019_spring(
+create table if not exists voting_locations_2019_spring(
   "region_id" integer,             -- Област код
   "region_name" text,              -- Област текст
   "municipality_id" integer,       -- Община код
@@ -37,7 +37,7 @@ CREATE TABLE voting_locations_2019_spring(
   "formatted_address" text,
   "postcode" text
 );
-CREATE TABLE voting_locations_2017(
+create table if not exists voting_locations_2017(
   "region_id" integer,             -- Област код
   "region_name" text,              -- Област текст
   "municipality_id" integer,       -- Община код
@@ -56,7 +56,7 @@ CREATE TABLE voting_locations_2017(
   "formatted_address" text,
   "postcode" text
 );
-CREATE TABLE voting_locations_2016(
+create table if not exists voting_locations_2016(
   "region_id" integer,             -- Област код
   "region_name" text,              -- Област текст
   "municipality_id" integer,       -- Община код
@@ -75,7 +75,7 @@ CREATE TABLE voting_locations_2016(
   "formatted_address" text,
   "postcode" text
 );
-CREATE TABLE voting_locations_2015(
+create table if not exists voting_locations_2015(
   "region_id" integer,             -- Област код
   "region_name" text,              -- Област текст
   "municipality_id" integer,       -- Община код
@@ -118,9 +118,9 @@ update voting_locations_2017 set section_id=CASE WHEN region_id < 10 THEN '0' ||
         CASE WHEN municipality_region_code = '' THEN '00' ELSE municipality_region_code END ||
         section;
 
-update voting_locations_2016 set section_id=CASE WHEN region_id < 10 THEN '0' || region_id ELSE region_id END ||
+update voting_locations_2016 set section_id=CASE WHEN cast(region_id as number) < 10 THEN '0' || region_id ELSE region_id END ||
         CASE WHEN municipality_id < 10 THEN '0' || municipality_id ELSE municipality_id END ||
-        CASE WHEN municipality_region_code = '' THEN '00' ELSE municipality_region_code END ||
+        CASE WHEN municipality_region_code = '0' THEN '00' ELSE municipality_region_code END ||
         section;
 
 update voting_locations_2015 set section_id=CASE WHEN region_id < 10 THEN '0' || region_id ELSE region_id END ||
@@ -130,7 +130,7 @@ update voting_locations_2015 set section_id=CASE WHEN region_id < 10 THEN '0' ||
 
 -- Run ./fill_in_sections_coordinates voting_locations_2019_spring
 
-update voting_locations_2019_spring set formatted_address=(select formatted_address from voting_locations_2019_spring where voting_locations_2019.location_id=voting_locations_2019_spring.location_id and 
+update voting_locations_2019_spring set formatted_address=(select formatted_address from voting_locations_2019_spring where voting_locations_2019.location_id=voting_locations_2019_spring.location_id and
  voting_locations_2019.address=voting_locations_2016.address) where formatted_address is null;
 update voting_locations_2019_spring set lat=(select lat from voting_locations_2019_spring where voting_locations_2019.formatted_address=voting_locations_2019_spring.formatted_address) where lat is null;
 update voting_locations_2019_spring set lng=(select lng from voting_locations_2019 where voting_locations_2019.formatted_address=voting_locations_2019_spring.formatted_address) where lng is null;
@@ -139,7 +139,7 @@ update voting_locations_2019_spring set postcode=(select postcode from voting_lo
 
 -- Run ./fill_in_sections_coordinates voting_locations_2019_spring
 
-update voting_locations_2017 set formatted_address=(select formatted_address from voting_locations_2019_spring where voting_locations_2019_spring.location_id=voting_locations_2017.location_id and 
+update voting_locations_2017 set formatted_address=(select formatted_address from voting_locations_2019_spring where voting_locations_2019_spring.location_id=voting_locations_2017.location_id and
  voting_locations_2019_spring.address=voting_locations_2016.address) where formatted_address is null;
 update voting_locations_2017 set lat=(select lat from voting_locations_2017 where voting_locations_2019.formatted_address=voting_locations_2017.formatted_address) where lat is null;
 update voting_locations_2017 set lng=(select lng from voting_locations_2019 where voting_locations_2019.formatted_address=voting_locations_2017.formatted_address) where lng is null;
@@ -148,7 +148,7 @@ update voting_locations_2017 set postcode=(select postcode from voting_locations
 
 -- Run ./fill_in_sections_coordinates voting_locations_2017
 
-update voting_locations_2016 set formatted_address=(select formatted_address from voting_locations_2017 where voting_locations_2017.location_id=voting_locations_2016.location_id and 
+update voting_locations_2016 set formatted_address=(select formatted_address from voting_locations_2017 where voting_locations_2017.location_id=voting_locations_2016.location_id and
  voting_locations_2017.address=voting_locations_2016.address) where formatted_address is null;
 update voting_locations_2016 set lat=(select lat from voting_locations_2019_spring where voting_locations_2019_spring.formatted_address=voting_locations_2016.formatted_address) where lat is null;
 update voting_locations_2016 set lng=(select lng from voting_locations_2019_spring where voting_locations_2019_spring.formatted_address=voting_locations_2016.formatted_address) where lng is null;
@@ -157,7 +157,7 @@ update voting_locations_2016 set postcode=(select postcode from voting_locations
 
 -- Run ./fill_in_sections_coordinates voting_locations_2016
 
-update voting_locations_2015 set formatted_address=(select formatted_address from voting_locations_2017 where voting_locations_2017.location_id=voting_locations_2015.location_id and 
+update voting_locations_2015 set formatted_address=(select formatted_address from voting_locations_2017 where voting_locations_2017.location_id=voting_locations_2015.location_id and
  voting_locations_2017.address=voting_locations_2015.address) where formatted_address is null;
 update voting_locations_2015 set lat=(select lat from voting_locations_2017 where voting_locations_2017.formatted_address=voting_locations_2015.formatted_address) where lat is null;
 update voting_locations_2015 set lng=(select lng from voting_locations_2017 where voting_locations_2017.formatted_address=voting_locations_2015.formatted_address) where lng is null;

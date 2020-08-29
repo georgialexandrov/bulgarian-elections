@@ -1,9 +1,8 @@
 .read './db/structure.sql'
-.read './db/voting_locations.sql'
 .read './db/elections/2019_regional/voting_locations_2019.sql'
 
 insert or ignore into election_periods(id, name) values (1, 'Местни избори 2019');
-insert or ignore into elections (id, name, round1_date, round2_date, election_period_id) values 
+insert or ignore into elections (id, name, round1_date, round2_date, election_period_id) values
 (1, 'Избори за кмет на община 2019', '2019-10-27', '2019-11-03', 1),
 (2, 'Избори за кмет на кметство 2019', '2019-10-27', '2019-11-03', 1),
 (3, 'Избори за кмет на район 2019', '2019-10-27', '2019-11-03', 1),
@@ -100,25 +99,23 @@ drop table _2019_mayor_2_votes;
 insert into temp_votes (election_id, round, section_code, ballot_number, valid_votes, invalid_votes)  select 3, 2, section_id, party1_id, party1_valid_ballots, party1_invalid_ballots from _2019_mayor_region_2_votes where party1_id is not null;
 insert into temp_votes (election_id, round, section_code, ballot_number, valid_votes, invalid_votes)  select 3, 2, section_id, party2_id, party2_valid_ballots, party2_invalid_ballots from _2019_mayor_region_2_votes where party2_id is not null;
 drop table _2019_mayor_region_2_votes;
-insert into temp_protocols (election_id, round, section_code, section_type, ballots_available, total_voters, added_voters, voters_by_signature, unused_ballots, destroyed_ballots, invalid_ballots_invalid_sn, invalid_ballots_photo, invalid_ballots_public, invalid_ballots_mistake, ballots_in_box, invalid_ballots_in_box, valid_ballots_in_box, valid_no_one_all, invalid_empty_or_onclear) select 1, 1, section_id, form_number, ballots_available, total_voters, added_voters, voters_by_signature, unused_ballots, destroyed_ballots, invalid_ballots_invalid_sn, invalid_ballots_photo, invalid_ballots_public, invalid_ballots_mistake, ballots_in_box, invalid_ballots_in_box, valid_ballots_in_box, valid_no_one_all, invalid_empty_or_onclear from _2019_mayor_municipality_1_protocols;
+
+insert into temp_protocols (election_id, round, section_code, section_type, total_voters, voters_by_signature, ballots_in_box, invalid_ballots_in_box, valid_ballots_in_box, no_one) select 1, 1, section_id, form_number, total_voters, voters_by_signature, ballots_in_box, invalid_ballots_in_box, valid_ballots_in_box, valid_no_one_all from _2019_mayor_municipality_1_protocols;
 drop table _2019_mayor_municipality_1_protocols;
-insert into temp_protocols (election_id, round, section_code, section_type, ballots_available, total_voters, added_voters, voters_by_signature, unused_ballots, destroyed_ballots, invalid_ballots_invalid_sn, invalid_ballots_photo, invalid_ballots_public, invalid_ballots_mistake, ballots_in_box, invalid_ballots_in_box, valid_ballots_in_box, valid_no_one_all, invalid_empty_or_onclear) select 2, 1, section_id, form_number, ballots_available, total_voters, added_voters, voters_by_signature, unused_ballots, destroyed_ballots, invalid_ballots_invalid_sn, invalid_ballots_photo, invalid_ballots_public, invalid_ballots_mistake, ballots_in_box, invalid_ballots_in_box, valid_ballots_in_box, valid_no_one_all, invalid_empty_or_onclear from _2019_mayor_1_protocols;
+insert into temp_protocols (election_id, round, section_code, section_type, total_voters, voters_by_signature, ballots_in_box, invalid_ballots_in_box, valid_ballots_in_box, no_one) select 2, 1, section_id, form_number, total_voters, voters_by_signature, ballots_in_box, invalid_ballots_in_box, valid_ballots_in_box, valid_no_one_all from _2019_mayor_1_protocols;
 drop table _2019_mayor_1_protocols;
-insert into temp_protocols (election_id, round, section_code, section_type, ballots_available, total_voters, added_voters, voters_by_signature, unused_ballots, destroyed_ballots, invalid_ballots_invalid_sn, invalid_ballots_photo, invalid_ballots_public, invalid_ballots_mistake, ballots_in_box, invalid_ballots_in_box, valid_ballots_in_box, valid_no_one_all, invalid_empty_or_onclear) select 3, 1, section_id, form_number, ballots_available, total_voters, added_voters, voters_by_signature, unused_ballots, destroyed_ballots, invalid_ballots_invalid_sn, invalid_ballots_photo, invalid_ballots_public, invalid_ballots_mistake, ballots_in_box, invalid_ballots_in_box, valid_ballots_in_box, valid_no_one_all, invalid_empty_or_onclear from _2019_mayor_region_1_protocols;
+insert into temp_protocols (election_id, round, section_code, section_type, total_voters, voters_by_signature, ballots_in_box, invalid_ballots_in_box, valid_ballots_in_box, no_one) select 3, 1, section_id, form_number, total_voters, voters_by_signature, ballots_in_box, invalid_ballots_in_box, valid_ballots_in_box, valid_no_one_all from _2019_mayor_region_1_protocols;
 drop table _2019_mayor_region_1_protocols;
-insert into temp_protocols (election_id, round, section_code, section_type, ballots_available, total_voters, added_voters, voters_by_signature, unused_ballots, destroyed_ballots, invalid_ballots_invalid_sn, invalid_ballots_photo, invalid_ballots_public, invalid_ballots_mistake, ballots_in_box, invalid_ballots_in_box, valid_ballots_in_box, valid_no_one_all, invalid_empty_or_onclear) select 4, 1, section_id, form_number, ballots_available, total_voters, added_voters, voters_by_signature, unused_ballots, destroyed_ballots, invalid_ballots_invalid_sn, invalid_ballots_photo, invalid_ballots_public, invalid_ballots_mistake, ballots_in_box, invalid_ballots_in_box, valid_ballots_in_box, valid_no_one_all, invalid_empty_or_onclear from _2019_council_region_1_protocols;
+insert into temp_protocols (election_id, round, section_code, section_type, total_voters, voters_by_signature, ballots_in_box, invalid_ballots_in_box, valid_ballots_in_box, no_one) select 4, 1, section_id, form_number, total_voters, voters_by_signature, ballots_in_box, invalid_ballots_in_box, valid_ballots_in_box, valid_no_one_all from _2019_council_region_1_protocols;
 drop table _2019_council_region_1_protocols;
-insert into temp_protocols (election_id, round, section_code, section_type, ballots_available, total_voters, added_voters, voters_by_signature, unused_ballots, destroyed_ballots, invalid_ballots_invalid_sn, invalid_ballots_photo, invalid_ballots_public, invalid_ballots_mistake, ballots_in_box, invalid_ballots_in_box, valid_ballots_in_box, valid_no_one_all, invalid_empty_or_onclear) select 5, 2, section_id, form_number, ballots_available, total_voters, added_voters, voters_by_signature, unused_ballots, destroyed_ballots, invalid_ballots_invalid_sn, invalid_ballots_photo, invalid_ballots_public, invalid_ballots_mistake, ballots_in_box, invalid_ballots_in_box, valid_ballots_in_box, valid_no_one_all, invalid_empty_or_onclear from _2019_mayor_municipality_2_protocols;
+insert into temp_protocols (election_id, round, section_code, section_type, total_voters, voters_by_signature, ballots_in_box, invalid_ballots_in_box, valid_ballots_in_box, no_one) select 1, 2, section_id, form_number, total_voters, voters_by_signature, ballots_in_box, invalid_ballots_in_box, valid_ballots_in_box, valid_no_one_all from _2019_mayor_municipality_2_protocols;
 drop table _2019_mayor_municipality_2_protocols;
-insert into temp_protocols (election_id, round, section_code, section_type, ballots_available, total_voters, added_voters, voters_by_signature, unused_ballots, destroyed_ballots, invalid_ballots_invalid_sn, invalid_ballots_photo, invalid_ballots_public, invalid_ballots_mistake, ballots_in_box, invalid_ballots_in_box, valid_ballots_in_box, valid_no_one_all, invalid_empty_or_onclear) select 6, 2, section_id, form_number, ballots_available, total_voters, added_voters, voters_by_signature, unused_ballots, destroyed_ballots, invalid_ballots_invalid_sn, invalid_ballots_photo, invalid_ballots_public, invalid_ballots_mistake, ballots_in_box, invalid_ballots_in_box, valid_ballots_in_box, valid_no_one_all, invalid_empty_or_onclear from _2019_mayor_2_protocols;
+insert into temp_protocols (election_id, round, section_code, section_type, total_voters, voters_by_signature, ballots_in_box, invalid_ballots_in_box, valid_ballots_in_box, no_one) select 2, 2, section_id, form_number, total_voters, voters_by_signature, ballots_in_box, invalid_ballots_in_box, valid_ballots_in_box, valid_no_one_all from _2019_mayor_2_protocols;
 drop table _2019_mayor_2_protocols;
-insert into temp_protocols (election_id, round, section_code, section_type, ballots_available, total_voters, added_voters, voters_by_signature, unused_ballots, destroyed_ballots, invalid_ballots_invalid_sn, invalid_ballots_photo, invalid_ballots_public, invalid_ballots_mistake, ballots_in_box, invalid_ballots_in_box, valid_ballots_in_box, valid_no_one_all, invalid_empty_or_onclear) select 7, 2, section_id, form_number, ballots_available, total_voters, added_voters, voters_by_signature, unused_ballots, destroyed_ballots, invalid_ballots_invalid_sn, invalid_ballots_photo, invalid_ballots_public, invalid_ballots_mistake, ballots_in_box, invalid_ballots_in_box, valid_ballots_in_box, valid_no_one_all, invalid_empty_or_onclear from _2019_mayor_region_2_protocols;
+insert into temp_protocols (election_id, round, section_code, section_type, total_voters, voters_by_signature, ballots_in_box, invalid_ballots_in_box, valid_ballots_in_box, no_one) select 3, 2, section_id, form_number, total_voters, voters_by_signature, ballots_in_box, invalid_ballots_in_box, valid_ballots_in_box, valid_no_one_all from _2019_mayor_region_2_protocols;
 drop table _2019_mayor_region_2_protocols;
 
-
-insert into temp (region_code, location_id, full_code, location_name) select distinct locations.district_id || municipality_code, locations.id, CASE WHEN cast(municipalities.district_id as number) < 10 THEN '0' || municipalities.district_id ELSE municipalities.district_id END || municipalities.municipality_code || '. ', location_name from locations join municipalities on municipalities.id=locations.municipality_id;
-
-insert into location_neighborhoods (location_id, neighborhood) select distinct location_id, replace(neighborhood, '"', '') from voting_locations_2019 where neighborhood != '';
+insert or ignore into location_neighborhoods (location_id, neighborhood) select distinct location_id, replace(neighborhood, '"', '') from voting_locations_2019 where neighborhood != '';
 insert or ignore into voting_locations (location_id, cik_address, address, lat, lng, postcode, location_neighborhood_id) select location_id, address, replace(formatted_address, '"', ''), lat, lng, replace(postcode, '"', ''), (select id from location_neighborhoods where location_neighborhoods.location_id=voting_locations_2019.location_id and neighborhood=replace(voting_locations_2019.neighborhood, '"', '')) from voting_locations_2019;
 
 insert or ignore into temp_parties (election_id, ballot_number, location_id, name) select 1, party_id, 999, party_name from _2019_mayor_municipality_1_cik_parties;
@@ -135,6 +132,7 @@ insert or ignore into temp_parties (election_id, ballot_number, location_id, nam
 drop table _2019_mayor_2_cik_parties;
 insert or ignore into temp_parties (election_id, ballot_number, location_id, name) select 3, party_id, 999, party_name from _2019_mayor_region_2_cik_parties;
 drop table _2019_mayor_region_2_cik_parties;
+
 insert or ignore into temp_parties (election_id, location_id, ballot_number, name) select 1, (select location_id from temp where temp.full_code=substr(_2019_mayor_municipality_1_local_parties.region, 0, 7)), party_id, party_name from _2019_mayor_municipality_1_local_parties;
 drop table _2019_mayor_municipality_1_local_parties;
 insert or ignore into temp_parties (election_id, location_id, ballot_number, name) select 2, (select location_id from temp where temp.full_code=id), party_id, party_name from _2019_mayor_1_local_parties;
@@ -150,19 +148,19 @@ drop table _2019_mayor_2_local_parties;
 insert or ignore into temp_parties (election_id, location_id, ballot_number, name) select 3, (select location_id from temp where temp.full_code=id), party_id, party_name from _2019_mayor_region_2_local_parties;
 drop table _2019_mayor_region_2_local_parties;
 
-insert or ignore into candidates (election_id, location_id, party_ballot, candidate_id, candidate_name) select 1, (select location_id from temp where temp.region_code=cast(region_id as integer)), party_id, candidate_id, candidate_name from _2019_mayor_municipality_1_local_candidates;
+insert or ignore into candidates (election_id, location_id, party_ballot, candidate_id, candidate_name) select 1, (select location_id from temp where temp.region_code=cast(_2019_mayor_municipality_1_local_candidates.region_id as integer)), party_id, candidate_id, candidate_name from _2019_mayor_municipality_1_local_candidates;
 drop table _2019_mayor_municipality_1_local_candidates;
-insert or ignore into candidates (election_id, location_id, party_ballot, candidate_id, candidate_name) select 2, (select location_id from temp where temp.full_code=region_id), party_id, candidate_id, candidate_name from _2019_mayor_1_local_candidates;
+insert or ignore into candidates (election_id, location_id, party_ballot, candidate_id, candidate_name) select 2, (select location_id from temp where temp.region_code=cast(_2019_mayor_1_local_candidates.region_id as integer)), party_id, candidate_id, candidate_name from _2019_mayor_1_local_candidates;
 drop table _2019_mayor_1_local_candidates;
-insert or ignore into candidates (election_id, location_id, party_ballot, candidate_id, candidate_name) select 3, (select location_id from temp where temp.full_code=region_id), party_id, candidate_id, candidate_name from _2019_mayor_region_1_local_candidates;
+insert or ignore into candidates (election_id, location_id, party_ballot, candidate_id, candidate_name) select 3, (select location_id from temp where temp.region_code=cast(_2019_mayor_region_1_local_candidates.region_id as integer)), party_id, candidate_id, candidate_name from _2019_mayor_region_1_local_candidates;
 drop table _2019_mayor_region_1_local_candidates;
-insert or ignore into candidates (election_id, location_id, party_ballot, candidate_id, candidate_name) select 4, (select location_id from temp where temp.full_code=region_id), party_id, candidate_id, candidate_name from _2019_council_region_1_local_candidates;
+insert or ignore into candidates (election_id, location_id, party_ballot, candidate_id, candidate_name) select 4, (select location_id from temp where temp.region_code=cast(_2019_council_region_1_local_candidates.region_id as integer)), party_id, candidate_id, candidate_name from _2019_council_region_1_local_candidates;
 drop table _2019_council_region_1_local_candidates;
-insert or ignore into candidates (election_id, location_id, party_ballot, candidate_id, candidate_name) select 1, (select location_id from temp where temp.full_code=region_id), party_id, candidate_id, candidate_name from _2019_mayor_municipality_2_local_candidates;
+insert or ignore into candidates (election_id, location_id, party_ballot, candidate_id, candidate_name) select 1, (select location_id from temp where temp.region_code=cast(_2019_mayor_municipality_2_local_candidates.region_id as integer)), party_id, candidate_id, candidate_name from _2019_mayor_municipality_2_local_candidates;
 drop table _2019_mayor_municipality_2_local_candidates;
-insert or ignore into candidates (election_id, location_id, party_ballot, candidate_id, candidate_name) select 2, (select location_id from temp where temp.full_code=region_id), party_id, candidate_id, candidate_name from _2019_mayor_2_local_candidates;
+insert or ignore into candidates (election_id, location_id, party_ballot, candidate_id, candidate_name) select 2, (select location_id from temp where temp.region_code=cast(_2019_mayor_2_local_candidates.region_id as integer)), party_id, candidate_id, candidate_name from _2019_mayor_2_local_candidates;
 drop table _2019_mayor_2_local_candidates;
-insert or ignore into candidates (election_id, location_id, party_ballot, candidate_id, candidate_name) select 3, (select location_id from temp where temp.full_code=region_id), party_id, candidate_id, candidate_name from _2019_mayor_region_2_local_candidates;
+insert or ignore into candidates (election_id, location_id, party_ballot, candidate_id, candidate_name) select 3, (select location_id from temp where temp.region_code=cast(_2019_mayor_region_2_local_candidates.region_id as integer)), party_id, candidate_id, candidate_name from _2019_mayor_region_2_local_candidates;
 drop table _2019_mayor_region_2_local_candidates;
 
 insert or ignore into sections (election_period_id, location_id, section_code, mobile_section) select 1, (select id from locations where locations.ekatte=_2019_mayor_municipality_1_sections.ekatte), section_id, mobile_section from _2019_mayor_municipality_1_sections;
@@ -179,17 +177,19 @@ insert or ignore into sections (election_period_id, location_id, section_code, m
 drop table _2019_mayor_2_sections;
 insert or ignore into sections (election_period_id, location_id, section_code, mobile_section) select 1, (select id from locations where locations.ekatte=_2019_mayor_region_2_sections.ekatte), section_id, mobile_section from _2019_mayor_region_2_sections;
 drop table _2019_mayor_region_2_sections;
-insert into preferences (election_id, section_id, party_id, candidate_id, valid_votes) select 4, section_id, party_id, candidate_id, total_votes from _2019_council_region_1_preferences;
+insert into temp_preferences (election_id, section_code, party_id, candidate_id, valid_votes) select 4, section_id, party_id, candidate_id, total_votes from _2019_council_region_1_preferences;
 drop table _2019_council_region_1_preferences;
 
-insert into parties (name) select distinct name from temp_parties;
+insert or ignore into parties (name) select distinct name from temp_parties;
 update sections set address_id=(select id from voting_locations join voting_locations_2019 on voting_locations_2019.address=voting_locations.cik_address and sections.section_code=voting_locations_2019.section_id) where election_period_id=1 and address_id is null;
-update candidates set party_id=(select parties.id from temp_parties join parties on parties.name=temp_parties.name where temp_parties.ballot_number=candidates.party_ballot and temp_parties.location_id=candidates.location_id);
+update candidates set party_id=(select parties.id from temp_parties join parties on parties.name=temp_parties.name where candidates.election_id in (1,2,3,4) and temp_parties.ballot_number=candidates.party_ballot and temp_parties.location_id=candidates.location_id) where election_id in (1,2,3,4) and party_id is null;
 drop table temp_parties;
-drop table temp;
+
 drop table voting_locations_2019;
 insert into votes (election_id, round, section_id, ballot_number, valid_votes, invalid_votes)  select election_id, round, sections.id, ballot_number, valid_votes, invalid_votes from temp_votes join sections on sections.section_code=temp_votes.section_code;
-insert into protocols (election_id, round, section_id, section_type, ballots_available, total_voters, added_voters, voters_by_signature, unused_ballots, destroyed_ballots, invalid_ballots_invalid_sn, invalid_ballots_photo, invalid_ballots_public, invalid_ballots_mistake, ballots_in_box, invalid_ballots_in_box, valid_ballots_in_box, valid_no_one_all, invalid_empty_or_onclear) select election_id, round, sections.id, section_type, ballots_available, total_voters, added_voters, voters_by_signature, unused_ballots, destroyed_ballots, invalid_ballots_invalid_sn, invalid_ballots_photo, invalid_ballots_public, invalid_ballots_mistake, ballots_in_box, invalid_ballots_in_box, valid_ballots_in_box, valid_no_one_all, invalid_empty_or_onclear from temp_protocols join sections on sections.section_code=temp_protocols.section_code;
-drop temp_votes;
-drop temp_protocols;
+drop table temp_votes;
+insert into protocols (election_id, round, section_id, section_type, total_voters, voters_by_signature, ballots_in_box, invalid_ballots_in_box, valid_ballots_in_box, no_one) select election_id, round, sections.id, section_type, total_voters, voters_by_signature, ballots_in_box, invalid_ballots_in_box, valid_ballots_in_box, no_one from temp_protocols join sections on sections.section_code=temp_protocols.section_code;
+drop table temp_protocols;
+insert into preferences (election_id, section_id, party_id, candidate_id, valid_votes, machine_voting)  select election_id, sections.id, party_id, candidate_id, valid_votes, temp_preferences.machine_voting from temp_preferences join sections on sections.section_code=temp_preferences.section_code;
+drop table temp_preferences;
 vacuum;

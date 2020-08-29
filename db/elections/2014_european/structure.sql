@@ -1,16 +1,16 @@
-CREATE TABLE _2014_european_candidates(
+create table _2014_european_candidates(
   "party_id" text,       -- 1) Номер на партия/коалиция/инициативен комитет
   "party_name" integer,  -- 2) Име на партия/коалиция/инициативен комитет
   "candidate_id" text,   -- 3) Номер на кандидат в листата
   "candidate_name" text -- 4) Име на кандидат
 );
 
-CREATE TABLE _2014_european_parties(
+create table _2014_european_parties(
   "party_id" integer, -- 1) Номер
   "party_name" text   -- 2) Име
 );
 
-CREATE TABLE _2014_european_preferences(
+create table _2014_european_preferences(
   "section_id" text,        -- 1) Пълен код на секция(код на район(2), община(2), адм. район(2), секция(3))
   "party_id" integer,       -- 2) Номер на партия
   "candidate_id" integer,   -- 3) Номер на кандидат в кандидатска листа
@@ -18,7 +18,7 @@ CREATE TABLE _2014_european_preferences(
 );
 
 
-CREATE TABLE _2014_european_protocols(
+create table _2014_european_protocols(
   "section_id" text,                          -- 1) Пълен код на секция(код на район(2), община(2), адм. район(2), секция(3));
   "number_of_candidates" integer,             -- 2)  А.Брой на регистрираните кандидатски листи на партии, коалиции и независими кандидати за членове на Европейския парламент от Република България
   "ballots_available" integer,                -- 3)  Б.Брой на бюлетините, получени по реда на чл. 215, ал. 1 от ИК, вписани в т. 4 протокола по чл. 215, ал. 4 от ИК – Приложение № 78 от изборните книжа
@@ -42,7 +42,7 @@ CREATE TABLE _2014_european_protocols(
   "serial_numbers" integer                    -- 21) Серийни номера на страници на протокол, разделени с |
 );
 
-CREATE TABLE _2014_european_sections(
+create table _2014_european_sections(
   "section_id" text,        -- 1) Пълен код на секция(код на район(2), община(2), адм. район(2), секция(3))
   "location_name" text,     -- 2) Име на Населено място
   "ekatte" integer,         -- 3) ЕКАТТЕ на населеното място
@@ -51,7 +51,7 @@ CREATE TABLE _2014_european_sections(
   "machine_voting" boolean  -- 6) Флаг машинно гласуване
 );
 
-CREATE TABLE _2014_european_votes(
+create table _2014_european_votes(
   "section_id" text,      -- 1) Пълен код на секция(код на район(2), община(2), адм. район(2), секция(3));
   "party1_valid" integer,    -- 2) Гласове(действителни) за:  1. БЪЛГАРСКАТА ЛЕВИЦА
   "party1_invalid" integer,  -- 2) Гласове(недействителни) за:  1. БЪЛГАРСКАТА ЛЕВИЦА
