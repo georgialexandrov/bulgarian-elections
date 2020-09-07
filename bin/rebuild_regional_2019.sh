@@ -18,6 +18,7 @@ fi
 if [[ ${2} && -f /tmp/${1}.db ]]; then
   cp /tmp/${1}.db ./db/${1}.db
 else
+  rm ./db/${1}.db
   sqlite3 ./db/${1}.db ".read ./db/elections/2019_regional/structure.sql"
 
   sqlite3 ./db/${1}.db ".mode csv" ".separator ';'" ".import ./files/elections/2019_regional/csv/ТУР1/КК/cik_parties_27.10.2019.txt _2019_mayor_1_cik_parties"

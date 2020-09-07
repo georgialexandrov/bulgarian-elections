@@ -11,6 +11,8 @@ create table if not exists elections(
   "round1_date" date,
   "round2_date" date,
   "election_period_id" integer,
+  "show" boolean,
+  "type" text,
   unique(name)
 );
 
@@ -165,6 +167,7 @@ create table if not exists temp(
   "location_id" integer,
   "municipality_id" integer,
   "municipality_region_id" integer,
+  "municipality_region_code" text,
   "full_code" text,
   "location_name" text
 );
@@ -174,13 +177,15 @@ create table if not exists candidates(
   "election_id" integer,
   "location_id" integer,
   "district_id" integer,
+  "municipality_region_id" integer default 0,
   "party_id" integer,
   "party_ballot" integer,
   "candidate_id" integer,
   "candidate_name" text,
-  unique(election_id,location_id,party_ballot,candidate_id),
+  unique(election_id,location_id,party_ballot,municipality_region_id,candidate_id),
   foreign key(election_id) references elections(id),
   foreign key(location_id) references locations(id),
+  foreign key(municipality_region_id) references municipality_regions(id),
   foreign key(party_id) references parties(id)
 );
 
@@ -189,6 +194,7 @@ create table if not exists sections(
   "election_period_id" integer,
   "location_id" integer,
   "section_code" text,
+  "municipality_region_id" integer,
   "address_id" text,
   "mobile_section" boolean,
   "ship_section" boolean,
@@ -196,6 +202,7 @@ create table if not exists sections(
   unique(election_period_id,section_code),
   foreign key(election_period_id) references election_periods(id),
   foreign key(location_id) references locations(id),
+  foreign key(municipality_region_id) references municipality_regions(id),
   foreign key(section_code) references sections(id)
 );
 
@@ -217,7 +224,6 @@ create table if not exists temp_preferences(
 create table if not exists preferences(
   "id" integer primary key autoincrement,
   "election_id" integer,
-  "round" integer,
   "section_id" integer,
   "party_id" integer,
   "candidate_id" integer,
