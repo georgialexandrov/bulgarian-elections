@@ -1,14 +1,14 @@
 import React, { useState, useEffect } from "react"
 import Layout from "../layout/layout"
-
 import SEO from "../components/seo"
 
-export default function IndexPage() {
+export default function SectionsPage() {
   return (
     <Layout>
-      <SEO title="Home" />
+      <SEO title="За проекта" />
 
-      <h1>Home page</h1>
+      <h1>Sections</h1>
+
     </Layout>
   )
 }
