@@ -24,7 +24,7 @@ export default function App() {
 
           <main className="flex-1 p-5">
             <Switch>
-              <Route path="/elections/:electionType?/:electionId?">
+              <Route path="/elections/:electionType?/:electionId?/:districtId?/:municipalityId?/:round?">
                 <Elections />
               </Route>
               <Route path="/coming-soon">

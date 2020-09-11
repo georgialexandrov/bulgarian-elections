@@ -18,9 +18,11 @@
     "graphql": "^15.3.0",
     "graphql-anywhere": "^4.2.7",
     "graphql-tag": "^2.11.0",
+    "leaflet": "^1.7.1",
     "qs": "^6.9.4",
     "react": "^16.13.1",
     "react-dom": "^16.13.1",
+    "react-leaflet": "^2.7.0",
     "react-router-dom": "^5.2.0",
     "react-scripts": "3.4.3",
     "typescript": "~3.7.2"
@@ -50,6 +52,7 @@
     ]
   },
   "devDependencies": {
+    "@types/react-leaflet": "^2.5.2",
     "@types/react-router-dom": "^5.1.5",
     "autoprefixer": "^9.8.6",
     "postcss-cli": "^7.1.2",

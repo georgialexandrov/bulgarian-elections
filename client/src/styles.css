@@ -18800,8 +18800,7 @@ video {
   animation: bounce 1s infinite;
 }
 
-body {
-  font-size: 1.5em;
+html {
   font-family: 'Cormorant Infant';
 }
 
