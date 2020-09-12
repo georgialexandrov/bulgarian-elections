@@ -1,0 +1,11 @@
+type Municipality {
+  id: ID!
+  municipality_code: String!
+  municipality_name: String!
+}
+
+extend type Query {
+  municipality(id: ID!): Municipality!
+  district_municipalities(districtId: ID!): [Municipality]
+  municipalities: [Municipality!]
+}

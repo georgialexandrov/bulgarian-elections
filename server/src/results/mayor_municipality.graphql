@@ -1,0 +1,56 @@
+type ElectionResult {
+  party_ballot: Int
+  party_name: String
+  candidate_name: String
+  total_voters: Int
+  voters_by_signature: Int
+  ballots_in_box: Int
+  valid_ballots_in_box: Int
+  invalid_ballots_in_box: Int
+  no_one: Int
+  valid_votes: Int
+  invalid_votes: Int
+  ballot_number: Int
+  percent: Float
+}
+
+type ElectionResultSections {
+  id: Int
+  lat: Float
+  lng: Float
+  cik_address: String
+  address: String
+  section_codes: String
+  total_voters: Int
+  voters_by_signature: Int
+  ballots_in_box: Int
+  valid_ballots_in_box: Int
+  invalid_ballots_in_box: Int
+  no_one: Int
+}
+
+type ElectionResultSectionResult {
+  lat: Float
+  lng: Float
+  cik_address: String
+  address: String
+  valid_votes: Int
+  invalid_votes: Int
+  party_ballot: Int
+  party_name: String
+  candidate_name: String
+  total_voters: Int
+  voters_by_signature: Int
+  ballots_in_box: Int
+  valid_ballots_in_box: Int
+  invalid_ballots_in_box: Int
+  no_one: Int
+  ballot_number: Int
+  percent: Float
+}
+
+extend type Query {
+  mayor_municipality_results(electionId: ID!, municipalityId: ID!, round: Int!): [ElectionResult]
+  mayor_municipality_sections(electionId: ID!, municipalityId: ID!, round: Int!): [ElectionResultSections]
+  mayor_municipality_section_result(electionId: ID!, municipalityId: ID!, round: Int!, lat: Float!, lng: Float!): [ElectionResultSectionResult]
+}

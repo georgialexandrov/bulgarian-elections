@@ -1,0 +1,13 @@
+type Election {
+  id: ID!
+  name: String!
+  round1_date: String!
+  round2_date: String
+  show: Boolean!
+  type: String!
+}
+
+type Query {
+  election(id: ID!): Election
+  elections: [Election!]
+}
