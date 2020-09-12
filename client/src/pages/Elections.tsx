@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react'
+import React from 'react'
 import gql from 'graphql-tag'
 import { useHistory, useParams } from 'react-router-dom'
 import { useQuery } from '@apollo/client'
@@ -8,8 +8,8 @@ import Municipality from '../components/Municipality'
 import MayorMunicipalityResults from '../components/MayorMunicipality/Results'
 
 const ELECTIONS = gql`
-  query elections {
-    elections @rest(type: "Election", path: "elections") {
+  {
+    elections {
       id
       name
       type
@@ -29,7 +29,7 @@ export default function Elections() {
   const { data, loading } = useQuery<{ elections: Election[] }>(ELECTIONS)
   const history = useHistory()
 
-  if (loading || !data) return <h1>Loading</h1>
+  if (loading || !data || !data.elections) return <h1>Loading</h1>
 
   const redirect = (electionId: number) => {
     const selectedElectionType = data.elections.find(election => election.id === electionId)
@@ -38,6 +38,7 @@ export default function Elections() {
   const setDistrict = (districtId: number) => history.push(`/elections/${electionType}/${electionId}/${districtId}`)
   const setMunicipality = (municipalityId: number) => history.push(`/elections/${electionType}/${electionId}/${districtId}/${municipalityId}`)
 
+  debugger
   return (
     <>
       <h1>

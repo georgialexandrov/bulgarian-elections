@@ -32,9 +32,8 @@ export type SectionsResponse = {
 }
 
 const MAYOR_MUNICIPALITY_RESULTS_MAP = gql`
-  query results($electionId: number, $municipalityId: number, $round: number) {
-    coordinates(electionId: $electionId, municipalityId: $municipalityId, round: $round)
-    @rest(path: "sections?election_id={args.electionId}&municipality_id={args.municipalityId}&round={args.round}", type: "Result") {
+  query results($electionId: ID!, $municipalityId: ID!, $round: Int!) {
+    mayor_municipality_sections(electionId: $electionId, municipalityId: $municipalityId, round: $round) {
       id
       lat
       lng
@@ -57,17 +56,17 @@ const mapboxAttr =
   'Map data &copy; <a href="https://www.openstreetmap.org/">OpenStreetMap</a> contributors, <a href="https://creativecommons.org/licenses/by-sa/2.0/">CC-BY-SA</a>, Imagery © <a href="https://www.mapbox.com/">Mapbox</a>'
 
 export default function ResultsMap(props: Props) {
-  const { data, loading } = useQuery<{ coordinates: SectionsResponse[] }, { electionId: number; municipalityId: number; round: number }>(
-    MAYOR_MUNICIPALITY_RESULTS_MAP,
-    {
-      variables: { electionId: props.electionId, municipalityId: props.municipalityId, round: props.round },
-    }
-  )
+  const { data, loading } = useQuery<
+    { mayor_municipality_sections: SectionsResponse[] },
+    { electionId: number; municipalityId: number; round: number }
+  >(MAYOR_MUNICIPALITY_RESULTS_MAP, {
+    variables: { electionId: props.electionId, municipalityId: props.municipalityId, round: props.round },
+  })
 
   if (loading) return <h1>Loading</h1>
-  if (!data || !data.coordinates) return <h1>No data</h1>
-  const coordinates = data.coordinates
-
+  if (!data || !data.mayor_municipality_sections) return <h1>No data</h1>
+  const coordinates = data.mayor_municipality_sections
+  console.log(coordinates)
   const mapSettings = {
     center: { lat: coordinates[0].lat, lng: coordinates[0].lng } as LatLng,
     defaultBaseMap: 'OpenStreetMap',

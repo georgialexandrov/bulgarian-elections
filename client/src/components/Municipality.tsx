@@ -3,21 +3,21 @@ import gql from 'graphql-tag'
 import { useQuery } from '@apollo/client'
 
 const MUNICIPALITY = gql`
-  query municipalities($districtId: string) {
-    municipalities(districtId: $districtId) @rest(path: "/municipalities/{args.districtId}", type: "District") {
+  query district_municipalities($districtId: ID!) {
+    district_municipalities(districtId: $districtId) {
       id
-      name
+      municipality_name
     }
   }
 `
 
-type District = {
+type Municipality = {
   id: number
-  name: string
+  municipality_name: string
 }
 
 export default function Municipality(props: { municipalityId: number; districtId: number; onClick: Function }) {
-  const { data, loading } = useQuery<{ municipalities: District[] }, { districtId: number }>(MUNICIPALITY, {
+  const { data, loading } = useQuery<{ district_municipalities: Municipality[] }, { districtId: number }>(MUNICIPALITY, {
     variables: { districtId: props.districtId },
   })
 
@@ -25,7 +25,7 @@ export default function Municipality(props: { municipalityId: number; districtId
 
   return (
     <div className="py-6">
-      {data?.municipalities?.map(municipality => (
+      {data?.district_municipalities?.map(municipality => (
         <span
           key={municipality.id}
           className={`mx-1 my-1 relative inline-block px-3 py-1 font-semibold ${
@@ -37,7 +37,7 @@ export default function Municipality(props: { municipalityId: number; districtId
             className={`absolute inset-0 ${(props.municipalityId == municipality.id && 'bg-gray-900') || 'bg-gray-500'} rounded-full`}
           ></span>
           <span className="relative cursor-pointer" onClick={() => props.onClick(municipality.id)}>
-            {municipality.name}
+            {municipality.municipality_name}
           </span>
         </span>
       ))}

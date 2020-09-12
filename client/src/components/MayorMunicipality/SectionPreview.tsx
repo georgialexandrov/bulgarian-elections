@@ -13,12 +13,8 @@ type SectionDataResult = {
 }
 
 const MAYOR_MUNICIPALITY_SECTION_PREVIEW = gql`
-  query sectionData($electionId: number, $municipalityId: number, $round: number, $lat: number, $lng: number) {
-    sectionData(electionId: $electionId, municipalityId: $municipalityId, round: $round, lat: $lat, lng: $lng)
-    @rest(
-      path: "mayor_municipality_section_result?electionId={args.electionId}&municipalityId={args.municipalityId}&round={args.round}&lat={args.lat}&lng={args.lng}"
-      type: "Result"
-    ) {
+  query mayor_municipality_section_result($electionId: ID!, $municipalityId: ID!, $round: Int!, $lat: Float!, $lng: Float!) {
+    mayor_municipality_section_result(electionId: $electionId, municipalityId: $municipalityId, round: $round, lat: $lat, lng: $lng) {
       candidate_name
       party_name
       valid_votes
@@ -44,17 +40,17 @@ export default function MayorMunicipalitySectionPreview(props: {
   lng: number
 }) {
   const { data, loading } = useQuery<
-    { sectionData: SectionDataResult[] },
+    { mayor_municipality_section_result: SectionDataResult[] },
     { electionId: number; municipalityId: number; round: number; lat: number; lng: number }
   >(MAYOR_MUNICIPALITY_SECTION_PREVIEW, {
     variables: { electionId: props.electionId, municipalityId: props.municipalityId, round: props.round, lat: props.lat, lng: props.lng },
   })
 
   if (loading) return <h1>Loading</h1>
-  if (!data?.sectionData) return <h1>NO data</h1>
+  if (!data?.mayor_municipality_section_result) return <h1>NO data</h1>
 
-  const sectionData = data.sectionData
-
+  const sectionData = data.mayor_municipality_section_result
+  console.log(sectionData)
   return (
     <div>
       <h1>Секции с номера {props.section.section_codes.split(',').join(', ')}</h1>

@@ -19,9 +19,8 @@ type Result = {
 }
 
 const LOCATIONS = gql`
-  query results($electionId: String, $municipalityId: String, $round: String) {
-    results(electionId: $electionId, municipalityId: $municipalityId, round: $round)
-    @rest(path: "mayor_municipality_results?election_id={args.electionId}&municipality_id={args.municipalityId}&round={args.round}", type: "Result") {
+  query mayor_municipality_results($electionId: ID!, $municipalityId: ID!, $round: Int!) {
+    mayor_municipality_results(electionId: $electionId, municipalityId: $municipalityId, round: $round) {
       candidate_name
       party_name
       valid_votes
@@ -39,14 +38,17 @@ const LOCATIONS = gql`
 `
 
 export default function Location(props: { electionId: number; municipalityId: number; round: number }) {
-  const { data, loading } = useQuery<{ results: Result[] }, { electionId: number; municipalityId: number; round: number }>(LOCATIONS, {
-    variables: { electionId: props.electionId, municipalityId: props.municipalityId, round: props.round },
-  })
+  const { data, loading } = useQuery<{ mayor_municipality_results: Result[] }, { electionId: number; municipalityId: number; round: number }>(
+    LOCATIONS,
+    {
+      variables: { electionId: props.electionId, municipalityId: props.municipalityId, round: props.round },
+    }
+  )
 
   if (loading) return <h1>Loading</h1>
-  if (!data || !data.results) return <h1>No data</h1>
+  if (!data || !data.mayor_municipality_results) return <h1>No data</h1>
 
-  const results = data?.results
+  const results = data?.mayor_municipality_results
 
   return (
     <>
