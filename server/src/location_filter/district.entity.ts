@@ -1,5 +1,5 @@
 import { Entity, Column, OneToMany, PrimaryGeneratedColumn } from 'typeorm'
-import Municipality from 'src/municipality/municipality.entity'
+import Municipality from './municipality.entity'
 
 @Entity({ name: 'districts' })
 export default class District {

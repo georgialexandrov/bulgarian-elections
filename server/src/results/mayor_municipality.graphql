@@ -50,7 +50,15 @@ type ElectionResultSectionResult {
 }
 
 extend type Query {
-  mayor_municipality_results(electionId: ID!, municipalityId: ID!, round: Int!): [ElectionResult]
-  mayor_municipality_sections(electionId: ID!, municipalityId: ID!, round: Int!): [ElectionResultSections]
-  mayor_municipality_section_result(electionId: ID!, municipalityId: ID!, round: Int!, lat: Float!, lng: Float!): [ElectionResultSectionResult]
+  mayor_municipality_results(electionId: ID!, municipalityId: ID!, locationId: ID!, regionId: ID!, round: Int!): [ElectionResult]
+  mayor_municipality_sections(electionId: ID!, municipalityId: ID!, locationId: ID!, regionId: ID!, round: Int!): [ElectionResultSections]
+  mayor_municipality_section_result(
+    electionId: ID!
+    municipalityId: ID!
+    locationId: ID!
+    regionId: ID!
+    round: Int!
+    lat: Float!
+    lng: Float!
+  ): [ElectionResultSectionResult]
 }

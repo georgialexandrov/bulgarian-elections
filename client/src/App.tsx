@@ -4,9 +4,11 @@ import { ApolloProvider, ApolloClient, ApolloCache } from '@apollo/client'
 import { InMemoryCache, NormalizedCacheObject } from 'apollo-cache-inmemory'
 import Header from './components/Header'
 import About from './pages/About'
-import CommingSoon from './pages/ComingSoon'
-import Sections from './pages/Sections'
 import Elections from './pages/Elections'
+import MayorMunicipalityElections from './pages/MayorMunicipalityElections'
+import MayorElections from './pages/MayorElections'
+import MayorMunicipalityRegionElections from './pages/MayorMunicipalityRegionElections'
+import CouncilElections from './pages/CouncilElections'
 
 export default function App() {
   const client = new ApolloClient({
@@ -18,21 +20,27 @@ export default function App() {
     <ApolloProvider client={client}>
       <Router>
         <div className="flex flex-col h-screen">
-          <Header siteTitle="Hello" />
+          <Header />
 
           <main className="flex-1 p-5">
             <Switch>
-              <Route path="/elections/:electionType?/:electionId?/:districtId?/:municipalityId?/:round?">
-                <Elections />
+              <Route path="/elections/mm/:electionId?/:districtId?/:municipalityId?/:round?">
+                <MayorMunicipalityElections />
               </Route>
-              <Route path="/coming-soon">
-                <CommingSoon />
+              <Route path="/elections/m/:electionId?/:districtId?/:municipalityId?/:locationId?/:round?">
+                <MayorElections />
+              </Route>
+              <Route path="/elections/mr/:electionId?/:districtId?/:municipalityId?/:regionId?/:round?">
+                <MayorMunicipalityRegionElections />
+              </Route>
+              <Route path="/elections/mc/:electionId?/:districtId?/:municipalityId?/:round?">
+                <CouncilElections />
               </Route>
               <Route path="/about">
                 <About />
               </Route>
-              <Route path="/sections">
-                <Sections />
+              <Route path="/">
+                <Elections />
               </Route>
             </Switch>
           </main>

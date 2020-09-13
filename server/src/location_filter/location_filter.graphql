@@ -1,0 +1,36 @@
+type District {
+  id: ID!
+  district_code: String!
+  district_name: String!
+}
+
+type Municipality {
+  id: ID!
+  municipality_code: String!
+  municipality_name: String!
+}
+
+type Location {
+  id: ID!
+  district: District
+  municipality: Municipality
+  location_type: String
+  location_name: String
+  ekatte: String
+}
+
+type MunicipalityRegion {
+  id: ID!
+  municipalityId: Municipality
+  region_code: String
+  region_name: String
+}
+
+extend type Query {
+  districts: [District!]
+  district(id: ID!): District
+  election_districts(electionId: ID!): [District]
+  district_municipalities(districtId: ID!): [Municipality]
+  municipality_locations(municipalityId: ID!): [Location]
+  municipality_regions(municipalityId: ID!): [MunicipalityRegion]
+}

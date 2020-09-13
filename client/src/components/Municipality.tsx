@@ -28,9 +28,7 @@ export default function Municipality(props: { municipalityId: number; districtId
       {data?.district_municipalities?.map(municipality => (
         <span
           key={municipality.id}
-          className={`mx-1 my-1 relative inline-block px-3 py-1 font-semibold ${
-            (props.municipalityId == municipality.id && 'text-white') || 'text-black'
-          }`}
+          className={`mx-1 my-1 relative inline-block px-2 text-sm py-1 ${(props.municipalityId == municipality.id && 'text-white') || 'text-black'}`}
         >
           <span
             aria-hidden

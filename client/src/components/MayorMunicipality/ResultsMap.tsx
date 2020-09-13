@@ -14,6 +14,8 @@ LeafletMarker.prototype.options.icon = new LeafletIcon({ iconUrl: icon, shadowUr
 type Props = {
   electionId: number
   municipalityId: number
+  locationId: number
+  regionId: number
   round: number
 }
 export type SectionsResponse = {
@@ -32,8 +34,14 @@ export type SectionsResponse = {
 }
 
 const MAYOR_MUNICIPALITY_RESULTS_MAP = gql`
-  query results($electionId: ID!, $municipalityId: ID!, $round: Int!) {
-    mayor_municipality_sections(electionId: $electionId, municipalityId: $municipalityId, round: $round) {
+  query results($electionId: ID!, $municipalityId: ID!, $locationId: ID!, $regionId: ID!, $round: Int!) {
+    mayor_municipality_sections(
+      electionId: $electionId
+      municipalityId: $municipalityId
+      locationId: $locationId
+      regionId: $regionId
+      round: $round
+    ) {
       id
       lat
       lng
@@ -58,9 +66,15 @@ const mapboxAttr =
 export default function ResultsMap(props: Props) {
   const { data, loading } = useQuery<
     { mayor_municipality_sections: SectionsResponse[] },
-    { electionId: number; municipalityId: number; round: number }
+    { electionId: number; municipalityId: number; locationId: number; regionId: number; round: number }
   >(MAYOR_MUNICIPALITY_RESULTS_MAP, {
-    variables: { electionId: props.electionId, municipalityId: props.municipalityId, round: props.round },
+    variables: {
+      electionId: props.electionId,
+      municipalityId: props.municipalityId,
+      locationId: props.locationId,
+      regionId: props.regionId,
+      round: props.round,
+    },
   })
 
   if (loading) return <h1>Loading</h1>
@@ -82,6 +96,8 @@ export default function ResultsMap(props: Props) {
               section={coordinate}
               electionId={props.electionId}
               municipalityId={props.municipalityId || 0}
+              locationId={props.locationId || 0}
+              regionId={props.regionId || 0}
               round={props.round}
               lat={coordinate.lat}
               lng={coordinate.lng}

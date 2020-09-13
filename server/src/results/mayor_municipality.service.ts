@@ -27,17 +27,11 @@ export default class MunicipalitiesService {
     @Args('electionId') electionId: number,
     @Args('round') round: number,
     @Args('municipalityId') municipalityId: number,
+    @Args('locationId') locationId: number,
+    @Args('regionId') regionId: number,
   ): Promise<ElectionResult[]> {
-    const locationIds = (
-      await this.locationsRepository
-        .createQueryBuilder('location')
-        .select('location.id')
-        .where('location.municipality_id = :municipalityId')
-        .setParameter('municipalityId', municipalityId)
-        .getMany()
-    ).map(location => location.id)
-
-    return await this.candidatesRepository
+    console.log(electionId, round, municipalityId, locationId, regionId)
+    let query = await this.candidatesRepository
       .createQueryBuilder('Vote')
       .select('sum(Vote.valid_votes)', 'valid_votes')
       .addSelect('sum(Vote.invalid_votes)', 'invalid_votes')
@@ -53,19 +47,53 @@ export default class MunicipalitiesService {
       .addSelect('Vote.ballot_number', 'ballot_number')
       .addSelect('((cast(valid_votes as float) / cast(valid_ballots_in_box as float)) * 100) ', 'percent')
       .innerJoinAndSelect(
-        'candidates',
-        'candidate',
-        `Vote.ballot_number=candidate.party_ballot and candidate.election_id=:electionId and candidate.location_id in (:...locationIds)`,
-        { electionId, locationIds },
-      )
-      .innerJoinAndSelect(
         'protocols',
         'protocol',
         'protocol.section_id = Vote.section_id and protocol.election_id = :electionId and protocol.round= :round',
         { round, electionId },
       )
-      .innerJoin('sections', 'section', 'section.id = protocol.section_id and section.location_id in (:...locationIds)', { locationIds })
       .innerJoinAndSelect('parties', 'party', 'party.id=candidate.party_id')
+
+    if (locationId > 0) {
+      query = query
+        .innerJoinAndSelect(
+          'candidates',
+          'candidate',
+          `Vote.ballot_number=candidate.party_ballot and candidate.election_id=:electionId and candidate.location_id = :locationId`,
+          { electionId, locationId },
+        )
+        .innerJoin('sections', 'section', 'section.id = protocol.section_id and section.location_id = :locationId', { locationId })
+    } else if (regionId > 0) {
+      query = query
+        .innerJoinAndSelect(
+          'candidates',
+          'candidate',
+          `Vote.ballot_number=candidate.party_ballot and candidate.election_id=:electionId and candidate.municipality_region_id = :regionId`,
+          { electionId, regionId },
+        )
+        .innerJoin('sections', 'section', 'section.id = protocol.section_id and section.municipality_region_id = :regionId', { regionId })
+    } else if (municipalityId > 0) {
+      const locationIds = (
+        await this.locationsRepository
+          .createQueryBuilder('location')
+          .select('location.id')
+          .where('location.municipality_id = :municipalityId')
+          .setParameter('municipalityId', municipalityId)
+          .getMany()
+      ).map(location => location.id)
+      query = query
+        .innerJoinAndSelect(
+          'candidates',
+          'candidate',
+          `Vote.ballot_number=candidate.party_ballot and candidate.election_id=:electionId and candidate.location_id in (:...locationIds)`,
+          { electionId, locationIds },
+        )
+        .innerJoin('sections', 'section', 'section.id = protocol.section_id and section.location_id in (:...locationIds)', {
+          locationIds,
+        })
+    }
+
+    return query
       .where('Vote.election_id = :electionId and Vote.round= :round', {
         electionId,
         round,
@@ -80,8 +108,10 @@ export default class MunicipalitiesService {
     @Args('electionId') electionId: number,
     @Args('round') round: number,
     @Args('municipalityId') municipalityId: number,
+    @Args('locationId') locationId: number,
+    @Args('regionId') regionId: number,
   ): Promise<ElectionResultSections[]> {
-    return this.sectionsRepository
+    let query = this.sectionsRepository
       .createQueryBuilder('Section')
       .select('Section.id', 'id')
       .addSelect('voting_location.lat', 'lat')
@@ -98,7 +128,15 @@ export default class MunicipalitiesService {
       .innerJoinAndSelect('Section.location', 'location')
       .innerJoinAndSelect('Section.voting_location', 'voting_location')
       .innerJoinAndSelect('protocols', 'protocol', 'protocol.section_id = Section.id and protocol.round=:round', { round, electionId })
-      .where('location.municipality_id = :municipalityId', { municipalityId })
+
+    if (locationId > 0) {
+      query = query.where('location.id = :locationId', { locationId })
+    } else if (regionId > 0) {
+      query = query.where('Section.municipality_region_id = :regionId', { regionId })
+    } else if (municipalityId > 0) {
+      query = query.where('location.municipality_id = :municipalityId', { municipalityId })
+    }
+    return query
       .andWhere('lat is not null')
       .andWhere('lng is not null')
       .groupBy('voting_location.address')
@@ -110,19 +148,12 @@ export default class MunicipalitiesService {
     @Args('electionId') electionId: number,
     @Args('round') round: number,
     @Args('municipalityId') municipalityId: number,
+    @Args('locationId') locationId: number,
+    @Args('regionId') regionId: number,
     @Args('lat') lat: number,
     @Args('lng') lng: number,
   ): Promise<ElectionResultSectionsResult[]> {
-    const locationIds = (
-      await this.locationsRepository
-        .createQueryBuilder('location')
-        .select('location.id')
-        .where('location.municipality_id = :municipalityId')
-        .setParameter('municipalityId', municipalityId)
-        .getMany()
-    ).map(location => location.id)
-
-    return await this.candidatesRepository
+    let query = this.candidatesRepository
       .createQueryBuilder('Vote')
       .select('voting_location.lat', 'lat')
       .addSelect('voting_location.lng', 'lng')
@@ -142,20 +173,52 @@ export default class MunicipalitiesService {
       .addSelect('Vote.ballot_number', 'ballot_number')
       .addSelect('((cast(valid_votes as float) / cast(valid_ballots_in_box as float)) * 100) ', 'percent')
       .innerJoinAndSelect(
-        'candidates',
-        'candidate',
-        `Vote.ballot_number=candidate.party_ballot and candidate.election_id=:electionId and candidate.location_id in (:...locationIds)`,
-        { electionId, locationIds },
-      )
-      .innerJoinAndSelect(
         'protocols',
         'protocol',
         'protocol.section_id = Vote.section_id and protocol.election_id = :electionId and protocol.round= :round',
         { round, electionId },
       )
-      .innerJoin('sections', 'section', 'section.id = protocol.section_id and section.location_id in (:...locationIds)', { locationIds })
       .innerJoinAndSelect('parties', 'party', 'party.id=candidate.party_id')
       .innerJoinAndSelect('voting_locations', 'voting_location', 'section.address_id=voting_location.id')
+
+    if (locationId > 0) {
+      query = query
+        .innerJoinAndSelect(
+          'candidates',
+          'candidate',
+          `Vote.ballot_number=candidate.party_ballot and candidate.election_id=:electionId and candidate.location_id = :locationId`,
+          { electionId, locationId },
+        )
+        .innerJoin('sections', 'section', 'section.id = protocol.section_id and section.location_id = :locationId', { locationId })
+    } else if (regionId > 0) {
+      query = query
+        .innerJoinAndSelect(
+          'candidates',
+          'candidate',
+          `Vote.ballot_number=candidate.party_ballot and candidate.election_id=:electionId and candidate.municipality_region_id = :regionId`,
+          { electionId, regionId },
+        )
+        .innerJoin('sections', 'section', 'section.id = protocol.section_id and section.municipality_region_id = :regionId)', { regionId })
+    } else if (municipalityId > 0) {
+      const locationIds = (
+        await this.locationsRepository
+          .createQueryBuilder('location')
+          .select('location.id')
+          .where('location.municipality_id = :municipalityId')
+          .setParameter('municipalityId', municipalityId)
+          .getMany()
+      ).map(location => location.id)
+      query = query
+        .innerJoinAndSelect(
+          'candidates',
+          'candidate',
+          `Vote.ballot_number=candidate.party_ballot and candidate.election_id=:electionId and candidate.location_id in (:...locationIds)`,
+          { electionId, locationIds },
+        )
+        .innerJoin('sections', 'section', 'section.id = protocol.section_id and section.location_id in (:...locationIds)', { locationIds })
+    }
+
+    return query
       .where('Vote.election_id = :electionId and Vote.round= :round and voting_location.lat = :lat and voting_location.lng = :lng', {
         electionId,
         round,

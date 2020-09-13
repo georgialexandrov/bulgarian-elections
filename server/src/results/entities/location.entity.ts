@@ -1,7 +1,7 @@
 import { Entity, Column, JoinColumn, PrimaryGeneratedColumn, ManyToOne } from 'typeorm'
 
-import District from 'src/districts/district.entity'
-import Municipality from 'src/municipality/municipality.entity'
+import District from '../../location_filter/district.entity'
+import Municipality from '../../location_filter/municipality.entity'
 
 @Entity({ name: 'locations' })
 export default class Location {

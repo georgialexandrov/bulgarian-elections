@@ -13,3 +13,4 @@ files/section_addresses_2019_spring.xlsx
 server/node_modules
 elections/.cache
 elections/node_modules
+old_server/node_modules

@@ -13,8 +13,24 @@ type SectionDataResult = {
 }
 
 const MAYOR_MUNICIPALITY_SECTION_PREVIEW = gql`
-  query mayor_municipality_section_result($electionId: ID!, $municipalityId: ID!, $round: Int!, $lat: Float!, $lng: Float!) {
-    mayor_municipality_section_result(electionId: $electionId, municipalityId: $municipalityId, round: $round, lat: $lat, lng: $lng) {
+  query mayor_municipality_section_result(
+    $electionId: ID!
+    $municipalityId: ID!
+    $locationId: ID!
+    $regionId: ID!
+    $round: Int!
+    $lat: Float!
+    $lng: Float!
+  ) {
+    mayor_municipality_section_result(
+      electionId: $electionId
+      municipalityId: $municipalityId
+      locationId: $locationId
+      regionId: $regionId
+      round: $round
+      lat: $lat
+      lng: $lng
+    ) {
       candidate_name
       party_name
       valid_votes
@@ -35,15 +51,25 @@ export default function MayorMunicipalitySectionPreview(props: {
   section: SectionsResponse
   electionId: number
   municipalityId: number
+  locationId: number
+  regionId: number
   round: number
   lat: number
   lng: number
 }) {
   const { data, loading } = useQuery<
     { mayor_municipality_section_result: SectionDataResult[] },
-    { electionId: number; municipalityId: number; round: number; lat: number; lng: number }
+    { electionId: number; municipalityId: number; locationId: number; regionId: number; round: number; lat: number; lng: number }
   >(MAYOR_MUNICIPALITY_SECTION_PREVIEW, {
-    variables: { electionId: props.electionId, municipalityId: props.municipalityId, round: props.round, lat: props.lat, lng: props.lng },
+    variables: {
+      electionId: props.electionId,
+      municipalityId: props.municipalityId,
+      round: props.round,
+      locationId: props.locationId,
+      regionId: props.regionId,
+      lat: props.lat,
+      lng: props.lng,
+    },
   })
 
   if (loading) return <h1>Loading</h1>

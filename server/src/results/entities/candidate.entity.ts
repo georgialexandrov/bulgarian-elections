@@ -1,6 +1,6 @@
 import { Entity, Column, JoinColumn, PrimaryGeneratedColumn, ManyToOne } from 'typeorm'
 
-import District from 'src/districts/district.entity'
+import District from '../../location_filter/district.entity'
 import Election from 'src/elections/election.entity'
 import Location from './location.entity'
 import MunicipalityRegion from './municipality_region.entity'

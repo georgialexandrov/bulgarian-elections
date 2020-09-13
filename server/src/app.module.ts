@@ -6,7 +6,7 @@ import { join } from 'path'
 import { AppController } from './app.controller'
 import { AppService } from './app.service'
 import Election from './elections/election.entity'
-import District from './districts/district.entity'
+import District from './location_filter/district.entity'
 import Candidate from './results/entities/candidate.entity'
 import ElectionPeriod from './results/entities/election_period.entity'
 import LocationNeighborhood from './results/entities/location_neighborhood.entity'
@@ -19,10 +19,9 @@ import Vote from './results/entities/vote.entity'
 import VotingLocatione from './results/entities/voting_location.entity'
 
 import ElectionsService from './elections/elections.service'
-import DistrictsService from './districts/districts.service'
-import MunicipalitiesService from './municipality/municipalities.service'
+import LocationFilterService from './location_filter/location_filter.service'
 import MayorMunicipalityService from './results/mayor_municipality.service'
-import Municipality from './municipality/municipality.entity'
+import Municipality from './location_filter/municipality.entity'
 
 @Module({
   imports: [
@@ -71,6 +70,6 @@ import Municipality from './municipality/municipality.entity'
     ]),
   ],
   controllers: [AppController],
-  providers: [AppService, ElectionsService, DistrictsService, MunicipalitiesService, MayorMunicipalityService],
+  providers: [AppService, ElectionsService, LocationFilterService, MayorMunicipalityService],
 })
 export class AppModule {}

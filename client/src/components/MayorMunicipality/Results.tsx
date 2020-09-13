@@ -19,8 +19,14 @@ type Result = {
 }
 
 const LOCATIONS = gql`
-  query mayor_municipality_results($electionId: ID!, $municipalityId: ID!, $round: Int!) {
-    mayor_municipality_results(electionId: $electionId, municipalityId: $municipalityId, round: $round) {
+  query mayor_municipality_results($electionId: ID!, $municipalityId: ID!, $locationId: ID!, $regionId: ID!, $round: Int!) {
+    mayor_municipality_results(
+      electionId: $electionId
+      municipalityId: $municipalityId
+      locationId: $locationId
+      regionId: $regionId
+      round: $round
+    ) {
       candidate_name
       party_name
       valid_votes
@@ -37,13 +43,19 @@ const LOCATIONS = gql`
   }
 `
 
-export default function Location(props: { electionId: number; municipalityId: number; round: number }) {
-  const { data, loading } = useQuery<{ mayor_municipality_results: Result[] }, { electionId: number; municipalityId: number; round: number }>(
-    LOCATIONS,
-    {
-      variables: { electionId: props.electionId, municipalityId: props.municipalityId, round: props.round },
-    }
-  )
+export default function Location(props: { electionId: number; municipalityId: number; locationId: number; regionId: number; round: number }) {
+  const { data, loading } = useQuery<
+    { mayor_municipality_results: Result[] },
+    { electionId: number; municipalityId: number; round: number; regionId: number; locationId: number }
+  >(LOCATIONS, {
+    variables: {
+      electionId: props.electionId,
+      municipalityId: props.municipalityId,
+      regionId: props.regionId,
+      locationId: props.locationId,
+      round: props.round,
+    },
+  })
 
   if (loading) return <h1>Loading</h1>
   if (!data || !data.mayor_municipality_results) return <h1>No data</h1>
@@ -103,15 +115,15 @@ export default function Location(props: { electionId: number; municipalityId: nu
                         <div className="text-sm text-gray-500">{result.party_name}</div>
                       </td>
                       <td className="px-6 py-4 whitespace-no-wrap">
-                        <span className="px-2 inline-flex text-xl font-semibold rounded-full">
+                        <span className="px-2 inline-flex text-sm font-semibold rounded-full">
                           {((result.valid_votes / result.valid_ballots_in_box) * 100).toFixed(2)}% (
                           {((result.valid_votes / result.total_voters) * 100).toFixed(2)}%)
                         </span>
                       </td>
                       <td className="px-6 py-4 whitespace-no-wrap">
-                        <span className="px-2 inline-flex text-xl font-semibold rounded-full text-green-800">{result.valid_votes}</span>
+                        <span className="px-2 inline-flex text-sm font-semibold rounded-full text-green-800">{result.valid_votes}</span>
                       </td>
-                      <td className="px-6 py-4 whitespace-no-wrap text-xl text-red-500">{result.invalid_votes}</td>
+                      <td className="px-6 py-4 whitespace-no-wrap text-sm text-red-500">{result.invalid_votes}</td>
                     </tr>
                   ))}
                 </tbody>

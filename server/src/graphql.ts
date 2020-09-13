@@ -6,26 +6,6 @@
 
 /* tslint:disable */
 /* eslint-disable */
-export interface District {
-    id: string;
-    district_code: string;
-    district_name: string;
-}
-
-export interface IQuery {
-    district(id: string): District | Promise<District>;
-    election_districts(electionId: string): District[] | Promise<District[]>;
-    district_municipalities(districtId: string): Municipality[] | Promise<Municipality[]>;
-    districts(): District[] | Promise<District[]>;
-    election(id: string): Election | Promise<Election>;
-    elections(): Election[] | Promise<Election[]>;
-    municipality(id: string): Municipality | Promise<Municipality>;
-    municipalities(): Municipality[] | Promise<Municipality[]>;
-    mayor_municipality_results(electionId: string, municipalityId: string, round: number): ElectionResult[] | Promise<ElectionResult[]>;
-    mayor_municipality_sections(electionId: string, municipalityId: string, round: number): ElectionResultSections[] | Promise<ElectionResultSections[]>;
-    mayor_municipality_section_result(electionId: string, municipalityId: string, round: number, lat: number, lng: number): ElectionResultSectionResult[] | Promise<ElectionResultSectionResult[]>;
-}
-
 export interface Election {
     id: string;
     name: string;
@@ -35,10 +15,46 @@ export interface Election {
     type: string;
 }
 
+export interface IQuery {
+    election(id: string): Election | Promise<Election>;
+    elections(): Election[] | Promise<Election[]>;
+    districts(): District[] | Promise<District[]>;
+    district(id: string): District | Promise<District>;
+    election_districts(electionId: string): District[] | Promise<District[]>;
+    district_municipalities(districtId: string): Municipality[] | Promise<Municipality[]>;
+    municipality_locations(municipalityId: string): Location[] | Promise<Location[]>;
+    municipality_regions(municipalityId: string): MunicipalityRegion[] | Promise<MunicipalityRegion[]>;
+    mayor_municipality_results(electionId: string, municipalityId: string, locationId: string, regionId: string, round: number): ElectionResult[] | Promise<ElectionResult[]>;
+    mayor_municipality_sections(electionId: string, municipalityId: string, locationId: string, regionId: string, round: number): ElectionResultSections[] | Promise<ElectionResultSections[]>;
+    mayor_municipality_section_result(electionId: string, municipalityId: string, locationId: string, regionId: string, round: number, lat: number, lng: number): ElectionResultSectionResult[] | Promise<ElectionResultSectionResult[]>;
+}
+
+export interface District {
+    id: string;
+    district_code: string;
+    district_name: string;
+}
+
 export interface Municipality {
     id: string;
     municipality_code: string;
     municipality_name: string;
+}
+
+export interface Location {
+    id: string;
+    district?: District;
+    municipality?: Municipality;
+    location_type?: string;
+    location_name?: string;
+    ekatte?: string;
+}
+
+export interface MunicipalityRegion {
+    id: string;
+    municipalityId?: Municipality;
+    region_code?: string;
+    region_name?: string;
 }
 
 export interface ElectionResult {
