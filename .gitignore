@@ -1,5 +1,4 @@
 db/*.db
-db/*.zip
 db/queries.sql
 files/elections/**/csv*
 files/voting_locations_2019.csv
